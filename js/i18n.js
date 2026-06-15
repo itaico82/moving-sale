@@ -28,6 +28,7 @@ window.MS_I18N = {
     clearSearch: "ניקוי החיפוש",
     saveTo: "הוספה לרשימה",
     saved: "נשמר ברשימה",
+    askPrice: "מחיר בפנייה",
     loadError: "טעינת הפריטים נכשלה. נסו לרענן את העמוד.",
   },
   en: {
@@ -58,6 +59,7 @@ window.MS_I18N = {
     clearSearch: "Clear search",
     saveTo: "Add to list",
     saved: "Saved to list",
+    askPrice: "Price on request",
     loadError: "Failed to load items. Please refresh the page.",
   },
 };

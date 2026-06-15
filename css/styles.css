@@ -180,6 +180,7 @@ body {
 .ms-card-dims { font-family: "Space Grotesk", sans-serif; font-size: 11px; color: #aaa; }
 .ms-card-pricerow {
   display: flex; align-items: baseline; gap: 9px; border-top: 1px solid #eee; padding-top: 12px;
+  margin-top: auto;
 }
 .ms-price { font-family: "Space Grotesk", sans-serif; font-size: 20px; font-weight: 700; }
 .ms-price-orig { font-family: "Space Grotesk", sans-serif; font-size: 13px; color: #bbb; text-decoration: line-through; }

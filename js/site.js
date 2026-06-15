@@ -141,7 +141,7 @@
         sold: it.sold,
         showViewers: !it.sold,
         viewersText: he ? "עוד " + n + " צופים בפריט כעת" : n + " others viewing now",
-        priceText: money(it.price),
+        priceText: it.price != null ? money(it.price) : t.askPrice,
         hasOrig: !!it.originalPrice,
         origText: it.originalPrice ? money(it.originalPrice) : "",
         waHref:
@@ -177,10 +177,10 @@
         id: it.id,
         title: it.title[lang],
         brand: it.brand || "",
-        priceText: money(it.price),
+        priceText: it.price != null ? money(it.price) : t.askPrice,
       };
     });
-    var savedTotal = savedRaw.reduce(function (s, i) { return s + i.price; }, 0);
+    var savedTotal = savedRaw.reduce(function (s, i) { return s + (i.price || 0); }, 0);
     var savedTitles = savedRaw.map(function (i) { return i.title[lang]; });
     var waAllText = he
       ? "היי, מתעניין/ת בפריטים הבאים מהמכירה: " + savedTitles.join(", ")
@@ -247,7 +247,7 @@
           '<h3 class="ms-card-title">' + esc(item.title) + "</h3>" +
           (item.brand ? '<span class="ms-card-brand">' + esc(item.brand) + "</span>" : "") +
         "</div>" +
-        '<p class="ms-card-desc">' + esc(item.desc) + "</p>" +
+        (item.desc ? '<p class="ms-card-desc">' + esc(item.desc) + "</p>" : "") +
         (item.dimensions ? '<span class="ms-card-dims">' + esc(item.dimensions) + "</span>" : "") +
         '<div class="ms-card-pricerow">' +
           '<span class="ms-price">' + esc(item.priceText) + "</span>" +
