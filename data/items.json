@@ -70,7 +70,9 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-yellow-chairs-1781556729374-0.jpg"
+      ],
       "title": {
         "he": "כיסאות צהובים",
         "en": "Yellow Chairs"
@@ -88,7 +90,9 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-bar-stools-1781556739857-0.jpg"
+      ],
       "title": {
         "he": "כיסאות בר",
         "en": "Bar Stools"
