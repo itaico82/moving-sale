@@ -27,9 +27,19 @@ To add photos: drop image files into `images/` and reference them in an item's
 `photos` array, e.g. `"photos": ["images/sofa-1.jpg"]`. The first photo is shown
 on the card; until one is added, a placeholder is displayed.
 
-> A browser-based admin editor (`admin.html`) that commits changes via the
-> GitHub API is the planned next step — see
-> `docs/superpowers/specs/2026-06-15-moving-sale-design.md`.
+### Admin editor (`admin.html`)
+
+Open `admin.html` (e.g. `https://itaico82.github.io/moving-sale/admin.html`) to
+edit everything through a form: config, categories, and items (add/edit/delete,
+mark sold/reserved, reorder, prices, photos). Photos are compressed in-browser
+before upload.
+
+**Saving** commits `data/items.json` (and any new images) straight to the repo
+via the GitHub Contents API. You paste a **fine-grained Personal Access Token**
+once — scoped to *only* this repo, `Contents: Read & write` — and it's stored
+only in your browser's `localStorage` (never in the deployed site). The page is
+publicly reachable but inert without your token. The live site updates ~1 min
+after a save.
 
 ## Local preview
 
