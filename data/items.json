@@ -1,0 +1,153 @@
+{
+  "config": {
+    "whatsapp": "972500000000",
+    "phoneLabel": "+972 50-000-0000",
+    "email": "hello@example.com",
+    "heroPhoto": null,
+    "location": { "he": "הרצליה", "en": "Herzliya" },
+    "moveDate": { "he": "יוני 2026", "en": "June 2026" }
+  },
+  "categories": [
+    { "id": "living-room", "name": { "he": "סלון", "en": "Living Room" } },
+    { "id": "dining", "name": { "he": "פינת אוכל", "en": "Dining" } },
+    { "id": "bedroom", "name": { "he": "חדר שינה", "en": "Bedroom" } },
+    { "id": "appliances", "name": { "he": "מוצרי חשמל", "en": "Appliances" } }
+  ],
+  "items": [
+    {
+      "id": "sofa",
+      "category": "living-room",
+      "brand": "Meridiani",
+      "price": 5300,
+      "originalPrice": 12000,
+      "dimensions": "220 × 95 ס״מ",
+      "sold": false,
+      "photos": [],
+      "title": { "he": "ספה מודולרית", "en": "Modular Sofa" },
+      "desc": {
+        "he": "תלת-מושבית, ריפוד פשתן טבעי בגוון חול. כמעט חדשה, נקייה מאוד.",
+        "en": "Three-seater in natural sand-tone linen. Barely used, very clean."
+      }
+    },
+    {
+      "id": "armchair",
+      "category": "living-room",
+      "brand": "Muuto",
+      "price": 1200,
+      "originalPrice": null,
+      "dimensions": "75 × 80 ס״מ",
+      "sold": true,
+      "photos": [],
+      "title": { "he": "כורסת קריאה", "en": "Reading Armchair" },
+      "desc": {
+        "he": "כורסה נמוכה ונוחה עם רגלי עץ אלון.",
+        "en": "Low, comfortable armchair with oak legs."
+      }
+    },
+    {
+      "id": "coffee-table",
+      "category": "living-room",
+      "brand": null,
+      "price": 900,
+      "originalPrice": 2100,
+      "dimensions": "110 × 60 ס״מ",
+      "sold": false,
+      "photos": [],
+      "title": { "he": "שולחן סלון שיש", "en": "Marble Coffee Table" },
+      "desc": {
+        "he": "משטח שיש לבן על בסיס מתכת שחורה.",
+        "en": "White marble top on a black metal base."
+      }
+    },
+    {
+      "id": "dining-table",
+      "category": "dining",
+      "brand": "HAY",
+      "price": 3200,
+      "originalPrice": null,
+      "dimensions": "200 × 100 ס״מ",
+      "sold": false,
+      "photos": [],
+      "title": { "he": "שולחן אוכל עץ אלון", "en": "Oak Dining Table" },
+      "desc": {
+        "he": "עץ אלון מלא, מקומות לשישה עד שמונה סועדים.",
+        "en": "Solid oak, seats six to eight."
+      }
+    },
+    {
+      "id": "chairs",
+      "category": "dining",
+      "brand": null,
+      "price": 1800,
+      "originalPrice": 3600,
+      "dimensions": "סט של 6",
+      "sold": false,
+      "photos": [],
+      "title": { "he": "שש כיסאות אוכל", "en": "Set of 6 Dining Chairs" },
+      "desc": {
+        "he": "כיסאות עץ עם מושב מרופד, נמכרים כסט.",
+        "en": "Wooden chairs with upholstered seats, sold as a set."
+      }
+    },
+    {
+      "id": "bed",
+      "category": "bedroom",
+      "brand": "Hollandia",
+      "price": 2800,
+      "originalPrice": 6000,
+      "dimensions": "160 × 200 ס״מ",
+      "sold": false,
+      "photos": [],
+      "title": { "he": "מיטה זוגית + מזרן", "en": "Queen Bed + Mattress" },
+      "desc": {
+        "he": "בסיס מתכוונן עם ראש מיטה מרופד ומזרן איכותי.",
+        "en": "Adjustable base with upholstered headboard and quality mattress."
+      }
+    },
+    {
+      "id": "nightstands",
+      "category": "bedroom",
+      "brand": null,
+      "price": 600,
+      "originalPrice": null,
+      "dimensions": "45 × 40 ס״מ",
+      "sold": false,
+      "photos": [],
+      "title": { "he": "זוג שידות לילה", "en": "Pair of Nightstands" },
+      "desc": {
+        "he": "שתי שידות עץ עם מגירה, תואמות למיטה.",
+        "en": "Two wooden one-drawer nightstands, matching the bed."
+      }
+    },
+    {
+      "id": "fridge",
+      "category": "appliances",
+      "brand": "Samsung",
+      "price": 1900,
+      "originalPrice": 4200,
+      "dimensions": "178 × 70 ס״מ",
+      "sold": false,
+      "photos": [],
+      "title": { "he": "מקרר", "en": "Refrigerator" },
+      "desc": {
+        "he": "מקרר רחב בגימור נירוסטה, פועל מצוין.",
+        "en": "Wide stainless-steel fridge, works perfectly."
+      }
+    },
+    {
+      "id": "coffee-machine",
+      "category": "appliances",
+      "brand": "De'Longhi",
+      "price": 750,
+      "originalPrice": null,
+      "dimensions": null,
+      "sold": false,
+      "photos": [],
+      "title": { "he": "מכונת אספרסו", "en": "Espresso Machine" },
+      "desc": {
+        "he": "מכונה אוטומטית עם מקציף חלב, מתוחזקת היטב.",
+        "en": "Automatic machine with milk frother, well maintained."
+      }
+    }
+  ]
+}

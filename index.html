@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>הבית שלנו · מכירת מעבר דירה</title>
+  <meta name="description" content="מכירת מעבר דירה פרטית — רהיטים ומוצרי חשמל במצב מצוין, איסוף עצמי." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Set direction/language early to avoid a flash before site.js runs. -->
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem("ms_lang");
+        if (l !== "he" && l !== "en") l = "he";
+        document.documentElement.lang = l;
+        document.documentElement.dir = l === "he" ? "rtl" : "ltr";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <noscript>
+    <p style="max-width:600px;margin:60px auto;padding:0 24px;font-family:sans-serif;text-align:center;">
+      צפייה בקטלוג דורשת JavaScript מופעל · Viewing this catalog requires JavaScript.
+    </p>
+  </noscript>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/site.js" defer></script>
+</body>
+</html>

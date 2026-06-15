@@ -1,0 +1,286 @@
+/* ============================================================
+   Moving Sale — C-Minimal direction
+   Recreated from the Claude Design prototype "Moving Sale.dc.html"
+   ============================================================ */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+:root {
+  --ms-bg: #f7f7f5;
+  --ms-ink: #121212;
+  --ms-accent: #2440e8;
+  --ms-accent-soft: #6f86ff;
+  --ms-line: #e6e6e2;
+}
+
+body {
+  background: var(--ms-bg);
+  color: var(--ms-ink);
+  font-family: "Heebo", sans-serif;
+  min-height: 100vh;
+}
+
+.ms-sans { font-family: "Heebo", sans-serif; }
+.ms-mono { font-family: "Space Grotesk", sans-serif; }
+
+/* ---- animations ---- */
+@keyframes msPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.7); } }
+@keyframes msSlide { from { transform: translateX(var(--ms-from, 100%)); } to { transform: translateX(0); } }
+@keyframes msFadeIn { from { opacity: 0; } to { opacity: 1; } }
+[dir="rtl"] .ms-drawer { --ms-from: -100%; }
+
+/* ---- header ---- */
+.ms-header {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(247, 247, 245, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--ms-line);
+}
+.ms-header-inner {
+  max-width: 1200px; margin: 0 auto; padding: 13px 32px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+}
+.ms-brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap;
+}
+.ms-search { position: relative; flex: 1; min-width: 190px; max-width: 440px; }
+.ms-search-icon {
+  position: absolute; inset-inline-start: 13px; top: 50%; transform: translateY(-50%);
+  display: flex; color: #9a9a9a; pointer-events: none;
+}
+.ms-search-input {
+  width: 100%; font-family: "Heebo", sans-serif; font-size: 14px; color: var(--ms-ink);
+  background: #fff; border: 1px solid var(--ms-line); border-radius: 0;
+  padding: 11px 14px; padding-inline-start: 40px; outline: none;
+}
+.ms-search-input:focus { border-color: var(--ms-ink); }
+.ms-nav { display: flex; align-items: center; gap: 18px; }
+.ms-nav-link {
+  font-family: "Heebo", sans-serif; font-size: 14px; font-weight: 500;
+  color: #444; text-decoration: none; white-space: nowrap;
+}
+.ms-list-btn {
+  display: flex; align-items: center; gap: 8px;
+  font-family: "Heebo", sans-serif; font-size: 14px; font-weight: 600; color: var(--ms-ink);
+  background: none; border: none; cursor: pointer; padding: 0; white-space: nowrap;
+}
+.ms-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 19px; height: 19px; padding: 0 5px;
+  font-family: "Space Grotesk", sans-serif; font-size: 12px; font-weight: 700; line-height: 1;
+  background: var(--ms-line); color: #888;
+}
+.ms-badge--active { background: var(--ms-accent); color: #fff; }
+.ms-lang-btn {
+  font-family: "Space Grotesk", sans-serif; font-size: 12px; font-weight: 600; color: var(--ms-ink);
+  background: none; border: 1px solid var(--ms-ink); border-radius: 0; padding: 7px 13px; cursor: pointer;
+}
+
+/* ---- hero ---- */
+.ms-hero { max-width: 1200px; margin: 0 auto; padding: 60px 32px 36px; }
+.ms-kicker {
+  font-family: "Space Grotesk", sans-serif; font-size: 13px; font-weight: 500;
+  letter-spacing: 0.05em; color: var(--ms-accent);
+}
+.ms-hero-title {
+  font-family: "Heebo", sans-serif; font-weight: 800;
+  font-size: clamp(44px, 7vw, 94px); line-height: 0.98; letter-spacing: -0.02em;
+  margin: 14px 0 0; text-wrap: balance;
+}
+.ms-hero-meta {
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap;
+  margin-top: 22px; border-top: 2px solid var(--ms-ink); padding-top: 20px;
+}
+.ms-hero-sub {
+  font-family: "Heebo", sans-serif; font-size: 17px; line-height: 1.55; color: #555;
+  max-width: 48ch; margin: 0;
+}
+.ms-hero-actions { display: flex; align-items: center; gap: 16px; }
+.ms-count { font-family: "Space Grotesk", sans-serif; font-size: 14px; color: #888; white-space: nowrap; }
+.ms-cta {
+  font-family: "Heebo", sans-serif; font-size: 14px; font-weight: 600; color: #fff;
+  background: var(--ms-ink); padding: 13px 26px; text-decoration: none; white-space: nowrap;
+}
+
+.ms-hero-img { max-width: 1200px; margin: 0 auto; padding: 0 32px 16px; }
+
+/* ---- image slots / placeholders ---- */
+.ms-photo {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: auto; overflow: hidden;
+  background: #efeeea; color: #c4c2bb;
+}
+.ms-photo--hero { aspect-ratio: 21 / 9; }
+.ms-photo--card { aspect-ratio: 1 / 1; }
+.ms-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ms-photo-empty { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 16px; text-align: center; }
+.ms-photo-empty span {
+  font-family: "Heebo", sans-serif; font-size: 12px; color: #b6b4ac; letter-spacing: 0.01em;
+}
+
+/* ---- result count ---- */
+.ms-result-count {
+  max-width: 1200px; margin: 0 auto; padding: 30px 32px 0;
+  font-family: "Space Grotesk", sans-serif; font-size: 14px; color: #888;
+}
+
+/* ---- categories + grid ---- */
+.ms-cat { max-width: 1200px; margin: 0 auto; padding: 40px 32px 8px; }
+.ms-cat-head {
+  display: flex; align-items: baseline; gap: 14px;
+  border-bottom: 1px solid var(--ms-ink); padding-bottom: 12px; margin-bottom: 28px;
+}
+.ms-cat-index { font-family: "Space Grotesk", sans-serif; font-size: 13px; color: var(--ms-accent); }
+.ms-cat-name { font-family: "Heebo", sans-serif; font-weight: 700; font-size: 22px; margin: 0; }
+.ms-cat-count { margin-inline-start: auto; font-family: "Space Grotesk", sans-serif; font-size: 13px; color: #999; }
+
+.ms-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1px; background: var(--ms-line); border: 1px solid var(--ms-line);
+}
+
+/* ---- card ---- */
+.ms-card { background: #fff; display: flex; flex-direction: column; }
+.ms-card-media { position: relative; }
+.ms-sold {
+  position: absolute; inset: 0; background: rgba(18, 18, 18, 0.55);
+  display: flex; align-items: center; justify-content: center;
+}
+.ms-sold-label {
+  font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #fff; font-size: 15px; border: 1px solid #fff; padding: 7px 18px;
+}
+.ms-viewers {
+  position: absolute; inset-block-start: 10px; inset-inline-start: 10px;
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(255, 255, 255, 0.94); border: 1px solid var(--ms-line);
+  padding: 5px 9px; font-family: "Heebo", sans-serif; font-size: 11.5px; font-weight: 500; color: #444;
+}
+.ms-viewers-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ms-accent); animation: msPulse 1.6s ease-in-out infinite; }
+.ms-save {
+  position: absolute; inset-block-start: 10px; inset-inline-end: 10px;
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--ms-line); cursor: pointer; padding: 0;
+  background: rgba(255, 255, 255, 0.94); color: var(--ms-ink); transition: all 0.15s ease;
+}
+.ms-save--active { border-color: var(--ms-accent); background: var(--ms-accent); color: #fff; }
+
+.ms-card-body {
+  padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1;
+  border-top: 1px solid var(--ms-line);
+}
+.ms-card-titlerow { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.ms-card-title { font-family: "Heebo", sans-serif; font-size: 16px; font-weight: 600; margin: 0; }
+.ms-card-brand {
+  font-family: "Space Grotesk", sans-serif; font-size: 11px; letter-spacing: 0.04em; color: #999; white-space: nowrap;
+}
+.ms-card-desc { font-family: "Heebo", sans-serif; font-size: 13px; line-height: 1.5; color: #777; margin: 0; flex: 1; }
+.ms-card-dims { font-family: "Space Grotesk", sans-serif; font-size: 11px; color: #aaa; }
+.ms-card-pricerow {
+  display: flex; align-items: baseline; gap: 9px; border-top: 1px solid #eee; padding-top: 12px;
+}
+.ms-price { font-family: "Space Grotesk", sans-serif; font-size: 20px; font-weight: 700; }
+.ms-price-orig { font-family: "Space Grotesk", sans-serif; font-size: 13px; color: #bbb; text-decoration: line-through; }
+.ms-card-contact { display: flex; gap: 12px; margin-inline-start: auto; }
+.ms-wa { font-family: "Heebo", sans-serif; font-size: 13px; font-weight: 600; color: var(--ms-accent); text-decoration: none; }
+.ms-mail { font-family: "Heebo", sans-serif; font-size: 13px; font-weight: 600; color: #999; text-decoration: none; }
+
+/* ---- empty / error states ---- */
+.ms-empty { max-width: 1200px; margin: 0 auto; padding: 60px 32px; text-align: center; }
+.ms-empty-text { font-family: "Heebo", sans-serif; font-size: 18px; color: #888; margin: 0 0 16px; }
+.ms-empty-clear {
+  font-family: "Heebo", sans-serif; font-size: 14px; font-weight: 600; color: var(--ms-accent);
+  background: none; border: none; cursor: pointer; text-decoration: underline;
+}
+
+/* ---- contact ---- */
+.ms-contact { background: var(--ms-ink); color: #fff; margin-top: 48px; }
+.ms-contact-inner { max-width: 1200px; margin: 0 auto; padding: 80px 32px; }
+.ms-contact-kicker {
+  font-family: "Space Grotesk", sans-serif; font-size: 13px; font-weight: 500;
+  letter-spacing: 0.08em; color: var(--ms-accent-soft);
+}
+.ms-contact-row {
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-top: 14px;
+}
+.ms-contact-copy { max-width: 52ch; }
+.ms-contact-title {
+  font-family: "Heebo", sans-serif; font-weight: 800; font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.05; letter-spacing: -0.01em; margin: 0;
+}
+.ms-contact-body { font-family: "Heebo", sans-serif; font-size: 16px; line-height: 1.6; color: #aaa; margin: 18px 0 0; }
+.ms-contact-actions { display: flex; flex-direction: column; gap: 10px; min-width: 280px; }
+.ms-contact-wa, .ms-contact-mail {
+  display: flex; justify-content: space-between; align-items: center; gap: 14px;
+  text-decoration: none; padding: 18px 24px;
+  font-family: "Heebo", sans-serif; font-weight: 600; font-size: 16px; color: #fff;
+}
+.ms-contact-wa { background: var(--ms-accent); }
+.ms-contact-mail { background: transparent; border: 1px solid #3a3a3a; }
+.ms-contact-wa span { font-family: "Space Grotesk", sans-serif; font-size: 13px; opacity: 0.8; }
+.ms-contact-mail span { font-family: "Space Grotesk", sans-serif; font-size: 13px; opacity: 0.7; }
+.ms-contact-footer {
+  margin-top: 56px; border-top: 1px solid #2a2a2a; padding-top: 22px;
+  font-family: "Space Grotesk", sans-serif; font-size: 13px; color: #777;
+}
+
+/* ---- My List drawer ---- */
+.ms-overlay {
+  position: fixed; inset: 0; background: rgba(18, 18, 18, 0.4); z-index: 100;
+  animation: msFadeIn 0.2s ease both;
+}
+.ms-drawer {
+  position: fixed; inset-block: 0; inset-inline-end: 0; width: min(400px, 92vw);
+  background: #fff; z-index: 101; display: flex; flex-direction: column;
+  box-shadow: -12px 0 40px -16px rgba(0, 0, 0, 0.4);
+  animation: msSlide 0.26s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.ms-drawer-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 22px; border-bottom: 1px solid var(--ms-line);
+}
+.ms-drawer-title { font-family: "Heebo", sans-serif; font-weight: 700; font-size: 18px; }
+.ms-drawer-title span { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 15px; color: var(--ms-accent); }
+.ms-drawer-close { display: flex; background: none; border: none; cursor: pointer; color: #444; padding: 4px; }
+.ms-drawer-body { flex: 1; overflow-y: auto; padding: 6px 22px; }
+.ms-drawer-empty {
+  font-family: "Heebo", sans-serif; font-size: 15px; line-height: 1.6; color: #999;
+  text-align: center; padding: 48px 8px; margin: 0;
+}
+.ms-saved-row {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  padding: 16px 0; border-bottom: 1px solid #f0f0ee;
+}
+.ms-saved-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.ms-saved-title { font-family: "Heebo", sans-serif; font-size: 15px; font-weight: 600; }
+.ms-saved-brand { font-family: "Space Grotesk", sans-serif; font-size: 11px; color: #999; }
+.ms-saved-price { font-family: "Space Grotesk", sans-serif; font-size: 15px; font-weight: 700; color: var(--ms-ink); margin-top: 2px; }
+.ms-saved-remove { display: flex; background: none; border: none; cursor: pointer; color: #bbb; padding: 2px; flex-shrink: 0; }
+.ms-drawer-foot {
+  border-top: 1px solid var(--ms-line); padding: 18px 22px; display: flex; flex-direction: column; gap: 12px;
+}
+.ms-total-row { display: flex; justify-content: space-between; align-items: baseline; }
+.ms-total-label { font-family: "Heebo", sans-serif; font-size: 14px; color: #666; }
+.ms-total-value { font-family: "Space Grotesk", sans-serif; font-size: 20px; font-weight: 700; }
+.ms-send-wa {
+  text-align: center; background: var(--ms-accent); color: #fff; text-decoration: none;
+  padding: 14px; font-family: "Heebo", sans-serif; font-weight: 600; font-size: 15px;
+}
+.ms-foot-actions { display: flex; gap: 10px; }
+.ms-mail-all {
+  flex: 1; text-align: center; border: 1px solid #d8d8d4; color: var(--ms-ink); text-decoration: none;
+  padding: 11px; font-family: "Heebo", sans-serif; font-weight: 600; font-size: 14px;
+}
+.ms-clear {
+  flex: 1; background: none; border: 1px solid #d8d8d4; color: #888; cursor: pointer;
+  padding: 11px; font-family: "Heebo", sans-serif; font-weight: 600; font-size: 14px;
+}
+
+@media (max-width: 520px) {
+  .ms-header-inner { padding: 13px 18px; }
+  .ms-hero { padding: 40px 18px 28px; }
+  .ms-hero-img, .ms-cat { padding-left: 18px; padding-right: 18px; }
+  .ms-contact-inner { padding: 56px 18px; }
+}
