@@ -239,8 +239,13 @@
     }).join("") || '<p style="color:#999;">אין פריטים. לחצו על "פריט חדש".</p>';
   }
 
-  // On the deployed site admin.html sits at root, so repo-relative paths work as-is.
-  function resolvePhoto(p) { return p; }
+  // For previews, resolve repo-relative paths against raw.githubusercontent.com
+  // so a just-committed image shows immediately (the Pages CDN lags ~1 min after
+  // each commit). The public catalog keeps the relative path, which is correct there.
+  function resolvePhoto(p) {
+    if (/^https?:\/\//.test(p)) return p;
+    return "https://raw.githubusercontent.com/" + GH.owner + "/" + GH.repo + "/" + GH.branch + "/" + p;
+  }
 
   /* ---------- image compression ---------- */
   function loadImage(file) {
