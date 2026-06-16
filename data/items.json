@@ -184,6 +184,7 @@
       ]
     }
   ],
+  "rooms": [],
   "items": [
     {
       "id": "f-livingroom-table",
@@ -1467,18 +1468,21 @@
     {
       "id": "l-bike-noga",
       "category": "leisure",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
-      "dimensions": null,
+      "brand": "Rockrider",
+      "price": 150,
+      "originalPrice": 800,
+      "dimensions": "20״",
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-bike-noga-1781631744593-0.jpg",
+        "images/l-bike-noga-1781631744392-1.jpg"
+      ],
       "title": {
-        "he": "אופניים",
+        "he": "אופני ילדים דקטלון 20״",
         "en": "Bicycle"
       },
       "desc": {
-        "he": "מידה של נגה",
+        "he": "אופני שטח 20״ מדקטלון. תוספת רגלית ומתקן לבקבוק",
         "en": "Noga's size"
       },
       "room": "outdoor"
