@@ -1529,6 +1529,29 @@
         "he": "310 מ״ל · גווני כחול (Lagoon)",
         "en": "310ml · Lagoon assorted"
       }
+    },
+    {
+      "id": "e-mi-desk-lamp",
+      "category": "electronics",
+      "brand": "Xiaomi",
+      "price": 100,
+      "originalPrice": 199,
+      "dimensions": null,
+      "link": "https://www.mi-il.co.il/product/mi-led-desk-lamp-1s",
+      "sold": false,
+      "photos": [
+        "images/e-mi-desk-lamp-1.jpg",
+        "images/e-mi-desk-lamp-2.jpg",
+        "images/e-mi-desk-lamp-3.jpg"
+      ],
+      "title": {
+        "he": "מנורת שולחן חכמה Mi LED Desk Lamp 1S",
+        "en": "Mi LED Desk Lamp 1S"
+      },
+      "desc": {
+        "he": "מנורת LED חכמה, דור 2",
+        "en": "Smart LED desk lamp, Gen 2"
+      }
     }
   ]
 }
