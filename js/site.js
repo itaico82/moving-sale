@@ -243,6 +243,7 @@
       phoneLabel: config.phoneLabel || "",
       emailLabel: config.email,
       heroPhotos: config.heroPhotos && config.heroPhotos.length ? config.heroPhotos : (config.heroPhoto ? [config.heroPhoto] : []),
+      flatLink: config.flatLink || "",
       flatWaHref: "https://wa.me/" + config.whatsapp + "?text=" +
         encodeURIComponent(he ? "היי, מעוניין/ת לשכור או לקנות את הדירה — אפשר פרטים?" : "Hi, I'm interested in renting or buying the flat — can you share details?"),
       flatMailHref: "mailto:" + config.email + "?subject=" +
@@ -399,11 +400,12 @@
       '<div class="ms-hero-cta">' +
         '<span class="ms-hero-cta-text">' + esc(t.flatCta) + "</span>" +
         '<span class="ms-hero-cta-actions">' +
-          '<a class="ms-hero-cta-btn wa" href="' + esc(v.flatWaHref) + '" target="_blank" rel="noopener">' + esc(t.wa) + "</a>" +
-          '<a class="ms-hero-cta-btn mail" href="' + esc(v.flatMailHref) + '">' + esc(t.mail) + "</a>" +
+          '<a class="ms-hero-cta-btn wa" data-action="cta-go" href="' + esc(v.flatWaHref) + '" target="_blank" rel="noopener">' + esc(t.wa) + "</a>" +
+          '<a class="ms-hero-cta-btn mail" data-action="cta-go" href="' + esc(v.flatMailHref) + '">' + esc(t.mail) + "</a>" +
         "</span>" +
       "</div>";
-    return '<section class="ms-hero-img"><div class="ms-hero-slideshow">' + inner + cta + "</div></section>";
+    var open = v.flatLink ? ' ms-clickable" data-action="open-flat" data-href="' + esc(v.flatLink) + '"' : '"';
+    return '<section class="ms-hero-img"><div class="ms-hero-slideshow' + open + ">" + inner + cta + "</div></section>";
   }
 
   function startHero() {
@@ -728,6 +730,11 @@
       case "open-media":
         openItemModal(el.getAttribute("data-id"));
         break;
+      case "open-flat": {
+        var href = el.getAttribute("data-href");
+        if (href) window.open(href, "_blank", "noopener");
+        break;
+      }
       case "toggle-share": {
         var menu = el.parentNode.querySelector("[data-share-menu]");
         closeShareMenus(menu);
