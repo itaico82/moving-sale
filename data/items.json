@@ -261,15 +261,13 @@
       "originalPrice": 350,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/f-nightstand-wheels-1781602683607-0.jpg"
-      ],
+      "photos": [],
       "title": {
         "he": "בסטה זוגית על גלגלים, מגירה אחת",
         "en": "Wide Nightstand on Wheels, One Drawer"
       },
       "desc": {
-        "he": "כוננית בסטה של איקאה, מסגרת בצבע עץ, חזית מגירה לבנה",
+        "he": "",
         "en": ""
       }
     },
@@ -299,16 +297,13 @@
       "originalPrice": 320,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/f-nightstand-single-1781602800020-0.jpg",
-        "images/f-nightstand-single-1781602822806-0.jpg"
-      ],
+      "photos": [],
       "title": {
         "he": "בסטה בודדת, דלת לבנה וגלגלים",
         "en": "Single Nightstand, White Door & Wheels"
       },
       "desc": {
-        "he": "אופציה למדף זכוכית בפנים, כלול",
+        "he": "",
         "en": ""
       }
     },
@@ -320,16 +315,13 @@
       "originalPrice": 39,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/f-lack-shelves-1781602950160-0.jpg",
-        "images/f-lack-shelves-1781602972002-0.jpg"
-      ],
+      "photos": [],
       "title": {
         "he": "מדפים לבנים LACK",
         "en": "LACK White Shelves"
       },
       "desc": {
-        "he": "סט של 12\nמחיר ליחידה בודדה",
+        "he": "סט של 12",
         "en": "Set of 12"
       },
       "link": null
@@ -418,15 +410,13 @@
       "originalPrice": 820,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/f-eket-unit-8-1781603063983-0.jpg"
-      ],
+      "photos": [],
       "title": {
         "he": "יחידת מדפים EKET, 8 תאים",
         "en": "EKET Shelf Unit, 8 Cubes"
       },
       "desc": {
-        "he": "סט של 2\nמחיר ליחידה בודדה",
+        "he": "סט של 2",
         "en": "Set of 2"
       },
       "link": null
@@ -511,15 +501,13 @@
       "originalPrice": 225,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/f-bissa-1781603171461-0.jpg"
-      ],
+      "photos": [],
       "title": {
         "he": "ארון נעליים BISSA",
         "en": "BISSA Shoe Cabinet"
       },
       "desc": {
-        "he": "סט של 2 \nמחיר ליחידה בודדת",
+        "he": "סט של 2",
         "en": "Set of 2"
       },
       "link": null
@@ -655,15 +643,19 @@
     {
       "id": "e-tube-amp",
       "category": "electronics",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "brand": "Jolida",
+      "price": 2500,
+      "originalPrice": 8500,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-tube-amp-1781603039539-0.jpg",
+        "images/e-tube-amp-1781603039506-1.jpg",
+        "images/e-tube-amp-1781603039571-2.jpg"
+      ],
       "title": {
-        "he": "מגבר מנורות",
-        "en": "Tube Amplifier"
+        "he": "מגבר מנורות Jolida JD202",
+        "en": "Tube Amplifier Jolida JD202"
       },
       "desc": {
         "he": "",
@@ -673,15 +665,18 @@
     {
       "id": "e-speakers",
       "category": "electronics",
-      "brand": null,
+      "brand": "Avance",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-speakers-1781603171813-0.jpg",
+        "images/e-speakers-1781603171781-1.jpg"
+      ],
       "title": {
-        "he": "רמקולים",
-        "en": "Speakers"
+        "he": "רמקולים Avance Dana",
+        "en": "Speakers Avance Dana"
       },
       "desc": {
         "he": "",
@@ -710,19 +705,23 @@
       "id": "e-coffee-machine",
       "category": "electronics",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 275,
+      "originalPrice": 549,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-coffee-machine-1781603191552-0.jpg",
+        "images/e-coffee-machine-1781603191413-1.jpg"
+      ],
       "title": {
-        "he": "מכונת קפה",
-        "en": "Coffee Machine"
+        "he": "מכונת קפה נספרסו אסנזה + קפסולות",
+        "en": "Nespresso essenza Coffee Machine + pods"
       },
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "link": "https://www.netoneto.co.il/product/%D7%9E%D7%9B%D7%95%D7%A0%D7%AA-%D7%A7%D7%A4%D7%94-nespresso-essenza-mini-%D7%A0%D7%A1%D7%A4%D7%A8%D7%A1%D7%95-%D7%93%D7%92%D7%9D-c30?gad_campaignid=22448598911&gbraid=0AAAAADOyK3CW0aQ6hFmtRz3yhesKI6My6"
     },
     {
       "id": "e-frother",
@@ -835,18 +834,18 @@
     {
       "id": "e-dvd",
       "category": "electronics",
-      "brand": null,
+      "brand": "Cambridge Audio",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
       "photos": [],
       "title": {
-        "he": "נגן DVD",
+        "he": "נגן DVD - Cambridge Audio",
         "en": "DVD Player"
       },
       "desc": {
-        "he": "",
+        "he": "DVD79 - מאוד מוזיקלי",
         "en": ""
       }
     },
@@ -910,16 +909,18 @@
       "category": "electronics",
       "brand": null,
       "price": 1800,
-      "originalPrice": null,
+      "originalPrice": 4435,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-robot-vacuum-1781603465549-0.jpg"
+      ],
       "title": {
-        "he": "רובוט שואב ושוטף",
-        "en": "Robot Vacuum & Mop"
+        "he": "רובוט שואב ושוטף Ecovacs Deebot T20 Omni",
+        "en": "  Ecovacs Deebot T20 Omni - Robot Vacuum & Mop"
       },
       "desc": {
-        "he": "",
+        "he": "עם תחנת עגינה וייבוש אוטומאטי",
         "en": ""
       }
     },
