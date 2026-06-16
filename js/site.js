@@ -36,6 +36,8 @@
       '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"></path></svg>',
     image:
       '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"></rect><circle cx="8.5" cy="8.5" r="1.6"></circle><path d="M21 15l-5-5L5 21"></path></svg>',
+    link:
+      '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>',
   };
 
   /* ---------- helpers ---------- */
@@ -283,7 +285,7 @@
           '<span class="ms-price">' + esc(item.priceText) + "</span>" +
           (item.hasOrig ? '<span class="ms-price-orig">' + esc(item.origText) + "</span>" : "") +
           '<span class="ms-card-contact">' +
-            (item.link ? '<a class="ms-detail" href="' + esc(item.link) + '" target="_blank" rel="noopener">' + esc(t.details) + "</a>" : "") +
+            (item.link ? '<a class="ms-detail" href="' + esc(item.link) + '" target="_blank" rel="noopener">' + ICON.link + esc(t.details) + "</a>" : "") +
             '<a class="ms-wa" href="' + esc(item.waHref) + '" target="_blank" rel="noopener">' + esc(t.wa) + "</a>" +
             '<a class="ms-mail" href="' + esc(item.mailHref) + '">' + esc(t.mail) + "</a>" +
           "</span>" +
@@ -639,7 +641,7 @@
       '<div class="ms-modal-actions">' +
         '<a class="wa" href="' + esc(waHref) + '" target="_blank" rel="noopener">' + esc(t.waLong) + "</a>" +
         '<a class="mail" href="' + esc(mailHref) + '">' + esc(t.mailLong) + "</a>" +
-        (it.link ? '<a class="detail" href="' + esc(it.link) + '" target="_blank" rel="noopener">' + esc(t.details) + "</a>" : "") +
+        (it.link ? '<a class="detail" href="' + esc(it.link) + '" target="_blank" rel="noopener">' + ICON.link + esc(t.details) + "</a>" : "") +
       "</div>";
 
     closeItemModal();
