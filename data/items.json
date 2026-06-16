@@ -930,10 +930,10 @@
       "price": null,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [],
       "title": {
-        "he": "מסך מחשב",
+        "he": "מסך מחשב Dell 21",
         "en": "Computer Monitor"
       },
       "desc": {
