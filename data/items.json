@@ -206,7 +206,7 @@
     {
       "id": "f-yellow-chairs",
       "category": "furniture",
-      "brand": null,
+      "brand": "Tollmans",
       "price": 1460,
       "originalPrice": 2920,
       "dimensions": null,
@@ -219,12 +219,12 @@
         "images/f-yellow-chairs-slik-3.jpg"
       ],
       "title": {
-        "he": "כיסאות צהובים",
+        "he": "כיסאות אוכל Tollmans",
         "en": "Yellow Chairs"
       },
       "desc": {
-        "he": "סט של 8 · כיסא PP לגינה (גוון Ginger)",
-        "en": "Set of 8 · PP outdoor chair (Ginger)"
+        "he": "סט של 8 · כיסא צהוב ייחודי. ניתן לערימה, עמיד לתנאי חוץ",
+        "en": "Set of 8 · Indoor / outdoor chair (Ginger). Stackable "
       },
       "link": "https://www.tollmansdot.co.il/product/slik-blue/"
     },
@@ -244,11 +244,11 @@
         "images/f-bar-stools-pureloop-4.jpg"
       ],
       "title": {
-        "he": "כיסאות בר",
+        "he": "כיסאות בר Tollmans Pure Loop",
         "en": "Bar Stools"
       },
       "desc": {
-        "he": "סט של 4 · ₪1,150 ליחידה במקור",
+        "he": "כסאות בר גבוהים, עיצוב נקי",
         "en": "Set of 4 · originally ₪1,150 each"
       },
       "link": "https://www.tollmansdot.co.il/product/pure-loop-white-online/"
