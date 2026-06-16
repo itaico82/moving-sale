@@ -261,15 +261,13 @@
       "originalPrice": 350,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/f-nightstand-wheels-1781602683607-0.jpg"
-      ],
+      "photos": [],
       "title": {
         "he": "בסטה זוגית על גלגלים, מגירה אחת",
         "en": "Wide Nightstand on Wheels, One Drawer"
       },
       "desc": {
-        "he": "כוננית בסטה של איקאה, מסגרת בצבע עץ, חזית מגירה לבנה",
+        "he": "",
         "en": ""
       }
     },
@@ -299,16 +297,13 @@
       "originalPrice": 320,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/f-nightstand-single-1781602800020-0.jpg",
-        "images/f-nightstand-single-1781602822806-0.jpg"
-      ],
+      "photos": [],
       "title": {
         "he": "בסטה בודדת, דלת לבנה וגלגלים",
         "en": "Single Nightstand, White Door & Wheels"
       },
       "desc": {
-        "he": "אופציה למדף זכוכית בפנים, כלול",
+        "he": "",
         "en": ""
       }
     },
@@ -648,15 +643,19 @@
     {
       "id": "e-tube-amp",
       "category": "electronics",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "brand": "Jolida",
+      "price": 2500,
+      "originalPrice": 8500,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-tube-amp-1781603039539-0.jpg",
+        "images/e-tube-amp-1781603039506-1.jpg",
+        "images/e-tube-amp-1781603039571-2.jpg"
+      ],
       "title": {
-        "he": "מגבר מנורות",
-        "en": "Tube Amplifier"
+        "he": "מגבר מנורות Jolida JD202",
+        "en": "Tube Amplifier Jolida JD202"
       },
       "desc": {
         "he": "",
@@ -851,10 +850,7 @@
       "originalPrice": 6290,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/e-grill-1.webp",
-        "images/e-grill-2.jpg"
-      ],
+      "photos": [],
       "title": {
         "he": "גריל גז ROGUE XT 525 SIB",
         "en": "Napoleon ROGUE XT 525 SIB Gas Grill"
