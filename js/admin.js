@@ -12,10 +12,48 @@
   var API = "https://api.github.com/repos/" + GH.owner + "/" + GH.repo + "/contents/";
 
   var model = null; // { config, categories, items }
+  var baseModel = null; // canonical snapshot of what was loaded — used for 3-way merge on save
   var sha = null; // sha of data/items.json on the repo (for safe overwrite)
   var token = "";
 
   var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------- merge helpers (concurrent-edit safety) ---------- */
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  function jsonEq(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
+  function byId(arr) { var m = {}; (arr || []).forEach(function (x) { m[x.id] = x; }); return m; }
+
+  // Field-level config merge: keep remote, override only fields the local user changed vs base.
+  function mergeConfig(base, local, remote) {
+    var out = clone(remote || {});
+    Object.keys(local || {}).forEach(function (k) {
+      if (!jsonEq(local[k], base ? base[k] : undefined)) out[k] = clone(local[k]);
+    });
+    return out;
+  }
+
+  // 3-way merge keyed by item id so concurrent edits to DIFFERENT items/fields combine.
+  // Same item edited by two people → the saver's version wins for that item only.
+  function mergeModels(base, local, remote) {
+    var out = {};
+    out.config = mergeConfig(base.config || {}, local.config || {}, remote.config || {});
+    out.categories = jsonEq(local.categories, base.categories) ? clone(remote.categories || []) : clone(local.categories || []);
+
+    var baseById = byId(base.items), localById = byId(local.items);
+    var resultById = {};
+    (remote.items || []).forEach(function (it) { resultById[it.id] = clone(it); });
+    (local.items || []).forEach(function (it) {
+      var b = baseById[it.id];
+      if (!b || !jsonEq(it, b)) resultById[it.id] = clone(it); // added or edited locally → local wins
+    });
+    Object.keys(baseById).forEach(function (id) { if (!localById[id]) delete resultById[id]; }); // deleted locally
+
+    var order = [], seen = {};
+    (local.items || []).forEach(function (it) { if (resultById[it.id] && !seen[it.id]) { order.push(it.id); seen[it.id] = 1; } });
+    (remote.items || []).forEach(function (it) { if (resultById[it.id] && !seen[it.id]) { order.push(it.id); seen[it.id] = 1; } });
+    out.items = order.map(function (id) { return resultById[id]; });
+    return out;
+  }
 
   /* ---------- utf8-safe base64 ---------- */
   function bytesToB64(bytes) {
@@ -101,6 +139,7 @@
       })
       .then(function () {
         normalize();
+        baseModel = clone(cleanModel()); // snapshot for 3-way merge on save
         renderAll();
       })
       .catch(function (e) {
@@ -428,10 +467,13 @@
     $("save").disabled = true;
     status("שומר…", "busy");
 
-    // 1) refresh sha, 2) upload pending photos, 3) commit items.json
+    // 1) fetch latest remote, 2) upload pending photos, 3) MERGE local edits into
+    // the latest remote (so concurrent edits to other items aren't clobbered), 4) commit
+    var remoteModel = null;
     ghGetFile(GH.path)
       .then(function (res) {
-        if (res) sha = res.sha; // adopt latest to avoid 409
+        sha = res ? res.sha : null; // latest sha for the conditional PUT
+        remoteModel = res && res.content ? JSON.parse(b64decodeUtf8(res.content)) : null;
         // upload pending images sequentially (hero photos first, then item photos)
         var uploads = [];
         (model.config._newHeroPhotos || []).forEach(function (np) { uploads.push({ target: "hero", np: np }); });
@@ -455,14 +497,21 @@
       .then(function () {
         // clear pending hero uploads now that they're committed + referenced
         model.config._newHeroPhotos = [];
-        var json = JSON.stringify(cleanModel(), null, 2) + "\n";
+        var local = cleanModel();
+        // merge our edits into the latest remote (keyed by item id) before committing
+        var merged = (remoteModel && baseModel) ? mergeModels(baseModel, local, remoteModel) : local;
+        var json = JSON.stringify(merged, null, 2) + "\n";
         status("שומר את הקטלוג…", "busy");
-        return ghPutFile(GH.path, b64encodeUtf8(json), "admin: update catalog", sha);
+        return ghPutFile(GH.path, b64encodeUtf8(json), "admin: update catalog", sha)
+          .then(function (res) { return { res: res, merged: merged }; });
       })
-      .then(function (res) {
-        sha = res.content.sha;
+      .then(function (out) {
+        sha = out.res.content.sha;
+        model = out.merged;
+        normalize();                    // re-add transient fields, fill defaults
+        baseModel = clone(cleanModel()); // new base = what we just committed
         status("נשמר ✓ האתר יתעדכן תוך כדקה", "ok");
-        renderItems();
+        renderAll();
       })
       .catch(function (err) {
         var msg = err.message || "שגיאה";
