@@ -200,7 +200,8 @@
       "desc": {
         "he": "דגם BE-Easy · גוון Fenix London Grey",
         "en": "BE-Easy · Fenix London Grey"
-      }
+      },
+      "link": "https://www.tollmansdot.co.il/product/be-easy-london-grey-170/"
     },
     {
       "id": "f-yellow-chairs",
@@ -1395,7 +1396,7 @@
       "price": null,
       "originalPrice": 102,
       "dimensions": null,
-      "link": null,
+      "link": "https://www.tollmansdot.co.il/product/pastille-s-4/",
       "sold": false,
       "photos": [],
       "title": {
@@ -1452,7 +1453,7 @@
       "price": null,
       "originalPrice": 158,
       "dimensions": null,
-      "link": null,
+      "link": "https://www.tollmansdot.co.il/product/balcolore-l-2/",
       "sold": false,
       "photos": [],
       "title": {
@@ -1471,7 +1472,7 @@
       "price": null,
       "originalPrice": 147,
       "dimensions": null,
-      "link": null,
+      "link": "https://www.tollmansdot.co.il/product/coro-cherry/",
       "sold": false,
       "photos": [],
       "title": {
@@ -1490,7 +1491,7 @@
       "price": null,
       "originalPrice": 147,
       "dimensions": null,
-      "link": null,
+      "link": "https://www.tollmansdot.co.il/product/coro-lagoon/",
       "sold": false,
       "photos": [],
       "title": {
