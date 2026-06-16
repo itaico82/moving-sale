@@ -256,10 +256,8 @@
 
   /* ---------- render fragments ---------- */
   function cardHTML(item, t) {
-    var clickable = item.link || (item.photos && item.photos.length);
     var media =
-      '<div class="ms-card-media' + (clickable ? " ms-clickable" : "") + '"' +
-        (clickable ? ' data-action="open-media" data-id="' + esc(item.id) + '"' : "") + ">" +
+      '<div class="ms-card-media ms-clickable" data-action="open-media" data-id="' + esc(item.id) + '">' +
       photoHTML(item.photos, "ms-photo--card", t.drop) +
       (item.sold
         ? '<div class="ms-sold"><span class="ms-sold-label">' + esc(t.sold) + "</span></div>"
@@ -573,6 +571,94 @@
     document.addEventListener("keydown", lbKey);
   }
 
+  /* ---------- item detail modal ---------- */
+  var modal = { el: null, photos: [], index: 0 };
+  function closeItemModal() {
+    if (modal.el) { modal.el.remove(); modal.el = null; }
+    document.removeEventListener("keydown", modalKey);
+  }
+  function modalStep(d) {
+    if (modal.photos.length < 2) return;
+    modal.index = (modal.index + d + modal.photos.length) % modal.photos.length;
+    var img = modal.el.querySelector(".ms-modal-img");
+    if (img) img.src = modal.photos[modal.index];
+  }
+  function modalKey(e) {
+    if (e.key === "Escape") closeItemModal();
+    else if (e.key === "ArrowLeft") modalStep(-1);
+    else if (e.key === "ArrowRight") modalStep(1);
+  }
+  function catName(id, lang) {
+    for (var i = 0; i < data.categories.length; i++) if (data.categories[i].id === id) return data.categories[i].name[lang];
+    return "";
+  }
+  function openItemModal(id) {
+    var it = itemById(id);
+    if (!it) return;
+    var lang = state.lang, he = lang === "he";
+    var t = window.MS_I18N[lang];
+    var config = data.config;
+    var title = it.title[lang];
+    var desc = it.desc[lang];
+    var priceText = it.price != null ? money(it.price) : t.askPrice;
+    var msg = he ? 'היי, מתעניין/ת ב"' + title + '" מהמכירה — עדיין זמין?' : 'Hi, I\'m interested in "' + title + '" from your sale — is it still available?';
+    var waHref = "https://wa.me/" + config.whatsapp + "?text=" + encodeURIComponent(msg);
+    var mailHref = "mailto:" + config.email + "?subject=" + encodeURIComponent(title);
+
+    modal.photos = it.photos || [];
+    modal.index = 0;
+
+    var gallery;
+    if (modal.photos.length) {
+      gallery =
+        '<img class="ms-modal-img" src="' + esc(modal.photos[0]) + '" alt="" />' +
+        (modal.photos.length > 1
+          ? '<button class="ms-modal-nav prev" data-mnav="-1" aria-label="previous">&#8249;</button>' +
+            '<button class="ms-modal-nav next" data-mnav="1" aria-label="next">&#8250;</button>'
+          : "");
+    } else {
+      gallery = '<div class="ms-modal-empty">' + ICON.image + "</div>";
+    }
+    if (it.sold) gallery += '<span class="ms-modal-sold">' + esc(t.sold) + "</span>";
+
+    var body =
+      '<div class="ms-modal-head">' +
+        '<h3 class="ms-modal-title">' + esc(title) + "</h3>" +
+        '<span class="ms-modal-cat">' + esc(catName(it.category, lang)) + "</span>" +
+      "</div>" +
+      (it.brand ? '<span class="ms-modal-brand">' + esc(it.brand) + "</span>" : "") +
+      (desc ? '<p class="ms-modal-desc">' + esc(desc) + "</p>" : "") +
+      (it.dimensions ? '<span class="ms-modal-dims">' + esc(it.dimensions) + "</span>" : "") +
+      '<div class="ms-modal-price-row">' +
+        '<span class="ms-modal-price">' + esc(priceText) + "</span>" +
+        (it.originalPrice ? '<span class="ms-modal-orig">' + esc(money(it.originalPrice)) + "</span>" : "") +
+      "</div>" +
+      '<div class="ms-modal-actions">' +
+        '<a class="wa" href="' + esc(waHref) + '" target="_blank" rel="noopener">' + esc(t.waLong) + "</a>" +
+        '<a class="mail" href="' + esc(mailHref) + '">' + esc(t.mailLong) + "</a>" +
+        (it.link ? '<a class="detail" href="' + esc(it.link) + '" target="_blank" rel="noopener">' + esc(t.details) + "</a>" : "") +
+      "</div>";
+
+    closeItemModal();
+    modal.el = document.createElement("div");
+    modal.el.className = "ms-modal";
+    modal.el.setAttribute("dir", he ? "rtl" : "ltr");
+    modal.el.innerHTML =
+      '<div class="ms-modal-card">' +
+        '<button class="ms-modal-close" data-mclose aria-label="close">&times;</button>' +
+        '<div class="ms-modal-gallery">' + gallery + "</div>" +
+        '<div class="ms-modal-body">' + body + "</div>" +
+      "</div>";
+    document.body.appendChild(modal.el);
+    modal.el.addEventListener("click", function (e) {
+      if (e.target === modal.el || e.target.hasAttribute("data-mclose")) { closeItemModal(); return; }
+      var nav = e.target.closest("[data-mnav]");
+      if (nav) { modalStep(parseInt(nav.getAttribute("data-mnav"), 10)); return; }
+      if (e.target.classList.contains("ms-modal-img")) openLightbox(modal.photos, modal.index);
+    });
+    document.addEventListener("keydown", modalKey);
+  }
+
   /* ---------- events (delegated, attached once) ---------- */
   function onClick(e) {
     var el = e.target.closest("[data-action]");
@@ -610,13 +696,9 @@
         render();
         break;
       }
-      case "open-media": {
-        var it = itemById(el.getAttribute("data-id"));
-        if (!it) break;
-        if (it.link) window.open(it.link, "_blank", "noopener");
-        else if (it.photos && it.photos.length) openLightbox(it.photos, 0);
+      case "open-media":
+        openItemModal(el.getAttribute("data-id"));
         break;
-      }
     }
   }
 

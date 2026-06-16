@@ -230,6 +230,52 @@ body {
 .ms-mail { font-family: "Heebo", sans-serif; font-size: 13px; font-weight: 600; color: #999; text-decoration: none; }
 .ms-detail { font-family: "Heebo", sans-serif; font-size: 13px; font-weight: 600; color: #121212; text-decoration: none; }
 
+/* ---- item detail modal ---- */
+.ms-modal {
+  position: fixed; inset: 0; z-index: 150; background: rgba(18, 18, 18, 0.55);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+  animation: msFadeIn 0.2s ease both;
+}
+.ms-modal-card {
+  background: #fff; width: min(720px, 100%); max-height: 90vh; overflow: auto;
+  position: relative; display: flex; flex-direction: column;
+  animation: msFadeIn 0.25s ease both;
+}
+.ms-modal-close {
+  position: absolute; inset-block-start: 10px; inset-inline-end: 12px; z-index: 2;
+  background: rgba(255, 255, 255, 0.92); border: 1px solid var(--ms-line);
+  width: 34px; height: 34px; font-size: 22px; line-height: 1; cursor: pointer;
+}
+.ms-modal-gallery { position: relative; background: #efeeea; }
+.ms-modal-img { width: 100%; max-height: 460px; object-fit: cover; display: block; cursor: zoom-in; }
+.ms-modal-empty { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; color: #c4c2bb; }
+.ms-modal-nav {
+  position: absolute; inset-block-start: 50%; transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85); border: none; width: 42px; height: 52px; font-size: 28px; cursor: pointer;
+}
+.ms-modal-nav:hover { background: #fff; }
+.ms-modal-nav.prev { inset-inline-start: 10px; }
+.ms-modal-nav.next { inset-inline-end: 10px; }
+.ms-modal-sold {
+  position: absolute; inset-block-start: 12px; inset-inline-start: 12px;
+  background: rgba(18, 18, 18, 0.85); color: #fff; font-family: "Space Grotesk", sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px;
+}
+.ms-modal-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 12px; }
+.ms-modal-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.ms-modal-title { font-family: "Heebo", sans-serif; font-size: 22px; font-weight: 700; margin: 0; }
+.ms-modal-cat { font-family: "Space Grotesk", sans-serif; font-size: 12px; color: var(--ms-accent); white-space: nowrap; }
+.ms-modal-brand { font-family: "Space Grotesk", sans-serif; font-size: 12px; color: #999; }
+.ms-modal-desc { font-family: "Heebo", sans-serif; font-size: 15px; line-height: 1.6; color: #555; margin: 0; }
+.ms-modal-dims { font-family: "Space Grotesk", sans-serif; font-size: 12px; color: #aaa; }
+.ms-modal-price-row { display: flex; align-items: baseline; gap: 10px; border-top: 1px solid #eee; padding-top: 14px; }
+.ms-modal-price { font-family: "Space Grotesk", sans-serif; font-size: 24px; font-weight: 700; }
+.ms-modal-orig { font-family: "Space Grotesk", sans-serif; font-size: 14px; color: #bbb; text-decoration: line-through; }
+.ms-modal-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.ms-modal-actions a { font-family: "Heebo", sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; padding: 11px 18px; }
+.ms-modal-actions .wa { background: var(--ms-accent); color: #fff; }
+.ms-modal-actions .mail, .ms-modal-actions .detail { border: 1px solid var(--ms-line); color: #121212; }
+
 /* ---- lightbox ---- */
 .ms-lb { position: fixed; inset: 0; z-index: 200; background: rgba(18, 18, 18, 0.92); display: none; align-items: center; justify-content: center; }
 .ms-lb.open { display: flex; }
