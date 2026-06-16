@@ -31,6 +31,9 @@ window.MS_I18N = {
     askPrice: "מחיר בפנייה",
     flatCta: "מעוניינים לשכור או לקנות את הדירה?",
     details: "לפרטים נוספים",
+    shareTitle: "שיתוף",
+    shareWa: "שיתוף בוואטסאפ",
+    shareMail: "שיתוף במייל",
     loadError: "טעינת הפריטים נכשלה. נסו לרענן את העמוד.",
   },
   en: {
@@ -64,6 +67,9 @@ window.MS_I18N = {
     askPrice: "Price on request",
     flatCta: "Want to rent or buy the flat?",
     details: "More details",
+    shareTitle: "Share",
+    shareWa: "Share via WhatsApp",
+    shareMail: "Share via email",
     loadError: "Failed to load items. Please refresh the page.",
   },
 };
