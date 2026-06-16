@@ -542,7 +542,9 @@
       "originalPrice": 175,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-trones-1781618252525-0.jpg"
+      ],
       "title": {
         "he": "ארון נעליים TRONES",
         "en": "TRONES Shoe Cabinet"
