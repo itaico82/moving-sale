@@ -485,7 +485,9 @@
       "originalPrice": 2195,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-double-bed-1781617371091-0.jpg"
+      ],
       "title": {
         "he": "מיטה זוגית",
         "en": "Double Bed"
