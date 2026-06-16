@@ -1151,7 +1151,9 @@
       "originalPrice": 181,
       "dimensions": "Ø30 × 6.4 ס״מ",
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-tollmans-plate-1.jpg"
+      ],
       "title": {
         "he": "קערת הגשה RAW Nordic",
         "en": "RAW Nordic Serving Bowl"
