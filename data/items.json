@@ -226,9 +226,9 @@
     {
       "id": "f-bar-stools",
       "category": "furniture",
-      "brand": null,
+      "brand": "Pure Loop",
       "price": null,
-      "originalPrice": null,
+      "originalPrice": 4600,
       "dimensions": null,
       "sold": false,
       "photos": [
@@ -239,9 +239,10 @@
         "en": "Bar Stools"
       },
       "desc": {
-        "he": "סט של 4",
-        "en": "Set of 4"
-      }
+        "he": "סט של 4 · ₪1,150 ליחידה במקור",
+        "en": "Set of 4 · originally ₪1,150 each"
+      },
+      "link": "https://www.tollmansdot.co.il/product/pure-loop-white-online/"
     },
     {
       "id": "f-nightstand-wheels",
