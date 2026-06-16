@@ -311,6 +311,18 @@ body {
   background: rgba(18, 18, 18, 0.85); color: #fff; font-family: "Space Grotesk", sans-serif;
   font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px;
 }
+.ms-modal-thumbs {
+  display: flex; gap: 8px; padding: 10px 12px; overflow-x: auto;
+  background: #fff; border-block-start: 1px solid var(--ms-line);
+}
+.ms-modal-thumb {
+  flex: 0 0 auto; width: 64px; height: 64px; padding: 0; cursor: pointer;
+  border: 2px solid transparent; background: #efeeea; overflow: hidden; opacity: 0.7;
+  transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+.ms-modal-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.ms-modal-thumb:hover { opacity: 1; }
+.ms-modal-thumb.active { opacity: 1; border-color: var(--ms-accent); }
 .ms-modal-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 12px; }
 .ms-modal-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .ms-modal-title { font-family: "Heebo", sans-serif; font-size: 22px; font-weight: 700; margin: 0; }

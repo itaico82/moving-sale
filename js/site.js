@@ -672,16 +672,23 @@
     document.removeEventListener("keydown", modalKey);
   }
   function modalKey(e) { if (e.key === "Escape") closeItemModal(); }
+  // Show slide i: sync the crossfade slides and the thumbnail highlight.
+  function setModalSlide(i) {
+    if (!modal.el) return;
+    modal.slideIndex = i;
+    var slides = modal.el.querySelectorAll(".ms-modal-slideshow .ms-slide");
+    for (var s = 0; s < slides.length; s++) slides[s].classList.toggle("active", s === i);
+    var thumbs = modal.el.querySelectorAll(".ms-modal-thumb");
+    for (var k = 0; k < thumbs.length; k++) thumbs[k].classList.toggle("active", k === i);
+  }
   // Auto-advancing crossfade for the modal gallery (mirrors the hero slideshow).
+  // Continues from the current slide so a thumbnail click can restart it in place.
   function modalSlideStart() {
     if (modal.slideTimer) { clearInterval(modal.slideTimer); modal.slideTimer = null; }
-    modal.slideIndex = 0;
     if (!modal.el || modal.photos.length < 2) return;
     modal.slideTimer = setInterval(function () {
       if (!modal.el) { clearInterval(modal.slideTimer); return; }
-      modal.slideIndex = (modal.slideIndex + 1) % modal.photos.length;
-      var slides = modal.el.querySelectorAll(".ms-modal-slideshow .ms-slide");
-      for (var i = 0; i < slides.length; i++) slides[i].classList.toggle("active", i === modal.slideIndex);
+      setModalSlide((modal.slideIndex + 1) % modal.photos.length);
     }, 3800);
   }
   function catName(id, lang) {
@@ -702,7 +709,7 @@
     var mailHref = "mailto:" + config.email + "?subject=" + encodeURIComponent(title);
 
     modal.photos = it.photos || [];
-    modal.index = 0;
+    modal.slideIndex = 0;
 
     var gallery;
     if (modal.photos.length) {
@@ -716,6 +723,14 @@
       gallery = '<div class="ms-modal-empty">' + ICON.image + "<span>" + esc(t.drop) + "</span></div>";
     }
     if (it.sold) gallery += '<span class="ms-modal-sold">' + esc(t.sold) + "</span>";
+    // Thumbnail strip — only when there is more than one photo.
+    if (modal.photos.length > 1) {
+      gallery += '<div class="ms-modal-thumbs">' +
+        modal.photos.map(function (p, i) {
+          return '<button class="ms-modal-thumb' + (i === 0 ? " active" : "") +
+            '" data-mthumb="' + i + '" aria-label="' + (i + 1) + '"><img src="' + esc(p) + '" alt="" /></button>';
+        }).join("") + "</div>";
+    }
 
     var body =
       '<div class="ms-modal-head">' +
@@ -748,6 +763,12 @@
     document.body.appendChild(modal.el);
     modal.el.addEventListener("click", function (e) {
       if (e.target === modal.el || e.target.hasAttribute("data-mclose")) { closeItemModal(); return; }
+      var thumb = e.target.closest("[data-mthumb]");
+      if (thumb) {
+        setModalSlide(parseInt(thumb.getAttribute("data-mthumb"), 10) || 0);
+        modalSlideStart(); // restart auto-advance from the picked slide
+        return;
+      }
       if (e.target.closest(".ms-modal-slideshow") && modal.photos.length) openLightbox(modal.photos, modal.slideIndex || 0);
     });
     document.addEventListener("keydown", modalKey);
