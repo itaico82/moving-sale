@@ -670,12 +670,16 @@
     {
       "id": "e-tube-amp",
       "category": "electronics",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "brand": "Jolida",
+      "price": 2500,
+      "originalPrice": 8500,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-tube-amp-1781603039539-0.jpg",
+        "images/e-tube-amp-1781603039506-1.jpg",
+        "images/e-tube-amp-1781603039571-2.jpg"
+      ],
       "title": {
         "he": "מגבר מנורות",
         "en": "Tube Amplifier"
@@ -688,12 +692,15 @@
     {
       "id": "e-speakers",
       "category": "electronics",
-      "brand": null,
+      "brand": "Avance",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-speakers-1781603171813-0.jpg",
+        "images/e-speakers-1781603171781-1.jpg"
+      ],
       "title": {
         "he": "רמקולים",
         "en": "Speakers"
@@ -725,11 +732,14 @@
       "id": "e-coffee-machine",
       "category": "electronics",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 275,
+      "originalPrice": 549,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-coffee-machine-1781603191552-0.jpg",
+        "images/e-coffee-machine-1781603191413-1.jpg"
+      ],
       "title": {
         "he": "מכונת קפה",
         "en": "Coffee Machine"
@@ -737,7 +747,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "link": "https://www.netoneto.co.il/product/%D7%9E%D7%9B%D7%95%D7%A0%D7%AA-%D7%A7%D7%A4%D7%94-nespresso-essenza-mini-%D7%A0%D7%A1%D7%A4%D7%A8%D7%A1%D7%95-%D7%93%D7%92%D7%9D-c30?gad_campaignid=22448598911&gbraid=0AAAAADOyK3CW0aQ6hFmtRz3yhesKI6My6"
     },
     {
       "id": "e-frother",
@@ -850,7 +861,7 @@
     {
       "id": "e-dvd",
       "category": "electronics",
-      "brand": null,
+      "brand": "Cambridge Audio",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
@@ -873,7 +884,10 @@
       "originalPrice": 6290,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-grill-1.webp",
+        "images/e-grill-2.jpg"
+      ],
       "title": {
         "he": "גריל גז ROGUE XT 525 SIB",
         "en": "Napoleon ROGUE XT 525 SIB Gas Grill"
@@ -925,10 +939,12 @@
       "category": "electronics",
       "brand": null,
       "price": 1800,
-      "originalPrice": null,
+      "originalPrice": 4435,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-robot-vacuum-1781603465549-0.jpg"
+      ],
       "title": {
         "he": "רובוט שואב ושוטף",
         "en": "Robot Vacuum & Mop"
@@ -1050,12 +1066,14 @@
     {
       "id": "e-air-purifier",
       "category": "electronics",
-      "brand": null,
+      "brand": "Xiaomi",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-air-purifier-1.webp"
+      ],
       "title": {
         "he": "מטהר אוויר",
         "en": "Air Purifier"
@@ -1063,7 +1081,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "link": "https://kupi.co.il/he/%D7%9E%D7%98%D7%94%D7%A8-%D7%90%D7%95%D7%95%D7%99%D7%A8-%D7%97%D7%9B%D7%9D-%D7%93%D7%92%D7%9D-mi-air-purifier-2c-xiaomi-%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%97%D7%99%D7%A0%D7%9D"
     },
     {
       "id": "e-desk-setup",
@@ -1163,7 +1182,9 @@
       "originalPrice": 181,
       "dimensions": "Ø30 × 6.4 ס״מ",
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-tollmans-plate-1.jpg"
+      ],
       "title": {
         "he": "קערת הגשה RAW Nordic",
         "en": "RAW Nordic Serving Bowl"
@@ -1538,6 +1559,31 @@
       "desc": {
         "he": "310 מ״ל · גווני כחול (Lagoon)",
         "en": "310ml · Lagoon assorted"
+      }
+    },
+    {
+      "id": "e-mi-desk-lamp",
+      "category": "electronics",
+      "brand": "Xiaomi",
+      "price": 100,
+      "originalPrice": 199,
+      "dimensions": null,
+      "link": "https://www.mi-il.co.il/product/mi-led-desk-lamp-1s",
+      "sold": false,
+      "photos": [
+        "images/e-mi-desk-lamp-1.jpg",
+        "images/e-mi-desk-lamp-3.jpg",
+        "images/e-mi-desk-lamp-2.jpg",
+        "images/e-mi-desk-lamp-1781604524849-0.jpg",
+        "images/e-mi-desk-lamp-1781604524701-1.jpg"
+      ],
+      "title": {
+        "he": "מנורת שולחן חכמה Mi LED Desk Lamp 1S",
+        "en": "Mi LED Desk Lamp 1S"
+      },
+      "desc": {
+        "he": "מנורת LED חכמה, דור 2",
+        "en": "Smart LED desk lamp, Gen 2"
       }
     }
   ]
