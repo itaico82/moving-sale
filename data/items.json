@@ -503,7 +503,11 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-double-mattress-1781618438167-0.jpg",
+        "images/f-double-mattress-1781618438223-1.jpg",
+        "images/f-double-mattress-1781618438285-2.jpg"
+      ],
       "title": {
         "he": "מזרון זוגי",
         "en": "Double Mattress"
