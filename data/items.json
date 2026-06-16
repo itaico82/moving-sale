@@ -184,6 +184,7 @@
       ]
     }
   ],
+  "rooms": [],
   "items": [
     {
       "id": "f-livingroom-table",
@@ -1009,21 +1010,25 @@
     {
       "id": "e-fridge",
       "category": "electronics",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "brand": "LG",
+      "price": 7000,
+      "originalPrice": 8990,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-fridge-1781633031497-0.jpg",
+        "images/e-fridge-1781633031415-1.jpg"
+      ],
       "title": {
-        "he": "מקרר",
+        "he": "מקרר LG יוקרתי מסדרת Instaview",
         "en": "Refrigerator"
       },
       "desc": {
-        "he": "",
+        "he": "דלת זכוכית שקופה, נדלק בהקשה. 632 ליטר. שני תאי הקפאה תחתונים, ללא מחיצת אמצע - ניתן להכניס סוס וחצי",
         "en": ""
       },
-      "room": "kitchen"
+      "room": "kitchen",
+      "link": "https://www.soferavi.co.il/%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%9D/%D7%9E%D7%A7%D7%A8%D7%A8-%D7%9E%D7%A7%D7%A4%D7%99%D7%90-%D7%AA%D7%97%D7%AA%D7%95%D7%9F-4-%D7%93%D7%9C%D7%AA%D7%95%D7%AA-%D7%90%D7%9C-%D7%92%D7%99-gr-729bins-%D7%91%D7%96/"
     },
     {
       "id": "e-oven",
