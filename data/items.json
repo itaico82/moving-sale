@@ -885,21 +885,24 @@
     {
       "id": "e-sous-vide",
       "category": "electronics",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "brand": "Anova",
+      "price": 1200,
+      "originalPrice": 600,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-sous-vide-1781633394202-0.jpg"
+      ],
       "title": {
-        "he": "סו-ויד",
+        "he": "סו-ויד Anova Precision Cooker BT",
         "en": "Sous-Vide"
       },
       "desc": {
-        "he": "",
+        "he": "מכשירבסו-ויד Anova Precision Cooker BT, מגיע עם אמבט מבודד עם מכסה, ואביזרים נוספים ",
         "en": ""
       },
-      "room": "kitchen"
+      "room": "kitchen",
+      "link": "https://www.zap.co.il/model.aspx?modelid=1209754"
     },
     {
       "id": "e-toaster",
@@ -911,7 +914,7 @@
       "sold": false,
       "photos": [],
       "title": {
-        "he": "טוסטר",
+        "he": "טוסטר מרובעים",
         "en": "Toaster"
       },
       "desc": {
