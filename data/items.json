@@ -329,7 +329,7 @@
         "en": "LACK White Shelves"
       },
       "desc": {
-        "he": "סט של 12\nמחיר ליחידה בודדה",
+        "he": "סט של 12\nמחיר ליחידה בודדת",
         "en": "Set of 12"
       },
       "link": null
@@ -361,7 +361,9 @@
       "originalPrice": 475,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-kallax-8-vertical-1781606197418-0.jpg"
+      ],
       "title": {
         "he": "KALLAX 8 תאים, עומדת",
         "en": "KALLAX 8-Cube, Vertical"
