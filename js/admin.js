@@ -123,8 +123,7 @@
     model.items.forEach(function (it) {
       it.title = it.title || { he: "", en: "" };
       it.desc = it.desc || { he: "", en: "" };
-      it.photos = it.photos || [];
-      it._newPhotos = it._newPhotos || []; // pending uploads: { dataUrl, filename }
+      it.photos = it.photos || []; // entries are committed path strings or pending {pending,dataUrl,filename}
     });
   }
 
@@ -216,20 +215,14 @@
   function renderItems() {
     $("item-count").textContent = "(" + model.items.length + ")";
     $("items").innerHTML = model.items.map(function (it, i) {
-      var photos = (it.photos || []).map(function (p, pi) {
-        return '<div class="photo"><img src="' + esc(resolvePhoto(p)) + '" alt="" />' +
+      var photos = (it.photos || []).map(function (entry, pi) {
+        var isPending = entry && typeof entry === "object";
+        var src = isPending ? entry.dataUrl : resolvePhoto(entry);
+        return '<div class="photo' + (isPending ? " pending" : "") + '"><img src="' + esc(src) + '" alt="" />' +
           '<button class="photo-del" data-act="photo-del" data-i="' + i + '" data-pi="' + pi + '" title="הסר">×</button>' +
           '<div class="photo-move">' +
             '<button data-act="photo-move" data-i="' + i + '" data-pi="' + pi + '" data-dir="-1" title="הזז להתחלה">‹</button>' +
             '<button data-act="photo-move" data-i="' + i + '" data-pi="' + pi + '" data-dir="1" title="הזז לסוף">›</button>' +
-          '</div></div>';
-      }).join("");
-      var pending = (it._newPhotos || []).map(function (np, ni) {
-        return '<div class="photo pending"><img src="' + esc(np.dataUrl) + '" alt="" />' +
-          '<button class="photo-del" data-act="newphoto-del" data-i="' + i + '" data-ni="' + ni + '" title="הסר">×</button>' +
-          '<div class="photo-move">' +
-            '<button data-act="newphoto-move" data-i="' + i + '" data-ni="' + ni + '" data-dir="-1" title="הזז להתחלה">‹</button>' +
-            '<button data-act="newphoto-move" data-i="' + i + '" data-ni="' + ni + '" data-dir="1" title="הזז לסוף">›</button>' +
           '</div></div>';
       }).join("");
 
@@ -264,7 +257,7 @@
           '<div class="field"><label>קישור לפריט (אופציונלי — נפתח בלחיצה על התמונה)</label>' +
             '<input type="text" data-kind="item" data-i="' + i + '" data-field="link" value="' + esc(it.link == null ? "" : it.link) + '" placeholder="https://" /></div>' +
           '<div class="field"><label>תמונות</label>' +
-            '<div class="photos">' + photos + pending +
+            '<div class="photos">' + photos +
               '<label class="add-photo" style="cursor:pointer;border:1px dashed var(--line);padding:10px 12px;color:var(--accent);">+ הוסף תמונות' +
               '<input type="file" accept="image/*" multiple data-act="add-photo" data-i="' + i + '" style="display:none;" /></label>' +
             "</div>" +
@@ -332,16 +325,8 @@
       var pi = parseInt(btn.getAttribute("data-pi"), 10);
       model.items[i].photos.splice(pi, 1); renderItems();
     }
-    else if (act === "newphoto-del") {
-      var ni = parseInt(btn.getAttribute("data-ni"), 10);
-      model.items[i]._newPhotos.splice(ni, 1); renderItems();
-    }
     else if (act === "photo-move") {
       move(model.items[i].photos, parseInt(btn.getAttribute("data-pi"), 10), parseInt(btn.getAttribute("data-dir"), 10));
-      renderItems();
-    }
-    else if (act === "newphoto-move") {
-      move(model.items[i]._newPhotos, parseInt(btn.getAttribute("data-ni"), 10), parseInt(btn.getAttribute("data-dir"), 10));
       renderItems();
     }
     else if (act === "hero-del") {
@@ -364,10 +349,11 @@
       status("מכווץ תמונות…", "busy");
       Promise.all(files.map(function (f, idx) {
         return compressImage(f).then(function (dataUrl) {
-          return { dataUrl: dataUrl, filename: model.items[i].id + "-" + new Date().getTime() + "-" + idx + ".jpg" };
+          return { pending: true, dataUrl: dataUrl, filename: model.items[i].id + "-" + new Date().getTime() + "-" + idx + ".jpg" };
         });
       })).then(function (out) {
-        model.items[i]._newPhotos.push.apply(model.items[i]._newPhotos, out);
+        // append to the single photos list; user can reorder anywhere before saving
+        model.items[i].photos.push.apply(model.items[i].photos, out);
         status("", "");
         renderItems();
       }).catch(function (err) { status("עיבוד תמונה נכשל: " + err.message, "err"); });
@@ -450,7 +436,9 @@
         var uploads = [];
         (model.config._newHeroPhotos || []).forEach(function (np) { uploads.push({ target: "hero", np: np }); });
         model.items.forEach(function (it) {
-          (it._newPhotos || []).forEach(function (np) { uploads.push({ it: it, np: np }); });
+          (it.photos || []).forEach(function (entry, idx) {
+            if (entry && typeof entry === "object" && entry.pending) uploads.push({ it: it, idx: idx, np: entry });
+          });
         });
         return uploads.reduce(function (chain, u) {
           return chain.then(function () {
@@ -459,15 +447,14 @@
             status("מעלה תמונה " + u.np.filename + "…", "busy");
             return ghPutFile(path, b64, "admin: add image " + u.np.filename).then(function () {
               if (u.target === "hero") model.config.heroPhotos.push(path);
-              else u.it.photos.push(path);
+              else u.it.photos[u.idx] = path; // replace pending entry in place — keeps chosen order
             });
           });
         }, Promise.resolve());
       })
       .then(function () {
-        // clear pending now that they're committed + referenced
+        // clear pending hero uploads now that they're committed + referenced
         model.config._newHeroPhotos = [];
-        model.items.forEach(function (it) { it._newPhotos = []; });
         var json = JSON.stringify(cleanModel(), null, 2) + "\n";
         status("שומר את הקטלוג…", "busy");
         return ghPutFile(GH.path, b64encodeUtf8(json), "admin: update catalog", sha);
@@ -506,7 +493,7 @@
       var firstCat = model.categories[0] ? model.categories[0].id : "";
       model.items.push({
         id: newId(), category: firstCat, brand: null, price: null, originalPrice: null,
-        dimensions: null, link: null, sold: false, photos: [], _newPhotos: [],
+        dimensions: null, link: null, sold: false, photos: [],
         title: { he: "", en: "" }, desc: { he: "", en: "" },
       });
       renderItems();
