@@ -38,6 +38,7 @@
     var out = {};
     out.config = mergeConfig(base.config || {}, local.config || {}, remote.config || {});
     out.categories = jsonEq(local.categories, base.categories) ? clone(remote.categories || []) : clone(local.categories || []);
+    out.rooms = jsonEq(local.rooms, base.rooms) ? clone(remote.rooms || []) : clone(local.rooms || []);
 
     var baseById = byId(base.items), localById = byId(local.items);
     var resultById = {};
@@ -150,7 +151,9 @@
   function normalize() {
     model.config = model.config || {};
     model.categories = model.categories || [];
+    model.rooms = model.rooms || [];
     model.items = model.items || [];
+    model.rooms.forEach(function (r) { r.name = r.name || { he: "", en: "" }; });
     var c = model.config;
     if (!Array.isArray(c.heroPhotos)) c.heroPhotos = c.heroPhoto ? [c.heroPhoto] : [];
     delete c.heroPhoto; // migrated to heroPhotos[]
@@ -183,7 +186,27 @@
   function renderAll() {
     renderConfig();
     renderCategories();
+    renderRooms();
     renderItems();
+  }
+
+  function renderRooms() {
+    var html = (model.rooms || []).map(function (c, i) {
+      return (
+        '<div class="adm-row">' +
+          '<div style="flex:1;min-width:140px;"><label>מזהה (id)</label>' +
+            '<input type="text" data-kind="room" data-i="' + i + '" data-field="id" value="' + esc(c.id) + '" /></div>' +
+          '<div style="flex:1;min-width:140px;"><label>שם (עברית)</label>' +
+            '<input type="text" data-kind="room" data-i="' + i + '" data-field="name.he" value="' + esc(c.name.he) + '" /></div>' +
+          '<div style="flex:1;min-width:140px;"><label>שם (אנגלית)</label>' +
+            '<input type="text" data-kind="room" data-i="' + i + '" data-field="name.en" value="' + esc(c.name.en) + '" /></div>' +
+          '<button class="ghost" data-act="room-up" data-i="' + i + '" title="למעלה">↑</button>' +
+          '<button class="ghost" data-act="room-down" data-i="' + i + '" title="למטה">↓</button>' +
+          '<button class="danger" data-act="room-del" data-i="' + i + '">מחק</button>' +
+        "</div>"
+      );
+    }).join("");
+    $("rooms").innerHTML = html || '<p style="color:#999;">אין חדרים.</p>';
   }
 
   function renderConfig() {
@@ -250,6 +273,12 @@
       return '<option value="' + esc(c.id) + '"' + (c.id === selected ? " selected" : "") + ">" + esc(c.name.he || c.id) + "</option>";
     }).join("");
   }
+  function roomOptions(selected) {
+    var blank = '<option value=""' + (!selected ? " selected" : "") + ">—</option>";
+    return blank + (model.rooms || []).map(function (r) {
+      return '<option value="' + esc(r.id) + '"' + (r.id === selected ? " selected" : "") + ">" + esc(r.name.he || r.id) + "</option>";
+    }).join("");
+  }
 
   function renderItems() {
     $("item-count").textContent = "(" + model.items.length + ")";
@@ -284,7 +313,8 @@
             '<div class="field"><label>תיאור (אנגלית)</label><textarea data-kind="item" data-i="' + i + '" data-field="desc.en">' + esc(it.desc.en) + "</textarea></div>" +
           "</div>" +
           '<div class="adm-grid-3">' +
-            '<div class="field"><label>קטגוריה</label><select data-kind="item-cat" data-i="' + i + '">' + catOptions(it.category) + "</select></div>" +
+            '<div class="field"><label>קטגוריה (סוג)</label><select data-kind="item-cat" data-i="' + i + '">' + catOptions(it.category) + "</select></div>" +
+            '<div class="field"><label>חדר</label><select data-kind="item-room" data-i="' + i + '">' + roomOptions(it.room) + "</select></div>" +
             '<div class="field"><label>מותג (אופציונלי)</label><input type="text" data-kind="item" data-i="' + i + '" data-field="brand" value="' + esc(it.brand == null ? "" : it.brand) + '" /></div>' +
             '<div class="field"><label>מידות (אופציונלי)</label><input type="text" data-kind="item" data-i="' + i + '" data-field="dimensions" value="' + esc(it.dimensions == null ? "" : it.dimensions) + '" /></div>' +
           "</div>" +
@@ -355,6 +385,9 @@
     if (act === "cat-up") { move(model.categories, i, -1); renderCategories(); renderItems(); }
     else if (act === "cat-down") { move(model.categories, i, 1); renderCategories(); renderItems(); }
     else if (act === "cat-del") { model.categories.splice(i, 1); renderCategories(); renderItems(); }
+    else if (act === "room-up") { move(model.rooms, i, -1); renderRooms(); renderItems(); }
+    else if (act === "room-down") { move(model.rooms, i, 1); renderRooms(); renderItems(); }
+    else if (act === "room-del") { model.rooms.splice(i, 1); renderRooms(); renderItems(); }
     else if (act === "item-up") { move(model.items, i, -1); renderItems(); }
     else if (act === "item-down") { move(model.items, i, 1); renderItems(); }
     else if (act === "item-del") {
@@ -417,6 +450,8 @@
 
     if (kind === "item-cat") {
       model.items[parseInt(t.getAttribute("data-i"), 10)].category = t.value;
+    } else if (kind === "item-room") {
+      model.items[parseInt(t.getAttribute("data-i"), 10)].room = t.value;
     } else if (kind === "item-sold") {
       model.items[parseInt(t.getAttribute("data-i"), 10)].sold = t.checked;
       renderItems();
@@ -433,6 +468,8 @@
       setPath(model.config, field, t.value);
     } else if (kind === "cat") {
       setPath(model.categories[parseInt(t.getAttribute("data-i"), 10)], field, t.value);
+    } else if (kind === "room") {
+      setPath(model.rooms[parseInt(t.getAttribute("data-i"), 10)], field, t.value);
     } else if (kind === "cat-keywords") {
       model.categories[parseInt(t.getAttribute("data-i"), 10)].keywords =
         t.value.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
@@ -454,6 +491,7 @@
     return {
       config: cfg,
       categories: model.categories,
+      rooms: model.rooms || [],
       items: model.items.map(function (it) {
         var copy = {};
         Object.keys(it).forEach(function (k) { if (k !== "_newPhotos") copy[k] = it[k]; });
@@ -538,10 +576,14 @@
       model.categories.push({ id: "category-" + (model.categories.length + 1), name: { he: "", en: "" } });
       renderCategories(); renderItems();
     });
+    $("add-room").addEventListener("click", function () {
+      model.rooms.push({ id: "room-" + (model.rooms.length + 1), name: { he: "", en: "" } });
+      renderRooms(); renderItems();
+    });
     $("add-item").addEventListener("click", function () {
       var firstCat = model.categories[0] ? model.categories[0].id : "";
       model.items.push({
-        id: newId(), category: firstCat, brand: null, price: null, originalPrice: null,
+        id: newId(), category: firstCat, room: "other", brand: null, price: null, originalPrice: null,
         dimensions: null, link: null, sold: false, photos: [],
         title: { he: "", en: "" }, desc: { he: "", en: "" },
       });

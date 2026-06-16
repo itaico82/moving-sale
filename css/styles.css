@@ -57,6 +57,13 @@ body {
 }
 .ms-search-input:focus { border-color: var(--ms-ink); }
 .ms-nav { display: flex; align-items: center; gap: 18px; }
+.ms-group-toggle { display: inline-flex; border: 1px solid var(--ms-line); }
+.ms-group-btn {
+  font-family: "Heebo", sans-serif; font-size: 13px; font-weight: 600; color: #777;
+  background: #fff; border: none; padding: 7px 12px; cursor: pointer; white-space: nowrap;
+}
+.ms-group-btn + .ms-group-btn { border-inline-start: 1px solid var(--ms-line); }
+.ms-group-btn.active { background: var(--ms-ink); color: #fff; }
 .ms-nav-link {
   font-family: "Heebo", sans-serif; font-size: 14px; font-weight: 500;
   color: #444; text-decoration: none; white-space: nowrap;

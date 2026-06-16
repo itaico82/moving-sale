@@ -202,7 +202,8 @@
         "he": "דגם BE-Easy · גוון Fenix London Grey",
         "en": "BE-Easy · Fenix London Grey"
       },
-      "link": "https://www.tollmansdot.co.il/product/be-easy-london-grey-170/"
+      "link": "https://www.tollmansdot.co.il/product/be-easy-london-grey-170/",
+      "room": "dining"
     },
     {
       "id": "f-yellow-chairs",
@@ -227,7 +228,8 @@
         "he": "סט של 8 · כיסא צהוב ייחודי. ניתן לערימה, עמיד לתנאי חוץ",
         "en": "Set of 8 · Indoor / outdoor chair (Ginger). Stackable "
       },
-      "link": "https://www.tollmansdot.co.il/product/slik-blue/"
+      "link": "https://www.tollmansdot.co.il/product/slik-blue/",
+      "room": "dining"
     },
     {
       "id": "f-bar-stools",
@@ -252,7 +254,8 @@
         "he": "כסאות בר גבוהים, עיצוב נקי",
         "en": "Set of 4 · originally ₪1,150 each"
       },
-      "link": "https://www.tollmansdot.co.il/product/pure-loop-white-online/"
+      "link": "https://www.tollmansdot.co.il/product/pure-loop-white-online/",
+      "room": "kitchen"
     },
     {
       "id": "f-nightstand-wheels",
@@ -272,7 +275,8 @@
       "desc": {
         "he": "כוננית בסטה של איקאה, מסגרת בצבע עץ, חזית מגירה לבנה",
         "en": ""
-      }
+      },
+      "room": "bedroom"
     },
     {
       "id": "f-nightstand-doors",
@@ -290,7 +294,8 @@
       "desc": {
         "he": "ללא גלגלים",
         "en": "No wheels"
-      }
+      },
+      "room": "bedroom"
     },
     {
       "id": "f-nightstand-single",
@@ -311,7 +316,8 @@
       "desc": {
         "he": "אופציה למדף זכוכית בפנים, כלול",
         "en": ""
-      }
+      },
+      "room": "bedroom"
     },
     {
       "id": "f-lack-shelves",
@@ -333,7 +339,8 @@
         "he": "סט של 12\nמחיר ליחידה בודדת",
         "en": "Set of 12"
       },
-      "link": null
+      "link": null,
+      "room": "living-room"
     },
     {
       "id": "f-eket-blue",
@@ -352,7 +359,8 @@
         "he": "",
         "en": ""
       },
-      "link": null
+      "link": null,
+      "room": "living-room"
     },
     {
       "id": "f-kallax-8-vertical",
@@ -373,7 +381,8 @@
         "he": "",
         "en": ""
       },
-      "link": null
+      "link": null,
+      "room": "living-room"
     },
     {
       "id": "f-kallax-8-horizontal",
@@ -394,7 +403,8 @@
         "he": "",
         "en": ""
       },
-      "link": null
+      "link": null,
+      "room": "living-room"
     },
     {
       "id": "f-kallax-4-vertical",
@@ -415,7 +425,8 @@
         "he": "",
         "en": ""
       },
-      "link": null
+      "link": null,
+      "room": "living-room"
     },
     {
       "id": "f-eket-unit-8",
@@ -436,7 +447,8 @@
         "he": "סט של 2\nמחיר ליחידה בודדה",
         "en": "Set of 2"
       },
-      "link": null
+      "link": null,
+      "room": "living-room"
     },
     {
       "id": "f-luli-bed",
@@ -458,7 +470,8 @@
       "desc": {
         "he": "מיטת גלריה, עם מקום אחסון בצד והרבה מקום פנוי על הרצפה (המיטה התחתונה נמכרת בנפרד)",
         "en": ""
-      }
+      },
+      "room": "kids"
     },
     {
       "id": "f-toddler-bed",
@@ -476,7 +489,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kids"
     },
     {
       "id": "f-double-bed",
@@ -496,7 +510,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bedroom"
     },
     {
       "id": "f-double-mattress",
@@ -518,7 +533,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bedroom"
     },
     {
       "id": "f-bissa",
@@ -539,7 +555,8 @@
         "he": "סט של 2 \nמחיר ליחידה בודדת",
         "en": "Set of 2"
       },
-      "link": null
+      "link": null,
+      "room": "entrance"
     },
     {
       "id": "f-trones",
@@ -560,7 +577,8 @@
         "he": "סט של 3\nמחיר ליחידה בודדת",
         "en": "Set of 3"
       },
-      "link": null
+      "link": null,
+      "room": "entrance"
     },
     {
       "id": "f-nysjon",
@@ -581,7 +599,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bathroom"
     },
     {
       "id": "f-bathroom-shelf",
@@ -601,7 +620,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bathroom"
     },
     {
       "id": "f-white-wardrobe",
@@ -619,7 +639,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bedroom"
     },
     {
       "id": "f-stockholm-mirror",
@@ -637,7 +658,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bedroom"
     },
     {
       "id": "f-bedside-table",
@@ -655,7 +677,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bedroom"
     },
     {
       "id": "f-micke-desk",
@@ -674,7 +697,8 @@
         "he": "",
         "en": ""
       },
-      "link": null
+      "link": null,
+      "room": "office"
     },
     {
       "id": "e-tube-amp",
@@ -697,7 +721,8 @@
         "he": "",
         "en": ""
       },
-      "link": "https://www.ebay.com/itm/188500391146"
+      "link": "https://www.ebay.com/itm/188500391146",
+      "room": "living-room"
     },
     {
       "id": "e-speakers",
@@ -718,7 +743,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "living-room"
     },
     {
       "id": "e-philips-mixer",
@@ -736,7 +762,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "e-coffee-machine",
@@ -758,7 +785,8 @@
         "he": "",
         "en": ""
       },
-      "link": "https://www.netoneto.co.il/product/%D7%9E%D7%9B%D7%95%D7%A0%D7%AA-%D7%A7%D7%A4%D7%94-nespresso-essenza-mini-%D7%A0%D7%A1%D7%A4%D7%A8%D7%A1%D7%95-%D7%93%D7%92%D7%9D-c30?gad_campaignid=22448598911&gbraid=0AAAAADOyK3CW0aQ6hFmtRz3yhesKI6My6"
+      "link": "https://www.netoneto.co.il/product/%D7%9E%D7%9B%D7%95%D7%A0%D7%AA-%D7%A7%D7%A4%D7%94-nespresso-essenza-mini-%D7%A0%D7%A1%D7%A4%D7%A8%D7%A1%D7%95-%D7%93%D7%92%D7%9D-c30?gad_campaignid=22448598911&gbraid=0AAAAADOyK3CW0aQ6hFmtRz3yhesKI6My6",
+      "room": "kitchen"
     },
     {
       "id": "e-frother",
@@ -776,7 +804,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "e-sous-vide",
@@ -794,7 +823,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "e-toaster",
@@ -812,7 +842,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "e-monitor-1",
@@ -830,7 +861,8 @@
       "desc": {
         "he": "מסך 1",
         "en": "Monitor 1"
-      }
+      },
+      "room": "office"
     },
     {
       "id": "e-monitor-2",
@@ -848,7 +880,8 @@
       "desc": {
         "he": "מסך 2",
         "en": "Monitor 2"
-      }
+      },
+      "room": "office"
     },
     {
       "id": "e-gaming-pc",
@@ -866,7 +899,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "office"
     },
     {
       "id": "e-dvd",
@@ -884,7 +918,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "living-room"
     },
     {
       "id": "e-grill",
@@ -906,7 +941,8 @@
         "he": "4 מבערים · שחור",
         "en": "4-burner · black"
       },
-      "link": "https://www.argaman4u.co.il/product/5109/"
+      "link": "https://www.argaman4u.co.il/product/5109/",
+      "room": "outdoor"
     },
     {
       "id": "e-washer",
@@ -924,7 +960,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bathroom"
     },
     {
       "id": "e-dryer",
@@ -942,7 +979,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bathroom"
     },
     {
       "id": "e-robot-vacuum",
@@ -962,7 +1000,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "other"
     },
     {
       "id": "e-fridge",
@@ -980,7 +1019,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "e-oven",
@@ -998,7 +1038,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "e-microwave",
@@ -1016,7 +1057,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "e-pressure-washer",
@@ -1034,7 +1076,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "e-tv-living",
@@ -1053,7 +1096,8 @@
         "he": "",
         "en": ""
       },
-      "link": "https://www.youtube.com/watch?v=JH4frUk1zzE"
+      "link": "https://www.youtube.com/watch?v=JH4frUk1zzE",
+      "room": "living-room"
     },
     {
       "id": "e-tv-spare",
@@ -1071,7 +1115,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "bedroom"
     },
     {
       "id": "e-air-purifier",
@@ -1092,7 +1137,8 @@
         "he": "",
         "en": ""
       },
-      "link": "https://kupi.co.il/he/%D7%9E%D7%98%D7%94%D7%A8-%D7%90%D7%95%D7%95%D7%99%D7%A8-%D7%97%D7%9B%D7%9D-%D7%93%D7%92%D7%9D-mi-air-purifier-2c-xiaomi-%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%97%D7%99%D7%A0%D7%9D"
+      "link": "https://kupi.co.il/he/%D7%9E%D7%98%D7%94%D7%A8-%D7%90%D7%95%D7%95%D7%99%D7%A8-%D7%97%D7%9B%D7%9D-%D7%93%D7%92%D7%9D-mi-air-purifier-2c-xiaomi-%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%97%D7%99%D7%A0%D7%9D",
+      "room": "living-room"
     },
     {
       "id": "e-desk-setup",
@@ -1110,7 +1156,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "office"
     },
     {
       "id": "k-scale",
@@ -1128,7 +1175,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "k-sourdough",
@@ -1146,7 +1194,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "k-baguette",
@@ -1164,7 +1213,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "k-flours",
@@ -1182,7 +1232,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "k-tollmans-plate",
@@ -1202,7 +1253,8 @@
       "desc": {
         "he": "אפור כהה",
         "en": "Dark grey"
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "k-tollmans-vases-2",
@@ -1220,7 +1272,8 @@
       "desc": {
         "he": "סט של 2",
         "en": "Set of 2"
-      }
+      },
+      "room": "living-room"
     },
     {
       "id": "k-tollmans-vases-3",
@@ -1238,7 +1291,8 @@
       "desc": {
         "he": "סט של 3",
         "en": "Set of 3"
-      }
+      },
+      "room": "living-room"
     },
     {
       "id": "k-fox-vases-3",
@@ -1256,7 +1310,8 @@
       "desc": {
         "he": "סט של 3",
         "en": "Set of 3"
-      }
+      },
+      "room": "living-room"
     },
     {
       "id": "l-bike-stand",
@@ -1274,7 +1329,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "l-tent",
@@ -1292,7 +1348,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "l-sleeping-bags",
@@ -1310,7 +1367,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "l-guitar-classical",
@@ -1328,7 +1386,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "other"
     },
     {
       "id": "l-guitar-acoustic",
@@ -1346,7 +1405,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "other"
     },
     {
       "id": "l-brompton-bag",
@@ -1364,7 +1424,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "l-brompton-bike",
@@ -1382,7 +1443,8 @@
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "l-bike-valerie",
@@ -1400,7 +1462,8 @@
       "desc": {
         "he": "מידה של ואלרי",
         "en": "Valerie's size"
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "l-bike-noga",
@@ -1418,7 +1481,8 @@
       "desc": {
         "he": "מידה של נגה",
         "en": "Noga's size"
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "l-bike-amit",
@@ -1436,7 +1500,8 @@
       "desc": {
         "he": "מידה של עמית",
         "en": "Amit's size"
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "k-margot-vase-trio",
@@ -1455,7 +1520,8 @@
       "desc": {
         "he": "מעושן / טורקיז / שקוף",
         "en": "Smoke / Teal / Clear"
-      }
+      },
+      "room": "living-room"
     },
     {
       "id": "k-pastille-vase-15",
@@ -1474,7 +1540,8 @@
       "desc": {
         "he": "גוון Berry",
         "en": "Berry"
-      }
+      },
+      "room": "living-room"
     },
     {
       "id": "k-pastille-vase-20",
@@ -1493,7 +1560,8 @@
       "desc": {
         "he": "גוון Cinder Rose",
         "en": "Cinder Rose"
-      }
+      },
+      "room": "living-room"
     },
     {
       "id": "k-balcolore-tub-m",
@@ -1512,7 +1580,8 @@
       "desc": {
         "he": "לבן",
         "en": "White"
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "k-balcolore-tub-l",
@@ -1531,7 +1600,8 @@
       "desc": {
         "he": "צהוב",
         "en": "Yellow"
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "k-coro-tumblers-berry",
@@ -1550,7 +1620,8 @@
       "desc": {
         "he": "310 מ״ל · גווני דובדבן",
         "en": "310ml · Berry assorted"
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "k-coro-tumblers-lagoon",
@@ -1569,7 +1640,8 @@
       "desc": {
         "he": "310 מ״ל · גווני כחול (Lagoon)",
         "en": "310ml · Lagoon assorted"
-      }
+      },
+      "room": "kitchen"
     },
     {
       "id": "e-mi-desk-lamp",
@@ -1594,6 +1666,79 @@
       "desc": {
         "he": "מנורת LED חכמה, דור 2",
         "en": "Smart LED desk lamp, Gen 2"
+      },
+      "room": "office"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "living-room",
+      "name": {
+        "he": "סלון",
+        "en": "Living Room"
+      }
+    },
+    {
+      "id": "dining",
+      "name": {
+        "he": "פינת אוכל",
+        "en": "Dining"
+      }
+    },
+    {
+      "id": "kitchen",
+      "name": {
+        "he": "מטבח",
+        "en": "Kitchen"
+      }
+    },
+    {
+      "id": "bedroom",
+      "name": {
+        "he": "חדר שינה",
+        "en": "Bedroom"
+      }
+    },
+    {
+      "id": "kids",
+      "name": {
+        "he": "חדר ילדים",
+        "en": "Kids' Room"
+      }
+    },
+    {
+      "id": "bathroom",
+      "name": {
+        "he": "אמבטיה וכביסה",
+        "en": "Bathroom & Laundry"
+      }
+    },
+    {
+      "id": "office",
+      "name": {
+        "he": "חדר עבודה",
+        "en": "Office"
+      }
+    },
+    {
+      "id": "entrance",
+      "name": {
+        "he": "כניסה",
+        "en": "Entrance"
+      }
+    },
+    {
+      "id": "outdoor",
+      "name": {
+        "he": "חצר ומרפסת",
+        "en": "Outdoor"
+      }
+    },
+    {
+      "id": "other",
+      "name": {
+        "he": "שונות",
+        "en": "Other"
       }
     }
   ]

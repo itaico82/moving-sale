@@ -16,6 +16,7 @@
     saved: [],
     listOpen: false,
     viewers: {},
+    groupMode: "type", // 'type' | 'room'
   };
   var data = null;
   var timer = null;
@@ -185,19 +186,24 @@
       };
     }
 
-    var cats = data.categories
-      .map(function (c, ci) {
-        var list = data.items
-          .filter(function (i) { return i.category === c.id && matches(i); })
-          .map(view);
-        return {
-          name: c.name[lang],
-          index: String(ci + 1).padStart(2, "0"),
-          count: he ? list.length + " פריטים" : list.length + " items",
-          items: list,
-        };
-      })
-      .filter(function (c) { return c.items.length; });
+    var groupMode = state.groupMode === "room" ? "room" : "type";
+    var defs = groupMode === "room" ? (data.rooms || []) : data.categories;
+    var keyOf = function (it) { return groupMode === "room" ? (it.room || "other") : it.category; };
+    var defIds = {};
+    defs.forEach(function (dd) { defIds[dd.id] = 1; });
+    var cats = defs.map(function (c, ci) {
+      var list = data.items.filter(function (i) { return keyOf(i) === c.id && matches(i); }).map(view);
+      return {
+        name: c.name[lang],
+        index: String(ci + 1).padStart(2, "0"),
+        count: he ? list.length + " פריטים" : list.length + " items",
+        items: list,
+      };
+    });
+    // safety net: items whose group key isn't one of the defined groups
+    var orphan = data.items.filter(function (i) { return !defIds[keyOf(i)] && matches(i); }).map(view);
+    if (orphan.length) cats.push({ name: he ? "שונות" : "Other", index: String(defs.length + 1).padStart(2, "0"), count: he ? orphan.length + " פריטים" : orphan.length + " items", items: orphan });
+    cats = cats.filter(function (c) { return c.items.length; });
 
     var total = cats.reduce(function (s, c) { return s + c.items.length; }, 0);
     var available = data.items.filter(function (i) { return !i.sold; }).length;
@@ -230,6 +236,7 @@
         ? total + ' תוצאות עבור "' + state.query.trim() + '"'
         : total + ' results for "' + state.query.trim() + '"',
       cats: cats,
+      groupMode: groupMode,
       noResults: q.length > 0 && total === 0,
       kicker: loc + " · " + move,
       countLabel: he ? available + " פריטים זמינים" : available + " items available",
@@ -455,6 +462,10 @@
             '" placeholder="' + esc(t.searchPh) + '" />' +
         "</div>" +
         '<nav class="ms-nav">' +
+          '<span class="ms-group-toggle">' +
+            '<button class="ms-group-btn' + (v.groupMode === "type" ? " active" : "") + '" data-action="set-group" data-mode="type">' + esc(t.byType) + "</button>" +
+            '<button class="ms-group-btn' + (v.groupMode === "room" ? " active" : "") + '" data-action="set-group" data-mode="room">' + esc(t.byRoom) + "</button>" +
+          "</span>" +
           '<a class="ms-nav-link" href="#c-items">' + esc(t.navItems) + "</a>" +
           '<button class="ms-list-btn" data-action="open-list">' + ICON.bookmark + esc(t.myList) +
             '<span class="ms-badge' + (v.savedCount > 0 ? " ms-badge--active" : "") + '">' + v.savedCount + "</span></button>" +
@@ -735,6 +746,11 @@
         if (href) window.open(href, "_blank", "noopener");
         break;
       }
+      case "set-group":
+        state.groupMode = el.getAttribute("data-mode") === "room" ? "room" : "type";
+        try { localStorage.setItem("ms_group", state.groupMode); } catch (err) {}
+        render();
+        break;
       case "toggle-share": {
         var menu = el.parentNode.querySelector("[data-share-menu]");
         closeShareMenus(menu);
@@ -771,6 +787,7 @@
   function init() {
     state.lang = readLang();
     state.saved = readSaved();
+    try { var g = localStorage.getItem("ms_group"); if (g === "room" || g === "type") state.groupMode = g; } catch (e) {}
     seedViewers();
     app.addEventListener("click", onClick);
     app.addEventListener("input", onInput);
