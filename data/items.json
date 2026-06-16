@@ -665,15 +665,18 @@
     {
       "id": "e-speakers",
       "category": "electronics",
-      "brand": null,
+      "brand": "Avance",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-speakers-1781603171813-0.jpg",
+        "images/e-speakers-1781603171781-1.jpg"
+      ],
       "title": {
-        "he": "רמקולים",
-        "en": "Speakers"
+        "he": "רמקולים Avance Dana",
+        "en": "Speakers Avance Dana"
       },
       "desc": {
         "he": "",
@@ -702,14 +705,17 @@
       "id": "e-coffee-machine",
       "category": "electronics",
       "brand": null,
-      "price": null,
+      "price": 150,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-coffee-machine-1781603191552-0.jpg",
+        "images/e-coffee-machine-1781603191413-1.jpg"
+      ],
       "title": {
-        "he": "מכונת קפה",
-        "en": "Coffee Machine"
+        "he": "מכונת קפה נספרסו",
+        "en": "Nespresso Coffee Machine"
       },
       "desc": {
         "he": "",
