@@ -218,11 +218,19 @@
     $("items").innerHTML = model.items.map(function (it, i) {
       var photos = (it.photos || []).map(function (p, pi) {
         return '<div class="photo"><img src="' + esc(resolvePhoto(p)) + '" alt="" />' +
-          '<button data-act="photo-del" data-i="' + i + '" data-pi="' + pi + '" title="הסר">×</button></div>';
+          '<button class="photo-del" data-act="photo-del" data-i="' + i + '" data-pi="' + pi + '" title="הסר">×</button>' +
+          '<div class="photo-move">' +
+            '<button data-act="photo-move" data-i="' + i + '" data-pi="' + pi + '" data-dir="-1" title="הזז להתחלה">‹</button>' +
+            '<button data-act="photo-move" data-i="' + i + '" data-pi="' + pi + '" data-dir="1" title="הזז לסוף">›</button>' +
+          '</div></div>';
       }).join("");
       var pending = (it._newPhotos || []).map(function (np, ni) {
         return '<div class="photo pending"><img src="' + esc(np.dataUrl) + '" alt="" />' +
-          '<button data-act="newphoto-del" data-i="' + i + '" data-ni="' + ni + '" title="הסר">×</button></div>';
+          '<button class="photo-del" data-act="newphoto-del" data-i="' + i + '" data-ni="' + ni + '" title="הסר">×</button>' +
+          '<div class="photo-move">' +
+            '<button data-act="newphoto-move" data-i="' + i + '" data-ni="' + ni + '" data-dir="-1" title="הזז להתחלה">‹</button>' +
+            '<button data-act="newphoto-move" data-i="' + i + '" data-ni="' + ni + '" data-dir="1" title="הזז לסוף">›</button>' +
+          '</div></div>';
       }).join("");
 
       return (
@@ -327,6 +335,14 @@
     else if (act === "newphoto-del") {
       var ni = parseInt(btn.getAttribute("data-ni"), 10);
       model.items[i]._newPhotos.splice(ni, 1); renderItems();
+    }
+    else if (act === "photo-move") {
+      move(model.items[i].photos, parseInt(btn.getAttribute("data-pi"), 10), parseInt(btn.getAttribute("data-dir"), 10));
+      renderItems();
+    }
+    else if (act === "newphoto-move") {
+      move(model.items[i]._newPhotos, parseInt(btn.getAttribute("data-ni"), 10), parseInt(btn.getAttribute("data-dir"), 10));
+      renderItems();
     }
     else if (act === "hero-del") {
       model.config.heroPhotos.splice(parseInt(btn.getAttribute("data-pi"), 10), 1); renderConfig();
