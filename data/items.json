@@ -851,7 +851,10 @@
       "originalPrice": 6290,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-grill-1.webp",
+        "images/e-grill-2.jpg"
+      ],
       "title": {
         "he": "גריל גז ROGUE XT 525 SIB",
         "en": "Napoleon ROGUE XT 525 SIB Gas Grill"
