@@ -1095,7 +1095,9 @@
       "originalPrice": 8500,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-tv-living-1781633195386-0.jpg"
+      ],
       "title": {
         "he": "טלוויזיה LG OLED 65״ C1",
         "en": "LG OLED 65\" C1 TV"
