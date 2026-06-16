@@ -1793,6 +1793,29 @@
         "he": "הליכון חכם מתקפל",
         "en": "Foldable smart treadmill"
       }
+    },
+    {
+      "id": "e-sonos-arc",
+      "category": "electronics",
+      "room": "living-room",
+      "brand": "Sonos",
+      "price": 1350,
+      "originalPrice": 2699,
+      "dimensions": null,
+      "link": "https://www.bug.co.il/brand/sonos/arc/color/white",
+      "sold": false,
+      "photos": [
+        "images/e-sonos-arc-1.jpg",
+        "images/e-sonos-arc-2.jpg"
+      ],
+      "title": {
+        "he": "סאונד בר Sonos Arc (לבן)",
+        "en": "Sonos Arc Soundbar (White)"
+      },
+      "desc": {
+        "he": "סאונד בר",
+        "en": "Soundbar"
+      }
     }
   ]
 }
