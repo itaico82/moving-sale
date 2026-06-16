@@ -261,13 +261,15 @@
       "originalPrice": 350,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-nightstand-wheels-1781602683607-0.jpg"
+      ],
       "title": {
         "he": "בסטה זוגית על גלגלים, מגירה אחת",
         "en": "Wide Nightstand on Wheels, One Drawer"
       },
       "desc": {
-        "he": "",
+        "he": "כוננית בסטה של איקאה, מסגרת בצבע עץ, חזית מגירה לבנה",
         "en": ""
       }
     },
@@ -297,13 +299,16 @@
       "originalPrice": 320,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-nightstand-single-1781602800020-0.jpg",
+        "images/f-nightstand-single-1781602822806-0.jpg"
+      ],
       "title": {
         "he": "בסטה בודדת, דלת לבנה וגלגלים",
         "en": "Single Nightstand, White Door & Wheels"
       },
       "desc": {
-        "he": "",
+        "he": "אופציה למדף זכוכית בפנים, כלול",
         "en": ""
       }
     },
@@ -315,13 +320,16 @@
       "originalPrice": 39,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-lack-shelves-1781602950160-0.jpg",
+        "images/f-lack-shelves-1781602972002-0.jpg"
+      ],
       "title": {
         "he": "מדפים לבנים LACK",
         "en": "LACK White Shelves"
       },
       "desc": {
-        "he": "סט של 12",
+        "he": "סט של 12\nמחיר ליחידה בודדה",
         "en": "Set of 12"
       },
       "link": null
@@ -410,13 +418,15 @@
       "originalPrice": 820,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-eket-unit-8-1781603063983-0.jpg"
+      ],
       "title": {
         "he": "יחידת מדפים EKET, 8 תאים",
         "en": "EKET Shelf Unit, 8 Cubes"
       },
       "desc": {
-        "he": "סט של 2",
+        "he": "סט של 2\nמחיר ליחידה בודדה",
         "en": "Set of 2"
       },
       "link": null
@@ -501,13 +511,15 @@
       "originalPrice": 225,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-bissa-1781603171461-0.jpg"
+      ],
       "title": {
         "he": "ארון נעליים BISSA",
         "en": "BISSA Shoe Cabinet"
       },
       "desc": {
-        "he": "סט של 2",
+        "he": "סט של 2 \nמחיר ליחידה בודדת",
         "en": "Set of 2"
       },
       "link": null
@@ -643,19 +655,15 @@
     {
       "id": "e-tube-amp",
       "category": "electronics",
-      "brand": "Jolida",
-      "price": 2500,
-      "originalPrice": 8500,
+      "brand": null,
+      "price": null,
+      "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/e-tube-amp-1781603039539-0.jpg",
-        "images/e-tube-amp-1781603039506-1.jpg",
-        "images/e-tube-amp-1781603039571-2.jpg"
-      ],
+      "photos": [],
       "title": {
-        "he": "מגבר מנורות Jolida JD202",
-        "en": "Tube Amplifier Jolida JD202"
+        "he": "מגבר מנורות",
+        "en": "Tube Amplifier"
       },
       "desc": {
         "he": "",
@@ -665,18 +673,15 @@
     {
       "id": "e-speakers",
       "category": "electronics",
-      "brand": "Avance",
+      "brand": null,
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/e-speakers-1781603171813-0.jpg",
-        "images/e-speakers-1781603171781-1.jpg"
-      ],
+      "photos": [],
       "title": {
-        "he": "רמקולים Avance Dana",
-        "en": "Speakers Avance Dana"
+        "he": "רמקולים",
+        "en": "Speakers"
       },
       "desc": {
         "he": "",
@@ -705,17 +710,14 @@
       "id": "e-coffee-machine",
       "category": "electronics",
       "brand": null,
-      "price": 150,
+      "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/e-coffee-machine-1781603191552-0.jpg",
-        "images/e-coffee-machine-1781603191413-1.jpg"
-      ],
+      "photos": [],
       "title": {
-        "he": "מכונת קפה נספרסו",
-        "en": "Nespresso Coffee Machine"
+        "he": "מכונת קפה",
+        "en": "Coffee Machine"
       },
       "desc": {
         "he": "",
