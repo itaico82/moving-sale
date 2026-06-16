@@ -353,6 +353,15 @@ body {
   font-family: "Space Grotesk", sans-serif; font-size: 13px; color: #777;
 }
 
+/* ---- show/hide sold toggle (page bottom) ---- */
+.ms-sold-toggle { display: flex; justify-content: center; padding: 28px 32px 44px; }
+.ms-sold-toggle-btn {
+  font-family: "Heebo", sans-serif; font-size: 14px; font-weight: 600; color: #555;
+  background: #fff; border: 1px solid var(--ms-line); border-radius: 0; padding: 11px 22px; cursor: pointer;
+}
+.ms-sold-toggle-btn:hover { border-color: var(--ms-ink); color: var(--ms-ink); }
+.ms-sold-toggle-btn.active { background: var(--ms-ink); color: #fff; border-color: var(--ms-ink); }
+
 /* ---- My List drawer ---- */
 .ms-overlay {
   position: fixed; inset: 0; background: rgba(18, 18, 18, 0.4); z-index: 100;

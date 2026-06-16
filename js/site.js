@@ -17,6 +17,7 @@
     listOpen: false,
     viewers: {},
     groupMode: "type", // 'type' | 'room'
+    showSold: false, // hide sold/reserved items by default
   };
   var data = null;
   var timer = null;
@@ -194,8 +195,10 @@
     var keyOf = function (it) { return groupMode === "room" ? (it.room || "other") : it.category; };
     var defIds = {};
     defs.forEach(function (dd) { defIds[dd.id] = 1; });
+    var showSold = !!state.showSold;
+    var visible = function (i) { return matches(i) && (showSold || !i.sold); };
     var cats = defs.map(function (c, ci) {
-      var list = data.items.filter(function (i) { return keyOf(i) === c.id && matches(i); }).map(view);
+      var list = data.items.filter(function (i) { return keyOf(i) === c.id && visible(i); }).map(view);
       return {
         name: c.name[lang],
         index: String(ci + 1).padStart(2, "0"),
@@ -204,7 +207,7 @@
       };
     });
     // safety net: items whose group key isn't one of the defined groups
-    var orphan = data.items.filter(function (i) { return !defIds[keyOf(i)] && matches(i); }).map(view);
+    var orphan = data.items.filter(function (i) { return !defIds[keyOf(i)] && visible(i); }).map(view);
     if (orphan.length) cats.push({ name: he ? "שונות" : "Other", index: String(defs.length + 1).padStart(2, "0"), count: he ? orphan.length + " פריטים" : orphan.length + " items", items: orphan });
     cats = cats.filter(function (c) { return c.items.length; });
 
@@ -240,6 +243,8 @@
         : total + ' results for "' + state.query.trim() + '"',
       cats: cats,
       groupMode: groupMode,
+      showSold: showSold,
+      soldToggleLabel: showSold ? t.hideSold : t.showSold,
       noResults: q.length > 0 && total === 0,
       kicker: loc + " · " + move,
       countLabel: he ? available + " פריטים זמינים" : available + " items available",
@@ -521,6 +526,13 @@
         '<div class="ms-contact-footer">' + esc(t.footer) + "</div>" +
       "</div></section>";
 
+    var soldToggle =
+      '<div class="ms-sold-toggle">' +
+        '<button class="ms-sold-toggle-btn' + (v.showSold ? " active" : "") + '" data-action="toggle-sold" aria-pressed="' + (v.showSold ? "true" : "false") + '">' +
+          esc(v.soldToggleLabel) +
+        "</button>" +
+      "</div>";
+
     var drawer = v.listOpen ? drawerHTML(v) : "";
 
     return (
@@ -532,6 +544,7 @@
       cats +
       noResults +
       contact +
+      soldToggle +
       drawer
     );
   }
@@ -755,6 +768,11 @@
         try { localStorage.setItem("ms_group", state.groupMode); } catch (err) {}
         render();
         break;
+      case "toggle-sold":
+        state.showSold = !state.showSold;
+        try { localStorage.setItem("ms_show_sold", state.showSold ? "1" : "0"); } catch (err) {}
+        render();
+        break;
       case "toggle-share": {
         var menu = el.parentNode.querySelector("[data-share-menu]");
         closeShareMenus(menu);
@@ -792,6 +810,7 @@
     state.lang = readLang();
     state.saved = readSaved();
     try { var g = localStorage.getItem("ms_group"); if (g === "room" || g === "type") state.groupMode = g; } catch (e) {}
+    try { state.showSold = localStorage.getItem("ms_show_sold") === "1"; } catch (e) {}
     seedViewers();
     app.addEventListener("click", onClick);
     app.addEventListener("input", onInput);
