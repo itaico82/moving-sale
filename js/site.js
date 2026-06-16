@@ -57,21 +57,21 @@
   function money(n) {
     return CUR + Number(n).toLocaleString("en-US");
   }
-  // Initial "others viewing now" count: 0–9, with 0 twice as likely as any
-  // single nonzero value (pool has two 0s), so several items start at 0.
+  // Initial "others viewing now" count: 0–7, with 0 four times as likely as
+  // any single nonzero value (pool has four 0s), so many items start at 0.
   function seedViewer() {
-    var pool = [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var pool = [0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7];
     return pool[Math.floor(Math.random() * pool.length)];
   }
 
   // One ±1 fluctuation. A Metropolis step over the target weights
-  // (w[0]=2, w[k]=1) keeps the long-run distribution at "0 twice as common
+  // (w[0]=4, w[k]=1) keeps the long-run distribution at "0 four times as common
   // as any other value" instead of drifting toward uniform.
   function nextViewer(v) {
     var j = v + (Math.random() < 0.5 ? -1 : 1);
-    if (j < 0 || j > 9) return v; // reflect at the bounds
-    var wv = v === 0 ? 2 : 1;
-    var wj = j === 0 ? 2 : 1;
+    if (j < 0 || j > 7) return v; // reflect at the bounds
+    var wv = v === 0 ? 4 : 1;
+    var wj = j === 0 ? 4 : 1;
     if (wj >= wv || Math.random() < wj / wv) return j;
     return v;
   }
