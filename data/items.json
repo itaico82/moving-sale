@@ -261,13 +261,15 @@
       "originalPrice": 350,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-nightstand-wheels-1781602683607-0.jpg"
+      ],
       "title": {
         "he": "בסטה זוגית על גלגלים, מגירה אחת",
         "en": "Wide Nightstand on Wheels, One Drawer"
       },
       "desc": {
-        "he": "",
+        "he": "כוננית בסטה של איקאה, מסגרת בצבע עץ, חזית מגירה לבנה. בחל הפתוח יש אופציה למדף זכוכית (כלול)",
         "en": ""
       }
     },
