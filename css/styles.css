@@ -58,12 +58,34 @@ body {
 .ms-search-input:focus { border-color: var(--ms-ink); }
 .ms-nav { display: flex; align-items: center; gap: 18px; }
 .ms-group-toggle { display: inline-flex; border: 1px solid var(--ms-line); }
+.ms-group-item { position: relative; display: inline-flex; }
+.ms-group-item + .ms-group-item .ms-group-btn { border-inline-start: 1px solid var(--ms-line); }
 .ms-group-btn {
+  display: inline-flex; align-items: center; gap: 5px;
   font-family: "Heebo", sans-serif; font-size: 13px; font-weight: 600; color: #777;
   background: #fff; border: none; padding: 7px 12px; cursor: pointer; white-space: nowrap;
 }
-.ms-group-btn + .ms-group-btn { border-inline-start: 1px solid var(--ms-line); }
 .ms-group-btn.active { background: var(--ms-ink); color: #fff; }
+.ms-group-chevron { opacity: 0.7; }
+.ms-group-menu {
+  display: none; position: absolute; inset-block-start: calc(100% + 6px); inset-inline-start: 0;
+  min-width: 200px; max-height: 60vh; overflow-y: auto; z-index: 30;
+  background: #fff; border: 1px solid var(--ms-line); box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+.ms-group-menu.open { display: block; }
+.ms-group-opt {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%;
+  font-family: "Heebo", sans-serif; font-size: 13.5px; font-weight: 500; color: var(--ms-ink);
+  background: #fff; border: none; border-block-end: 1px solid var(--ms-line);
+  padding: 9px 13px; cursor: pointer; text-align: start;
+}
+.ms-group-opt:last-child { border-block-end: none; }
+.ms-group-opt:hover { background: var(--ms-bg); }
+.ms-group-opt-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ms-group-opt-count {
+  font-family: "Space Grotesk", sans-serif; font-size: 12px; color: #999;
+  background: var(--ms-bg); padding: 1px 7px; border-radius: 999px; flex-shrink: 0;
+}
 .ms-nav-link {
   font-family: "Heebo", sans-serif; font-size: 14px; font-weight: 500;
   color: #444; text-decoration: none; white-space: nowrap;

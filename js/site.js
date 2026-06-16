@@ -200,6 +200,7 @@
     var cats = defs.map(function (c, ci) {
       var list = data.items.filter(function (i) { return keyOf(i) === c.id && visible(i); }).map(view);
       return {
+        id: c.id,
         name: c.name[lang],
         index: String(ci + 1).padStart(2, "0"),
         count: he ? list.length + " פריטים" : list.length + " items",
@@ -208,8 +209,18 @@
     });
     // safety net: items whose group key isn't one of the defined groups
     var orphan = data.items.filter(function (i) { return !defIds[keyOf(i)] && visible(i); }).map(view);
-    if (orphan.length) cats.push({ name: he ? "שונות" : "Other", index: String(defs.length + 1).padStart(2, "0"), count: he ? orphan.length + " פריטים" : orphan.length + " items", items: orphan });
+    if (orphan.length) cats.push({ id: "other", name: he ? "שונות" : "Other", index: String(defs.length + 1).padStart(2, "0"), count: he ? orphan.length + " פריטים" : orphan.length + " items", items: orphan });
     cats = cats.filter(function (c) { return c.items.length; });
+
+    // group lists for the type/room dropdowns (only groups that have visible items)
+    function groupsFor(mode) {
+      var gd = mode === "room" ? (data.rooms || []) : data.categories;
+      var gk = function (it) { return mode === "room" ? (it.room || "other") : it.category; };
+      return gd.map(function (c) {
+        var n = data.items.filter(function (i) { return gk(i) === c.id && visible(i); }).length;
+        return { id: c.id, name: c.name[lang], count: n };
+      }).filter(function (g) { return g.count > 0; });
+    }
 
     var total = cats.reduce(function (s, c) { return s + c.items.length; }, 0);
     var available = data.items.filter(function (i) { return !i.sold; }).length;
@@ -243,6 +254,8 @@
         : total + ' results for "' + state.query.trim() + '"',
       cats: cats,
       groupMode: groupMode,
+      typeGroups: groupsFor("type"),
+      roomGroups: groupsFor("room"),
       showSold: showSold,
       soldToggleLabel: showSold ? t.hideSold : t.showSold,
       noResults: q.length > 0 && total === 0,
@@ -334,7 +347,7 @@
       .map(function (it) { return cardHTML(it, t); })
       .join("");
     return (
-      '<section class="ms-cat">' +
+      '<section class="ms-cat" id="grp-' + esc(cat.id) + '">' +
         '<div class="ms-cat-head">' +
           '<span class="ms-cat-index">' + esc(cat.index) + "</span>" +
           '<h2 class="ms-cat-name">' + esc(cat.name) + "</h2>" +
@@ -458,6 +471,36 @@
     });
   }
 
+  // Chevron used by the group dropdown triggers.
+  var CHEVRON =
+    '<svg class="ms-group-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>';
+
+  // One dropdown (by type / by room): a trigger button + a hidden menu listing
+  // that dimension's non-empty groups with counts.
+  function groupMenuHTML(mode, label, groups) {
+    var active = state.groupMode === mode;
+    var opts = groups
+      .map(function (g) {
+        return (
+          '<button class="ms-group-opt" data-action="goto-group" data-mode="' + esc(mode) +
+            '" data-id="' + esc(g.id) + '">' +
+            '<span class="ms-group-opt-name">' + esc(g.name) + "</span>" +
+            '<span class="ms-group-opt-count">' + g.count + "</span>" +
+          "</button>"
+        );
+      })
+      .join("");
+    return (
+      '<span class="ms-group-item">' +
+        '<button class="ms-group-btn' + (active ? " active" : "") +
+          '" data-action="open-group-menu" data-mode="' + esc(mode) + '">' +
+          esc(label) + CHEVRON +
+        "</button>" +
+        '<div class="ms-group-menu" data-group-menu="' + esc(mode) + '">' + opts + "</div>" +
+      "</span>"
+    );
+  }
+
   function build(v) {
     var t = v.t;
 
@@ -471,8 +514,8 @@
         "</div>" +
         '<nav class="ms-nav">' +
           '<span class="ms-group-toggle">' +
-            '<button class="ms-group-btn' + (v.groupMode === "type" ? " active" : "") + '" data-action="set-group" data-mode="type">' + esc(t.byType) + "</button>" +
-            '<button class="ms-group-btn' + (v.groupMode === "room" ? " active" : "") + '" data-action="set-group" data-mode="room">' + esc(t.byRoom) + "</button>" +
+            groupMenuHTML("type", t.byType, v.typeGroups) +
+            groupMenuHTML("room", t.byRoom, v.roomGroups) +
           "</span>" +
           '<a class="ms-nav-link" href="#c-items">' + esc(t.navItems) + "</a>" +
           '<button class="ms-list-btn" data-action="open-list">' + ICON.bookmark + esc(t.myList) +
@@ -716,9 +759,24 @@
     var menus = app.querySelectorAll(".ms-share-menu.open");
     for (var i = 0; i < menus.length; i++) if (menus[i] !== except) menus[i].classList.remove("open");
   }
+  function closeGroupMenus(except) {
+    var menus = app.querySelectorAll(".ms-group-menu.open");
+    for (var i = 0; i < menus.length; i++) if (menus[i] !== except) menus[i].classList.remove("open");
+  }
+  // Smooth-scroll to a group section, offset for the sticky header.
+  function scrollToGroup(id) {
+    var sec = document.getElementById("grp-" + id);
+    if (!sec) return;
+    var header = app.querySelector(".ms-header");
+    var offset = (header ? header.offsetHeight : 0) + 12;
+    var top = sec.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: top, behavior: "smooth" });
+  }
   function onClick(e) {
     // close any open share dropdown unless the click is on a share toggle / inside a menu
     if (!e.target.closest('[data-action="toggle-share"]') && !e.target.closest(".ms-share-menu")) closeShareMenus();
+    // close any open group dropdown unless the click is on a group trigger / inside a menu
+    if (!e.target.closest('[data-action="open-group-menu"]') && !e.target.closest(".ms-group-menu")) closeGroupMenus();
 
     var el = e.target.closest("[data-action]");
     if (!el) return;
@@ -763,11 +821,24 @@
         if (href) window.open(href, "_blank", "noopener");
         break;
       }
-      case "set-group":
-        state.groupMode = el.getAttribute("data-mode") === "room" ? "room" : "type";
-        try { localStorage.setItem("ms_group", state.groupMode); } catch (err) {}
-        render();
+      case "open-group-menu": {
+        var gmenu = el.parentNode.querySelector("[data-group-menu]");
+        closeGroupMenus(gmenu);
+        if (gmenu) gmenu.classList.toggle("open");
         break;
+      }
+      case "goto-group": {
+        var gmode = el.getAttribute("data-mode") === "room" ? "room" : "type";
+        var gid = el.getAttribute("data-id");
+        closeGroupMenus();
+        var switched = state.groupMode !== gmode;
+        state.groupMode = gmode;
+        try { localStorage.setItem("ms_group", state.groupMode); } catch (err) {}
+        if (switched) render();
+        // wait for the (possible) re-render before measuring scroll position
+        requestAnimationFrame(function () { scrollToGroup(gid); });
+        break;
+      }
       case "toggle-sold":
         state.showSold = !state.showSold;
         try { localStorage.setItem("ms_show_sold", state.showSold ? "1" : "0"); } catch (err) {}
