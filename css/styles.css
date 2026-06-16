@@ -282,7 +282,8 @@ body {
 .ms-modal-slideshow { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #efeeea; cursor: zoom-in; }
 /* Anchor detail images to the top so the top of the item is always visible */
 .ms-modal-slideshow .ms-slide img { object-position: top; transform-origin: top center !important; }
-.ms-modal-empty { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; color: #c4c2bb; }
+.ms-modal-empty { aspect-ratio: 16 / 10; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #c4c2bb; }
+.ms-modal-empty span { font-family: "Heebo", sans-serif; font-size: 14px; color: #b6b4ac; }
 .ms-modal-sold {
   position: absolute; inset-block-start: 12px; inset-inline-start: 12px;
   background: rgba(18, 18, 18, 0.85); color: #fff; font-family: "Space Grotesk", sans-serif;

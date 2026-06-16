@@ -113,10 +113,13 @@
   }
 
   /* ---------- viewer counter ---------- */
+  // Mock viewers only on available items that actually have photos.
+  function hasViewers(it) { return !it.sold && !!(it.photos && it.photos.length); }
+
   function seedViewers() {
     var v = {};
     data.items.forEach(function (it) {
-      if (!it.sold) v[it.id] = seedViewer();
+      if (hasViewers(it)) v[it.id] = seedViewer();
     });
     state.viewers = v;
   }
@@ -125,7 +128,7 @@
   function scheduleDrift() {
     timer = setTimeout(function () {
       data.items.forEach(function (it) {
-        if (!it.sold) state.viewers[it.id] = nextViewer(state.viewers[it.id] || 0);
+        if (hasViewers(it)) state.viewers[it.id] = nextViewer(state.viewers[it.id] || 0);
       });
       updateViewerChips();
       scheduleDrift();
@@ -172,7 +175,7 @@
         photos: it.photos || [],
         link: it.link || "",
         sold: it.sold,
-        viewersEligible: !it.sold,
+        viewersEligible: hasViewers(it),
         viewersHidden: n === 0,
         viewersText: he ? n + " צופים בפריט כעת" : n + " currently viewing",
         priceText: it.price != null ? money(it.price) : t.askPrice,
@@ -653,7 +656,7 @@
             '" alt="" style="transform-origin:' + origins[i % origins.length] + ';" /></div>';
         }).join("") + "</div>";
     } else {
-      gallery = '<div class="ms-modal-empty">' + ICON.image + "</div>";
+      gallery = '<div class="ms-modal-empty">' + ICON.image + "<span>" + esc(t.drop) + "</span></div>";
     }
     if (it.sold) gallery += '<span class="ms-modal-sold">' + esc(t.sold) + "</span>";
 
