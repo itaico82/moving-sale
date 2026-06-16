@@ -19,6 +19,8 @@
   };
   var data = null;
   var timer = null;
+  var heroTimer = null;
+  var heroIndex = 0;
 
   /* ---------- icons ---------- */
   var ICON = {
@@ -116,7 +118,7 @@
       data.items.forEach(function (it) {
         if (!it.sold) state.viewers[it.id] = nextViewer(state.viewers[it.id] || 0);
       });
-      render();
+      updateViewerChips();
       scheduleDrift();
     }, 10000 + Math.random() * 10000);
   }
@@ -136,9 +138,15 @@
         ? 'היי, מתעניין/ת ב"' + title + '" מהמכירה — עדיין זמין?'
         : 'Hi, I\'m interested in "' + title + '" from your sale — is it still available?';
     }
+    // Each category contributes searchable keywords (plus its own names), so a
+    // query like "appliances" / "מקרר" surfaces every item in that category.
+    var catKeywords = {};
+    data.categories.forEach(function (c) {
+      catKeywords[c.id] = (c.keywords || []).concat([c.name.he, c.name.en]).join(" ").toLowerCase();
+    });
     function matches(it) {
       if (!q) return true;
-      var hay = [it.title.he, it.title.en, it.desc.he, it.desc.en, it.brand || ""]
+      var hay = [it.title.he, it.title.en, it.desc.he, it.desc.en, it.brand || "", catKeywords[it.category] || ""]
         .join(" ")
         .toLowerCase();
       return hay.indexOf(q) !== -1;
@@ -153,8 +161,10 @@
         brand: it.brand || "",
         dimensions: it.dimensions || "",
         photos: it.photos || [],
+        link: it.link || "",
         sold: it.sold,
-        showViewers: !it.sold && n > 0,
+        viewersEligible: !it.sold,
+        viewersHidden: n === 0,
         viewersText: he ? "עוד " + n + " צופים בפריט כעת" : n + " others viewing now",
         priceText: it.price != null ? money(it.price) : t.askPrice,
         hasOrig: !!it.originalPrice,
@@ -224,7 +234,11 @@
       mailHref: "mailto:" + config.email,
       phoneLabel: config.phoneLabel || "",
       emailLabel: config.email,
-      heroPhoto: config.heroPhoto,
+      heroPhotos: config.heroPhotos && config.heroPhotos.length ? config.heroPhotos : (config.heroPhoto ? [config.heroPhoto] : []),
+      flatWaHref: "https://wa.me/" + config.whatsapp + "?text=" +
+        encodeURIComponent(he ? "היי, מעוניין/ת לשכור או לקנות את הדירה — אפשר פרטים?" : "Hi, I'm interested in renting or buying the flat — can you share details?"),
+      flatMailHref: "mailto:" + config.email + "?subject=" +
+        encodeURIComponent(he ? "הדירה — שכירות / קנייה" : "The flat — rent / buy"),
       listOpen: state.listOpen,
       savedCount: state.saved.length,
       savedItems: savedItems,
@@ -242,14 +256,17 @@
 
   /* ---------- render fragments ---------- */
   function cardHTML(item, t) {
+    var clickable = item.link || (item.photos && item.photos.length);
     var media =
-      '<div class="ms-card-media">' +
+      '<div class="ms-card-media' + (clickable ? " ms-clickable" : "") + '"' +
+        (clickable ? ' data-action="open-media" data-id="' + esc(item.id) + '"' : "") + ">" +
       photoHTML(item.photos, "ms-photo--card", t.drop) +
       (item.sold
         ? '<div class="ms-sold"><span class="ms-sold-label">' + esc(t.sold) + "</span></div>"
         : "") +
-      (item.showViewers
-        ? '<div class="ms-viewers"><span class="ms-viewers-dot"></span>' + esc(item.viewersText) + "</div>"
+      (item.viewersEligible
+        ? '<div class="ms-viewers' + (item.viewersHidden ? " ms-viewers--hidden" : "") + '" data-viewers="' + esc(item.id) + '">' +
+            '<span class="ms-viewers-dot"></span><span class="ms-viewers-label">' + esc(item.viewersText) + "</span></div>"
         : "") +
       '<button class="ms-save' + (item.saved ? " ms-save--active" : "") +
         '" data-action="toggle-save" data-id="' + esc(item.id) + '" title="' + esc(item.saveLabel) + '">' +
@@ -268,6 +285,7 @@
           '<span class="ms-price">' + esc(item.priceText) + "</span>" +
           (item.hasOrig ? '<span class="ms-price-orig">' + esc(item.origText) + "</span>" : "") +
           '<span class="ms-card-contact">' +
+            (item.link ? '<a class="ms-detail" href="' + esc(item.link) + '" target="_blank" rel="noopener">' + esc(t.details) + "</a>" : "") +
             '<a class="ms-wa" href="' + esc(item.waHref) + '" target="_blank" rel="noopener">' + esc(t.wa) + "</a>" +
             '<a class="ms-mail" href="' + esc(item.mailHref) + '">' + esc(t.mail) + "</a>" +
           "</span>" +
@@ -345,6 +363,66 @@
     );
   }
 
+  function heroSlideshow(v) {
+    var t = v.t;
+    var origins = ["center", "top left", "bottom right", "top right", "bottom left", "center top"];
+    var inner;
+    if (v.heroPhotos.length) {
+      var active = heroIndex % v.heroPhotos.length;
+      inner = v.heroPhotos.map(function (p, i) {
+        return '<div class="ms-slide' + (i === active ? " active" : "") + '" data-hero-slide="' + i + '">' +
+          '<img src="' + esc(p) + '" alt="" style="transform-origin:' + origins[i % origins.length] + ';" /></div>';
+      }).join("");
+    } else {
+      inner = '<div class="ms-slide active"><div class="ms-hero-empty">' + ICON.image +
+        "<span>" + esc(t.dropHero) + "</span></div></div>";
+    }
+    var cta =
+      '<div class="ms-hero-cta">' +
+        '<span class="ms-hero-cta-text">' + esc(t.flatCta) + "</span>" +
+        '<span class="ms-hero-cta-actions">' +
+          '<a class="ms-hero-cta-btn wa" href="' + esc(v.flatWaHref) + '" target="_blank" rel="noopener">' + esc(t.wa) + "</a>" +
+          '<a class="ms-hero-cta-btn mail" href="' + esc(v.flatMailHref) + '">' + esc(t.mail) + "</a>" +
+        "</span>" +
+      "</div>";
+    return '<section class="ms-hero-img"><div class="ms-hero-slideshow">' + inner + cta + "</div></section>";
+  }
+
+  function startHero() {
+    clearTimeout(heroTimer);
+    var photos = data.config.heroPhotos && data.config.heroPhotos.length
+      ? data.config.heroPhotos
+      : (data.config.heroPhoto ? [data.config.heroPhoto] : []);
+    if (photos.length <= 1) return;
+    (function tick() {
+      heroTimer = setTimeout(function () {
+        heroIndex = (heroIndex + 1) % photos.length;
+        var slides = app.querySelectorAll("[data-hero-slide]");
+        for (var i = 0; i < slides.length; i++) slides[i].classList.toggle("active", i === heroIndex);
+        tick();
+      }, 5200);
+    })();
+  }
+
+  // Update viewer chips in place (no full re-render) so the hero slideshow and
+  // search box are never reset by the every-10–20s viewer drift.
+  function updateViewerChips() {
+    var he = state.lang === "he";
+    data.items.forEach(function (it) {
+      if (it.sold) return;
+      var el = app.querySelector('[data-viewers="' + it.id + '"]');
+      if (!el) return;
+      var n = state.viewers[it.id] || 0;
+      if (n === 0) {
+        el.classList.add("ms-viewers--hidden");
+      } else {
+        el.classList.remove("ms-viewers--hidden");
+        var label = el.querySelector(".ms-viewers-label");
+        if (label) label.textContent = he ? "עוד " + n + " צופים בפריט כעת" : n + " others viewing now";
+      }
+    });
+  }
+
   function build(v) {
     var t = v.t;
 
@@ -376,9 +454,7 @@
           "</div>" +
         "</div>" +
       "</section>" +
-      '<section class="ms-hero-img">' +
-        photoHTML(v.heroPhoto ? [v.heroPhoto] : [], "ms-photo--hero", t.dropHero) +
-      "</section>";
+      heroSlideshow(v);
 
     var resultCount = v.searching
       ? '<div class="ms-result-count">' + esc(v.resultCountText) + "</div>"
@@ -445,12 +521,56 @@
         try { inp.setSelectionRange(caret, caret); } catch (e) {}
       }
     }
+    startHero();
   }
 
   function renderError() {
     var t = window.MS_I18N[readLang()];
     app.innerHTML =
       '<section class="ms-empty"><p class="ms-empty-text">' + esc(t.loadError) + "</p></section>";
+  }
+
+  /* ---------- lightbox ---------- */
+  var lb = { photos: [], index: 0, el: null };
+  function itemById(id) {
+    for (var i = 0; i < data.items.length; i++) if (data.items[i].id === id) return data.items[i];
+    return null;
+  }
+  function lbRender() {
+    lb.el.querySelector(".ms-lb-img").src = lb.photos[lb.index];
+    var multi = lb.photos.length > 1;
+    lb.el.querySelector(".prev").style.display = multi ? "" : "none";
+    lb.el.querySelector(".next").style.display = multi ? "" : "none";
+  }
+  function lbStep(d) { lb.index = (lb.index + d + lb.photos.length) % lb.photos.length; lbRender(); }
+  function closeLightbox() { if (lb.el) lb.el.classList.remove("open"); document.removeEventListener("keydown", lbKey); }
+  function lbKey(e) {
+    if (e.key === "Escape") closeLightbox();
+    else if (e.key === "ArrowLeft") lbStep(-1);
+    else if (e.key === "ArrowRight") lbStep(1);
+  }
+  function openLightbox(photos, start) {
+    if (!photos || !photos.length) return;
+    lb.photos = photos;
+    lb.index = start || 0;
+    if (!lb.el) {
+      lb.el = document.createElement("div");
+      lb.el.className = "ms-lb";
+      lb.el.innerHTML =
+        '<button class="ms-lb-close" aria-label="close">&times;</button>' +
+        '<button class="ms-lb-nav prev" aria-label="previous">&#8249;</button>' +
+        '<img class="ms-lb-img" alt="" />' +
+        '<button class="ms-lb-nav next" aria-label="next">&#8250;</button>';
+      document.body.appendChild(lb.el);
+      lb.el.addEventListener("click", function (e) {
+        if (e.target === lb.el || e.target.classList.contains("ms-lb-close")) closeLightbox();
+        else if (e.target.classList.contains("prev")) lbStep(-1);
+        else if (e.target.classList.contains("next")) lbStep(1);
+      });
+    }
+    lbRender();
+    lb.el.classList.add("open");
+    document.addEventListener("keydown", lbKey);
   }
 
   /* ---------- events (delegated, attached once) ---------- */
@@ -488,6 +608,13 @@
         else state.saved.splice(i, 1);
         persistSaved();
         render();
+        break;
+      }
+      case "open-media": {
+        var it = itemById(el.getAttribute("data-id"));
+        if (!it) break;
+        if (it.link) window.open(it.link, "_blank", "noopener");
+        else if (it.photos && it.photos.length) openLightbox(it.photos, 0);
         break;
       }
     }

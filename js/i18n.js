@@ -29,6 +29,8 @@ window.MS_I18N = {
     saveTo: "הוספה לרשימה",
     saved: "נשמר ברשימה",
     askPrice: "מחיר בפנייה",
+    flatCta: "מעוניינים לשכור או לקנות את הדירה?",
+    details: "לפרטים ↗",
     loadError: "טעינת הפריטים נכשלה. נסו לרענן את העמוד.",
   },
   en: {
@@ -60,6 +62,8 @@ window.MS_I18N = {
     saveTo: "Add to list",
     saved: "Saved to list",
     askPrice: "Price on request",
+    flatCta: "Want to rent or buy the flat?",
+    details: "Details ↗",
     loadError: "Failed to load items. Please refresh the page.",
   },
 };

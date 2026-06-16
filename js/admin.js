@@ -112,6 +112,14 @@
     model.config = model.config || {};
     model.categories = model.categories || [];
     model.items = model.items || [];
+    var c = model.config;
+    if (!Array.isArray(c.heroPhotos)) c.heroPhotos = c.heroPhoto ? [c.heroPhoto] : [];
+    delete c.heroPhoto; // migrated to heroPhotos[]
+    c._newHeroPhotos = c._newHeroPhotos || []; // pending hero uploads: { dataUrl, filename }
+    model.categories.forEach(function (cat) {
+      cat.name = cat.name || { he: "", en: "" };
+      if (!Array.isArray(cat.keywords)) cat.keywords = [];
+    });
     model.items.forEach(function (it) {
       it.title = it.title || { he: "", en: "" };
       it.desc = it.desc || { he: "", en: "" };
@@ -142,17 +150,30 @@
 
   function renderConfig() {
     var c = model.config;
+    var existing = (c.heroPhotos || []).map(function (p, i) {
+      return '<div class="photo"><img src="' + esc(resolvePhoto(p)) + '" alt="" />' +
+        '<button data-act="hero-del" data-pi="' + i + '" title="הסר">×</button></div>';
+    }).join("");
+    var pending = (c._newHeroPhotos || []).map(function (np, ni) {
+      return '<div class="photo pending"><img src="' + esc(np.dataUrl) + '" alt="" />' +
+        '<button data-act="hero-newdel" data-ni="' + ni + '" title="הסר">×</button></div>';
+    }).join("");
+
     $("config").innerHTML =
       '<div class="adm-grid">' +
         field("config", "whatsapp", "וואטסאפ (ספרות בלבד, פורמט בינ״ל)", c.whatsapp) +
         field("config", "phoneLabel", "תצוגת מספר טלפון", c.phoneLabel) +
         field("config", "email", "אימייל", c.email) +
-        field("config", "heroPhoto", "תמונת אווירה (נתיב, אופציונלי)", c.heroPhoto) +
         field("config", "location.he", "מיקום (עברית)", c.location && c.location.he) +
         field("config", "location.en", "מיקום (אנגלית)", c.location && c.location.en) +
         field("config", "moveDate.he", "תאריך מעבר (עברית)", c.moveDate && c.moveDate.he) +
         field("config", "moveDate.en", "תאריך מעבר (אנגלית)", c.moveDate && c.moveDate.en) +
-      "</div>";
+      "</div>" +
+      '<div class="field" style="margin-top:14px;"><label>תמונות אווירה (סליידשואו בראש העמוד)</label>' +
+        '<div class="photos">' + existing + pending +
+          '<label class="add-photo" style="cursor:pointer;border:1px dashed var(--line);padding:10px 12px;color:var(--accent);">+ הוסף תמונות אווירה' +
+          '<input type="file" accept="image/*" multiple data-act="add-hero-photo" style="display:none;" /></label>' +
+        "</div></div>";
   }
 
   function field(kind, path, label, value, extra) {
@@ -166,16 +187,20 @@
   function renderCategories() {
     var html = model.categories.map(function (c, i) {
       return (
-        '<div class="adm-row" data-cat-row="' + i + '">' +
-          '<div style="flex:1;min-width:140px;"><label>מזהה (id)</label>' +
-            '<input type="text" data-kind="cat" data-i="' + i + '" data-field="id" value="' + esc(c.id) + '" /></div>' +
-          '<div style="flex:1;min-width:140px;"><label>שם (עברית)</label>' +
-            '<input type="text" data-kind="cat" data-i="' + i + '" data-field="name.he" value="' + esc(c.name.he) + '" /></div>' +
-          '<div style="flex:1;min-width:140px;"><label>שם (אנגלית)</label>' +
-            '<input type="text" data-kind="cat" data-i="' + i + '" data-field="name.en" value="' + esc(c.name.en) + '" /></div>' +
-          '<button class="ghost" data-act="cat-up" data-i="' + i + '" title="למעלה">↑</button>' +
-          '<button class="ghost" data-act="cat-down" data-i="' + i + '" title="למטה">↓</button>' +
-          '<button class="danger" data-act="cat-del" data-i="' + i + '">מחק</button>' +
+        '<div style="border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:14px;">' +
+          '<div class="adm-row" data-cat-row="' + i + '">' +
+            '<div style="flex:1;min-width:140px;"><label>מזהה (id)</label>' +
+              '<input type="text" data-kind="cat" data-i="' + i + '" data-field="id" value="' + esc(c.id) + '" /></div>' +
+            '<div style="flex:1;min-width:140px;"><label>שם (עברית)</label>' +
+              '<input type="text" data-kind="cat" data-i="' + i + '" data-field="name.he" value="' + esc(c.name.he) + '" /></div>' +
+            '<div style="flex:1;min-width:140px;"><label>שם (אנגלית)</label>' +
+              '<input type="text" data-kind="cat" data-i="' + i + '" data-field="name.en" value="' + esc(c.name.en) + '" /></div>' +
+            '<button class="ghost" data-act="cat-up" data-i="' + i + '" title="למעלה">↑</button>' +
+            '<button class="ghost" data-act="cat-down" data-i="' + i + '" title="למטה">↓</button>' +
+            '<button class="danger" data-act="cat-del" data-i="' + i + '">מחק</button>' +
+          "</div>" +
+          '<div class="field" style="margin:8px 0 0;"><label>מילות חיפוש (מופרדות בפסיק — לחיפוש לפי קטגוריה)</label>' +
+            '<input type="text" data-kind="cat-keywords" data-i="' + i + '" value="' + esc((c.keywords || []).join(", ")) + '" /></div>' +
         "</div>"
       );
     }).join("");
@@ -228,6 +253,8 @@
             '<div class="field"><label>מחיר מקורי (אופציונלי)</label><input type="number" data-kind="item-num" data-i="' + i + '" data-field="originalPrice" value="' + (it.originalPrice == null ? "" : it.originalPrice) + '" /></div>' +
             '<div class="field" style="display:flex;align-items:flex-end;"><label class="chk"><input type="checkbox" data-kind="item-sold" data-i="' + i + '"' + (it.sold ? " checked" : "") + " /> נמכר / שמור</label></div>" +
           "</div>" +
+          '<div class="field"><label>קישור לפריט (אופציונלי — נפתח בלחיצה על התמונה)</label>' +
+            '<input type="text" data-kind="item" data-i="' + i + '" data-field="link" value="' + esc(it.link == null ? "" : it.link) + '" placeholder="https://" /></div>' +
           '<div class="field"><label>תמונות</label>' +
             '<div class="photos">' + photos + pending +
               '<label class="add-photo" style="cursor:pointer;border:1px dashed var(--line);padding:10px 12px;color:var(--accent);">+ הוסף תמונות' +
@@ -301,6 +328,12 @@
       var ni = parseInt(btn.getAttribute("data-ni"), 10);
       model.items[i]._newPhotos.splice(ni, 1); renderItems();
     }
+    else if (act === "hero-del") {
+      model.config.heroPhotos.splice(parseInt(btn.getAttribute("data-pi"), 10), 1); renderConfig();
+    }
+    else if (act === "hero-newdel") {
+      model.config._newHeroPhotos.splice(parseInt(btn.getAttribute("data-ni"), 10), 1); renderConfig();
+    }
   }
 
   function onChange(e) {
@@ -325,6 +358,22 @@
       return;
     }
 
+    if (act === "add-hero-photo") {
+      var hfiles = Array.prototype.slice.call(t.files);
+      if (!hfiles.length) return;
+      status("מכווץ תמונות…", "busy");
+      Promise.all(hfiles.map(function (f, idx) {
+        return compressImage(f).then(function (dataUrl) {
+          return { dataUrl: dataUrl, filename: "hero-" + new Date().getTime() + "-" + idx + ".jpg" };
+        });
+      })).then(function (out) {
+        model.config._newHeroPhotos.push.apply(model.config._newHeroPhotos, out);
+        status("", "");
+        renderConfig();
+      }).catch(function (err) { status("עיבוד תמונה נכשל: " + err.message, "err"); });
+      return;
+    }
+
     if (kind === "item-cat") {
       model.items[parseInt(t.getAttribute("data-i"), 10)].category = t.value;
     } else if (kind === "item-sold") {
@@ -340,13 +389,16 @@
     var field = t.getAttribute("data-field");
 
     if (kind === "config") {
-      setPath(model.config, field, t.value === "" && field === "heroPhoto" ? null : t.value);
+      setPath(model.config, field, t.value);
     } else if (kind === "cat") {
       setPath(model.categories[parseInt(t.getAttribute("data-i"), 10)], field, t.value);
+    } else if (kind === "cat-keywords") {
+      model.categories[parseInt(t.getAttribute("data-i"), 10)].keywords =
+        t.value.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
     } else if (kind === "item") {
       var it = model.items[parseInt(t.getAttribute("data-i"), 10)];
       var val = t.value;
-      if ((field === "brand" || field === "dimensions") && val === "") val = null;
+      if ((field === "brand" || field === "dimensions" || field === "link") && val === "") val = null;
       setPath(it, field, val);
     } else if (kind === "item-num") {
       var item = model.items[parseInt(t.getAttribute("data-i"), 10)];
@@ -356,8 +408,10 @@
 
   /* ---------- save ---------- */
   function cleanModel() {
+    var cfg = {};
+    Object.keys(model.config).forEach(function (k) { if (k !== "_newHeroPhotos") cfg[k] = model.config[k]; });
     return {
-      config: model.config,
+      config: cfg,
       categories: model.categories,
       items: model.items.map(function (it) {
         var copy = {};
@@ -376,8 +430,9 @@
     ghGetFile(GH.path)
       .then(function (res) {
         if (res) sha = res.sha; // adopt latest to avoid 409
-        // upload pending images sequentially
+        // upload pending images sequentially (hero photos first, then item photos)
         var uploads = [];
+        (model.config._newHeroPhotos || []).forEach(function (np) { uploads.push({ target: "hero", np: np }); });
         model.items.forEach(function (it) {
           (it._newPhotos || []).forEach(function (np) { uploads.push({ it: it, np: np }); });
         });
@@ -387,13 +442,15 @@
             var b64 = u.np.dataUrl.split(",")[1];
             status("מעלה תמונה " + u.np.filename + "…", "busy");
             return ghPutFile(path, b64, "admin: add image " + u.np.filename).then(function () {
-              u.it.photos.push(path);
+              if (u.target === "hero") model.config.heroPhotos.push(path);
+              else u.it.photos.push(path);
             });
           });
         }, Promise.resolve());
       })
       .then(function () {
         // clear pending now that they're committed + referenced
+        model.config._newHeroPhotos = [];
         model.items.forEach(function (it) { it._newPhotos = []; });
         var json = JSON.stringify(cleanModel(), null, 2) + "\n";
         status("שומר את הקטלוג…", "busy");
@@ -433,7 +490,7 @@
       var firstCat = model.categories[0] ? model.categories[0].id : "";
       model.items.push({
         id: newId(), category: firstCat, brand: null, price: null, originalPrice: null,
-        dimensions: null, sold: false, photos: [], _newPhotos: [],
+        dimensions: null, link: null, sold: false, photos: [], _newPhotos: [],
         title: { he: "", en: "" }, desc: { he: "", en: "" },
       });
       renderItems();

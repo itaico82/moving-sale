@@ -3,7 +3,7 @@
     "whatsapp": "972544911686",
     "phoneLabel": "054-491-1686",
     "email": "itaico@gmail.com",
-    "heroPhoto": null,
+    "heroPhotos": [],
     "location": {
       "he": "רמת אפעל, רמת גן",
       "en": "Ramat Efal"
@@ -19,28 +19,32 @@
       "name": {
         "he": "ריהוט",
         "en": "Furniture"
-      }
+      },
+      "keywords": ["רהיטים", "ארון", "ארונות", "מדף", "מדפים", "שולחן", "שולחנות", "כיסא", "כיסאות", "כורסה", "ספה", "מיטה", "מזרון", "שידה", "בסטה", "מראה", "נעליים", "sofa", "table", "chair", "desk", "bed", "mattress", "shelf", "shelves", "cabinet", "wardrobe", "nightstand", "mirror", "ikea", "kallax", "eket", "lack", "bissa", "trones", "micke", "furniture"]
     },
     {
       "id": "electronics",
       "name": {
         "he": "חשמל ואלקטרוניקה",
         "en": "Electronics & Appliances"
-      }
+      },
+      "keywords": ["חשמל", "מוצרי חשמל", "מכשירי חשמל", "אלקטרוניקה", "מקרר", "תנור", "מיקרוגל", "מכונת כביסה", "מייבש", "טלוויזיה", "מסך", "מחשב", "רמקולים", "מגבר", "גריל", "רובוט שואב", "מקציף", "טוסטר", "סו ויד", "מכונת קפה", "מטהר אוויר", "appliances", "electronics", "fridge", "refrigerator", "oven", "microwave", "washer", "washing machine", "dryer", "tv", "monitor", "computer", "speakers", "amplifier", "grill", "vacuum", "toaster", "coffee"]
     },
     {
       "id": "kitchen",
       "name": {
         "he": "מטבח וקרמיקה",
         "en": "Kitchen & Ceramics"
-      }
+      },
+      "keywords": ["מטבח", "קרמיקה", "אגרטל", "אגרטלים", "צלחת", "קערה", "כלים", "אפייה", "מחמצת", "באגט", "קמח", "קמחים", "משקל", "טולמנס", "פוקס", "kitchen", "ceramics", "vase", "vases", "plate", "bowl", "baking", "sourdough", "baguette", "flour", "scale", "tollman", "fox"]
     },
     {
       "id": "leisure",
       "name": {
         "he": "פנאי, ספורט וכלי נגינה",
         "en": "Leisure, Sport & Instruments"
-      }
+      },
+      "keywords": ["פנאי", "ספורט", "כלי נגינה", "גיטרה", "אופניים", "אופני", "ברומפטון", "אוהל", "שק שינה", "מתקן", "קמפינג", "camping", "leisure", "sport", "guitar", "bike", "bicycle", "brompton", "tent", "sleeping bag", "outdoor"]
     }
   ],
   "items": [
