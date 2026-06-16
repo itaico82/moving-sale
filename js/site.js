@@ -167,7 +167,7 @@
         sold: it.sold,
         viewersEligible: !it.sold,
         viewersHidden: n === 0,
-        viewersText: he ? "עוד " + n + " צופים בפריט כעת" : n + " others viewing now",
+        viewersText: he ? n + " צופים בפריט כעת" : n + " currently viewing",
         priceText: it.price != null ? money(it.price) : t.askPrice,
         hasOrig: !!it.originalPrice,
         origText: it.originalPrice ? money(it.originalPrice) : "",
@@ -418,7 +418,7 @@
       } else {
         el.classList.remove("ms-viewers--hidden");
         var label = el.querySelector(".ms-viewers-label");
-        if (label) label.textContent = he ? "עוד " + n + " צופים בפריט כעת" : n + " others viewing now";
+        if (label) label.textContent = he ? n + " צופים בפריט כעת" : n + " currently viewing";
       }
     });
   }
