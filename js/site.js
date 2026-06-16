@@ -572,21 +572,24 @@
   }
 
   /* ---------- item detail modal ---------- */
-  var modal = { el: null, photos: [], index: 0 };
+  var modal = { el: null, photos: [], slideIndex: 0, slideTimer: null };
   function closeItemModal() {
+    if (modal.slideTimer) { clearInterval(modal.slideTimer); modal.slideTimer = null; }
     if (modal.el) { modal.el.remove(); modal.el = null; }
     document.removeEventListener("keydown", modalKey);
   }
-  function modalStep(d) {
-    if (modal.photos.length < 2) return;
-    modal.index = (modal.index + d + modal.photos.length) % modal.photos.length;
-    var img = modal.el.querySelector(".ms-modal-img");
-    if (img) img.src = modal.photos[modal.index];
-  }
-  function modalKey(e) {
-    if (e.key === "Escape") closeItemModal();
-    else if (e.key === "ArrowLeft") modalStep(-1);
-    else if (e.key === "ArrowRight") modalStep(1);
+  function modalKey(e) { if (e.key === "Escape") closeItemModal(); }
+  // Auto-advancing crossfade for the modal gallery (mirrors the hero slideshow).
+  function modalSlideStart() {
+    if (modal.slideTimer) { clearInterval(modal.slideTimer); modal.slideTimer = null; }
+    modal.slideIndex = 0;
+    if (!modal.el || modal.photos.length < 2) return;
+    modal.slideTimer = setInterval(function () {
+      if (!modal.el) { clearInterval(modal.slideTimer); return; }
+      modal.slideIndex = (modal.slideIndex + 1) % modal.photos.length;
+      var slides = modal.el.querySelectorAll(".ms-modal-slideshow .ms-slide");
+      for (var i = 0; i < slides.length; i++) slides[i].classList.toggle("active", i === modal.slideIndex);
+    }, 3800);
   }
   function catName(id, lang) {
     for (var i = 0; i < data.categories.length; i++) if (data.categories[i].id === id) return data.categories[i].name[lang];
@@ -610,12 +613,12 @@
 
     var gallery;
     if (modal.photos.length) {
-      gallery =
-        '<img class="ms-modal-img" src="' + esc(modal.photos[0]) + '" alt="" />' +
-        (modal.photos.length > 1
-          ? '<button class="ms-modal-nav prev" data-mnav="-1" aria-label="previous">&#8249;</button>' +
-            '<button class="ms-modal-nav next" data-mnav="1" aria-label="next">&#8250;</button>'
-          : "");
+      var origins = ["center", "top left", "bottom right", "top right", "bottom left", "center top"];
+      gallery = '<div class="ms-modal-slideshow" data-mlightbox title="' + esc(he ? "הגדלה" : "Enlarge") + '">' +
+        modal.photos.map(function (p, i) {
+          return '<div class="ms-slide' + (i === 0 ? " active" : "") + '"><img src="' + esc(p) +
+            '" alt="" style="transform-origin:' + origins[i % origins.length] + ';" /></div>';
+        }).join("") + "</div>";
     } else {
       gallery = '<div class="ms-modal-empty">' + ICON.image + "</div>";
     }
@@ -652,11 +655,10 @@
     document.body.appendChild(modal.el);
     modal.el.addEventListener("click", function (e) {
       if (e.target === modal.el || e.target.hasAttribute("data-mclose")) { closeItemModal(); return; }
-      var nav = e.target.closest("[data-mnav]");
-      if (nav) { modalStep(parseInt(nav.getAttribute("data-mnav"), 10)); return; }
-      if (e.target.classList.contains("ms-modal-img")) openLightbox(modal.photos, modal.index);
+      if (e.target.closest(".ms-modal-slideshow") && modal.photos.length) openLightbox(modal.photos, modal.slideIndex || 0);
     });
     document.addEventListener("keydown", modalKey);
+    modalSlideStart();
   }
 
   /* ---------- events (delegated, attached once) ---------- */

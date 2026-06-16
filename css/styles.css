@@ -247,15 +247,8 @@ body {
   width: 34px; height: 34px; font-size: 22px; line-height: 1; cursor: pointer;
 }
 .ms-modal-gallery { position: relative; background: #efeeea; }
-.ms-modal-img { width: 100%; max-height: 460px; object-fit: cover; display: block; cursor: zoom-in; }
+.ms-modal-slideshow { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #efeeea; cursor: zoom-in; }
 .ms-modal-empty { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; color: #c4c2bb; }
-.ms-modal-nav {
-  position: absolute; inset-block-start: 50%; transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.85); border: none; width: 42px; height: 52px; font-size: 28px; cursor: pointer;
-}
-.ms-modal-nav:hover { background: #fff; }
-.ms-modal-nav.prev { inset-inline-start: 10px; }
-.ms-modal-nav.next { inset-inline-end: 10px; }
 .ms-modal-sold {
   position: absolute; inset-block-start: 12px; inset-inline-start: 12px;
   background: rgba(18, 18, 18, 0.85); color: #fff; font-family: "Space Grotesk", sans-serif;
