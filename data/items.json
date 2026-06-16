@@ -1675,6 +1675,29 @@
         "en": "Smart LED desk lamp, Gen 2"
       },
       "room": "office"
+    },
+    {
+      "id": "l-walkingpad",
+      "category": "leisure",
+      "room": "other",
+      "brand": "Xiaomi",
+      "price": 650,
+      "originalPrice": 1299,
+      "dimensions": null,
+      "link": "https://www.cwc.co.il/product/%D7%94%D7%9C%D7%99%D7%9B%D7%95%D7%9F-%D7%97%D7%9B%D7%9D-%D7%9E%D7%AA%D7%A7%D7%A4%D7%9C-walkingpad-a1-pro-xiaomi-%D7%A9%D7%99%D7%90%D7%95%D7%9E%D7%99/",
+      "sold": false,
+      "photos": [
+        "images/l-walkingpad-1.jpg",
+        "images/l-walkingpad-2.jpg"
+      ],
+      "title": {
+        "he": "הליכון חכם מתקפל WalkingPad A1 Pro",
+        "en": "WalkingPad A1 Pro Foldable Treadmill"
+      },
+      "desc": {
+        "he": "הליכון חכם מתקפל",
+        "en": "Foldable smart treadmill"
+      }
     }
   ]
 }
