@@ -184,7 +184,6 @@
       ]
     }
   ],
-  "rooms": [],
   "items": [
     {
       "id": "f-livingroom-table",
@@ -401,7 +400,7 @@
         "en": "KALLAX 8-Cube, Horizontal"
       },
       "desc": {
-        "he": "",
+        "he": "עם רגליות שניתנות להסרה",
         "en": ""
       },
       "link": null,
@@ -496,20 +495,22 @@
     {
       "id": "f-double-bed",
       "category": "furniture",
-      "brand": null,
+      "brand": "IKEA",
       "price": 1098,
       "originalPrice": 2195,
-      "dimensions": null,
+      "dimensions": "140x200",
       "sold": false,
       "photos": [
-        "images/f-double-bed-1781617371091-0.jpg"
+        "images/f-double-bed-1781617371091-0.jpg",
+        "images/f-double-bed-1781632817288-0.jpg",
+        "images/f-double-bed-1781632817310-1.jpg"
       ],
       "title": {
         "he": "מיטה זוגית",
         "en": "Double Bed"
       },
       "desc": {
-        "he": "",
+        "he": "מיטת איקאה דגם MANDAL",
         "en": ""
       },
       "room": "bedroom"
