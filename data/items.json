@@ -380,7 +380,9 @@
       "originalPrice": 475,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-kallax-8-horizontal-1781604367509-0.jpg"
+      ],
       "title": {
         "he": "KALLAX 8 תאים, לרוחב",
         "en": "KALLAX 8-Cube, Horizontal"
@@ -399,7 +401,9 @@
       "originalPrice": 345,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-kallax-4-vertical-1781604633378-0.jpg"
+      ],
       "title": {
         "he": "KALLAX 4 תאים, לגובה",
         "en": "KALLAX 4-Cube, Vertical"
@@ -542,7 +546,7 @@
         "en": "TRONES Shoe Cabinet"
       },
       "desc": {
-        "he": "סט של 3",
+        "he": "סט של 3\nמחיר ליחידה בודדת",
         "en": "Set of 3"
       },
       "link": null
@@ -555,7 +559,10 @@
       "originalPrice": 595,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-nysjon-1781603883235-0.jpg",
+        "images/f-nysjon-1781603908028-0.jpg"
+      ],
       "title": {
         "he": "ארון כביסה לבן NYSJÖN",
         "en": "NYSJÖN White Laundry Cabinet"
@@ -573,7 +580,9 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-bathroom-shelf-1781603990403-0.jpg"
+      ],
       "title": {
         "he": "יחידת מדפים לאמבטיה",
         "en": "Bathroom Shelf Unit"
@@ -1038,23 +1047,20 @@
     {
       "id": "e-air-purifier",
       "category": "electronics",
-      "brand": "Xiaomi",
+      "brand": null,
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [
-        "images/e-air-purifier-1.webp"
-      ],
+      "photos": [],
       "title": {
-        "he": "מטהר אוויר חכם Mi Air Purifier 2C",
-        "en": "Mi Air Purifier 2C"
+        "he": "מטהר אוויר",
+        "en": "Air Purifier"
       },
       "desc": {
-        "he": "מטהר אוויר חכם",
-        "en": "Smart air purifier"
-      },
-      "link": "https://kupi.co.il/he/%D7%9E%D7%98%D7%94%D7%A8-%D7%90%D7%95%D7%95%D7%99%D7%A8-%D7%97%D7%9B%D7%9D-%D7%93%D7%92%D7%9D-mi-air-purifier-2c-xiaomi-%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%97%D7%99%D7%A0%D7%9D"
+        "he": "",
+        "en": ""
+      }
     },
     {
       "id": "e-desk-setup",
@@ -1154,9 +1160,7 @@
       "originalPrice": 181,
       "dimensions": "Ø30 × 6.4 ס״מ",
       "sold": false,
-      "photos": [
-        "images/k-tollmans-plate-1.jpg"
-      ],
+      "photos": [],
       "title": {
         "he": "קערת הגשה RAW Nordic",
         "en": "RAW Nordic Serving Bowl"
@@ -1531,31 +1535,6 @@
       "desc": {
         "he": "310 מ״ל · גווני כחול (Lagoon)",
         "en": "310ml · Lagoon assorted"
-      }
-    },
-    {
-      "id": "e-mi-desk-lamp",
-      "category": "electronics",
-      "brand": "Xiaomi",
-      "price": 100,
-      "originalPrice": 199,
-      "dimensions": null,
-      "link": "https://www.mi-il.co.il/product/mi-led-desk-lamp-1s",
-      "sold": false,
-      "photos": [
-        "images/e-mi-desk-lamp-1.jpg",
-        "images/e-mi-desk-lamp-3.jpg",
-        "images/e-mi-desk-lamp-2.jpg",
-        "images/e-mi-desk-lamp-1781604524849-0.jpg",
-        "images/e-mi-desk-lamp-1781604524701-1.jpg"
-      ],
-      "title": {
-        "he": "מנורת שולחן חכמה Mi LED Desk Lamp 1S",
-        "en": "Mi LED Desk Lamp 1S"
-      },
-      "desc": {
-        "he": "מנורת LED חכמה, דור 2",
-        "en": "Smart LED desk lamp, Gen 2"
       }
     }
   ]
