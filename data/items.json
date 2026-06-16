@@ -184,7 +184,78 @@
       ]
     }
   ],
-  "rooms": [],
+  "rooms": [
+    {
+      "id": "living-room",
+      "name": {
+        "he": "סלון",
+        "en": "Living Room"
+      }
+    },
+    {
+      "id": "dining",
+      "name": {
+        "he": "פינת אוכל",
+        "en": "Dining"
+      }
+    },
+    {
+      "id": "kitchen",
+      "name": {
+        "he": "מטבח",
+        "en": "Kitchen"
+      }
+    },
+    {
+      "id": "bedroom",
+      "name": {
+        "he": "חדר שינה",
+        "en": "Bedroom"
+      }
+    },
+    {
+      "id": "kids",
+      "name": {
+        "he": "חדר ילדים",
+        "en": "Kids' Room"
+      }
+    },
+    {
+      "id": "bathroom",
+      "name": {
+        "he": "אמבטיה וכביסה",
+        "en": "Bathroom & Laundry"
+      }
+    },
+    {
+      "id": "office",
+      "name": {
+        "he": "חדר עבודה",
+        "en": "Office"
+      }
+    },
+    {
+      "id": "entrance",
+      "name": {
+        "he": "כניסה",
+        "en": "Entrance"
+      }
+    },
+    {
+      "id": "outdoor",
+      "name": {
+        "he": "חצר ומרפסת",
+        "en": "Outdoor"
+      }
+    },
+    {
+      "id": "other",
+      "name": {
+        "he": "שונות",
+        "en": "Other"
+      }
+    }
+  ],
   "items": [
     {
       "id": "f-livingroom-table",
@@ -1472,7 +1543,8 @@
       "desc": {
         "he": "700 מ״מ, 6 הילוכים. סלסילה ותיק קדמי עם מחבר מהיר (אידיאלי לקניות בעיר)",
         "en": "700mm "
-      }
+      },
+      "room": "outdoor"
     },
     {
       "id": "l-bike-noga",
@@ -1517,7 +1589,8 @@
         "he": "8 הילוכים, בולמי זעזועים, בלמי דיסק, צמיגים עם חומר נגד תקרים",
         "en": "-"
       },
-      "link": "https://www.selabike.co.il/p/%D7%90%D7%95%D7%A4%D7%A0%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%90%D7%93%D7%95%D7%9D-polygon-relic-24/?attribute_pa_color=%25d7%25a7%25d7%25a8%25d7%259d&cmc_adid=ga__22822423647&creativeId=&adgroupid=&targetid=&gad_campaignid=22822456752&gbraid=0AAAAACoLA6ougPeWI_OeHRf49qUdDoJvj"
+      "link": "https://www.selabike.co.il/p/%D7%90%D7%95%D7%A4%D7%A0%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%90%D7%93%D7%95%D7%9D-polygon-relic-24/?attribute_pa_color=%25d7%25a7%25d7%25a8%25d7%259d&cmc_adid=ga__22822423647&creativeId=&adgroupid=&targetid=&gad_campaignid=22822456752&gbraid=0AAAAACoLA6ougPeWI_OeHRf49qUdDoJvj",
+      "room": "outdoor"
     },
     {
       "id": "k-margot-vase-trio",
