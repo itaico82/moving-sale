@@ -1011,20 +1011,21 @@
     {
       "id": "e-tv-living",
       "category": "electronics",
-      "brand": null,
+      "brand": "LG",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
       "photos": [],
       "title": {
-        "he": "טלוויזיה (סלון)",
-        "en": "TV (Living Room)"
+        "he": "טלוויזיה LG OLED 65״ C1",
+        "en": "LG OLED 65\" C1 TV"
       },
       "desc": {
         "he": "",
         "en": ""
-      }
+      },
+      "link": "https://www.youtube.com/watch?v=JH4frUk1zzE"
     },
     {
       "id": "e-tv-spare",
