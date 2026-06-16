@@ -1449,21 +1449,20 @@
     {
       "id": "l-bike-valerie",
       "category": "leisure",
-      "brand": null,
+      "brand": "Decathlon",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
       "photos": [],
       "title": {
-        "he": "אופניים",
+        "he": "אופניי עיר - Decathlon",
         "en": "Bicycle"
       },
       "desc": {
-        "he": "מידה של ואלרי",
-        "en": "Valerie's size"
-      },
-      "room": "outdoor"
+        "he": "700 מ״מ, 6 הילוכים. סלסילה ותיק קדמי עם מחבר מהיר (אידיאלי לקניות בעיר)",
+        "en": "700mm "
+      }
     },
     {
       "id": "l-bike-noga",
@@ -1487,21 +1486,25 @@
     {
       "id": "l-bike-amit",
       "category": "leisure",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
-      "dimensions": null,
+      "brand": "Polygon",
+      "price": 800,
+      "originalPrice": 1639,
+      "dimensions": "24\"",
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-bike-amit-1781631386813-1.jpg",
+        "images/l-bike-amit-1781631386577-0.jpg",
+        "images/l-bike-amit-1781631413901-0.jpg"
+      ],
       "title": {
-        "he": "אופני ילדים מקצועיות",
-        "en": "Bicycle"
+        "he": "אופני ילדים מקצועיות - 24\" Polygon Relic",
+        "en": "24״ mountain bike"
       },
       "desc": {
-        "he": "מידה של עמית",
-        "en": "Amit's size"
+        "he": "8 הילוכים, בולמי זעזועים, בלמי דיסק, צמיגים עם חומר נגד תקרים",
+        "en": "-"
       },
-      "room": "outdoor"
+      "link": "https://www.selabike.co.il/p/%D7%90%D7%95%D7%A4%D7%A0%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%90%D7%93%D7%95%D7%9D-polygon-relic-24/?attribute_pa_color=%25d7%25a7%25d7%25a8%25d7%259d&cmc_adid=ga__22822423647&creativeId=&adgroupid=&targetid=&gad_campaignid=22822456752&gbraid=0AAAAACoLA6ougPeWI_OeHRf49qUdDoJvj"
     },
     {
       "id": "k-margot-vase-trio",
@@ -1668,78 +1671,6 @@
         "en": "Smart LED desk lamp, Gen 2"
       },
       "room": "office"
-    }
-  ],
-  "rooms": [
-    {
-      "id": "living-room",
-      "name": {
-        "he": "סלון",
-        "en": "Living Room"
-      }
-    },
-    {
-      "id": "dining",
-      "name": {
-        "he": "פינת אוכל",
-        "en": "Dining"
-      }
-    },
-    {
-      "id": "kitchen",
-      "name": {
-        "he": "מטבח",
-        "en": "Kitchen"
-      }
-    },
-    {
-      "id": "bedroom",
-      "name": {
-        "he": "חדר שינה",
-        "en": "Bedroom"
-      }
-    },
-    {
-      "id": "kids",
-      "name": {
-        "he": "חדר ילדים",
-        "en": "Kids' Room"
-      }
-    },
-    {
-      "id": "bathroom",
-      "name": {
-        "he": "אמבטיה וכביסה",
-        "en": "Bathroom & Laundry"
-      }
-    },
-    {
-      "id": "office",
-      "name": {
-        "he": "חדר עבודה",
-        "en": "Office"
-      }
-    },
-    {
-      "id": "entrance",
-      "name": {
-        "he": "כניסה",
-        "en": "Entrance"
-      }
-    },
-    {
-      "id": "outdoor",
-      "name": {
-        "he": "חצר ומרפסת",
-        "en": "Outdoor"
-      }
-    },
-    {
-      "id": "other",
-      "name": {
-        "he": "שונות",
-        "en": "Other"
-      }
     }
   ]
 }
