@@ -265,7 +265,9 @@
   /* ---------- render fragments ---------- */
   function cardHTML(item, t) {
     var shareUrl = location.origin + location.pathname + "#item=" + encodeURIComponent(item.id);
-    var shareMsg = item.title + " – " + item.priceText + "\n" + shareUrl;
+    var prompts = t.sharePrompts || [];
+    var prompt = prompts.length ? prompts[Math.floor(Math.random() * prompts.length)] : "";
+    var shareMsg = (prompt ? prompt + "\n\n" : "") + item.title + " – " + item.priceText + "\n" + shareUrl;
     var waShare = "https://wa.me/?text=" + encodeURIComponent(shareMsg);
     var mailShare = "mailto:?subject=" + encodeURIComponent(item.title) + "&body=" + encodeURIComponent(shareMsg);
     var media =

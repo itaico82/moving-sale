@@ -34,6 +34,16 @@ window.MS_I18N = {
     shareTitle: "שיתוף",
     shareWa: "שיתוף בוואטסאפ",
     shareMail: "שיתוף במייל",
+    sharePrompts: [
+      "מאמי! תראה מה מצאתי! חייבים כזה",
+      "זוכר שרצינו כזה?",
+      "זה ממש יסגור לנו פינה.",
+      "נו, זה ממש אנחנו. תגיד כן.",
+      "מצאתי מציאה — רוץ לפני שיחטפו!",
+      "תכל'ס, זה צועק את השם שלנו.",
+      "אל תחשוב יותר מדי, פשוט בוא ניקח.",
+      "חבל לפספס מחיר כזה.",
+    ],
     loadError: "טעינת הפריטים נכשלה. נסו לרענן את העמוד.",
   },
   en: {
@@ -70,6 +80,16 @@ window.MS_I18N = {
     shareTitle: "Share",
     shareWa: "Share via WhatsApp",
     shareMail: "Share via email",
+    sharePrompts: [
+      "Babe! Look what I found! We need this.",
+      "Remember we wanted one of these?",
+      "This would really tie the room together.",
+      "Honestly, this is so us. Say yes.",
+      "Found a steal — grab it before it's gone!",
+      "Don't overthink it, let's just get it.",
+      "Too good a price to pass up.",
+      "It's basically calling our names.",
+    ],
     loadError: "Failed to load items. Please refresh the page.",
   },
 };
