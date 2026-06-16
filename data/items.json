@@ -544,10 +544,11 @@
       "brand": "IKEA",
       "price": 113,
       "originalPrice": 225,
-      "dimensions": null,
+      "dimensions": "49x28x93",
       "sold": false,
       "photos": [
-        "images/f-bissa-1781603171461-0.jpg"
+        "images/f-bissa-1781603171461-0.jpg",
+        "images/f-bissa-1781632987162-0.jpg"
       ],
       "title": {
         "he": "ארון נעליים BISSA",
