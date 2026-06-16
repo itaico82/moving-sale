@@ -299,13 +299,16 @@
       "originalPrice": 320,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-nightstand-single-1781602800020-0.jpg",
+        "images/f-nightstand-single-1781602822806-0.jpg"
+      ],
       "title": {
         "he": "בסטה בודדת, דלת לבנה וגלגלים",
         "en": "Single Nightstand, White Door & Wheels"
       },
       "desc": {
-        "he": "",
+        "he": "אופציה למדף זכוכית בפנים, כלול",
         "en": ""
       }
     },
