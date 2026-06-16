@@ -1038,20 +1038,23 @@
     {
       "id": "e-air-purifier",
       "category": "electronics",
-      "brand": null,
+      "brand": "Xiaomi",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-air-purifier-1.webp"
+      ],
       "title": {
-        "he": "מטהר אוויר",
-        "en": "Air Purifier"
+        "he": "מטהר אוויר חכם Mi Air Purifier 2C",
+        "en": "Mi Air Purifier 2C"
       },
       "desc": {
-        "he": "",
-        "en": ""
-      }
+        "he": "מטהר אוויר חכם",
+        "en": "Smart air purifier"
+      },
+      "link": "https://kupi.co.il/he/%D7%9E%D7%98%D7%94%D7%A8-%D7%90%D7%95%D7%95%D7%99%D7%A8-%D7%97%D7%9B%D7%9D-%D7%93%D7%92%D7%9D-mi-air-purifier-2c-xiaomi-%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%97%D7%99%D7%A0%D7%9D"
     },
     {
       "id": "e-desk-setup",
