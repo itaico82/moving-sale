@@ -302,7 +302,6 @@
           '<span class="ms-price">' + esc(item.priceText) + "</span>" +
           (item.hasOrig ? '<span class="ms-price-orig">' + esc(item.origText) + "</span>" : "") +
           '<span class="ms-card-contact">' +
-            (item.link ? '<a class="ms-detail" href="' + esc(item.link) + '" target="_blank" rel="noopener">' + ICON.link + esc(t.details) + "</a>" : "") +
             '<a class="ms-wa" href="' + esc(item.waHref) + '" target="_blank" rel="noopener" title="' + esc(t.wa) + '" aria-label="' + esc(t.wa) + '">' + ICON.whatsapp + "</a>" +
             '<a class="ms-mail" href="' + esc(item.mailHref) + '" title="' + esc(t.mail) + '" aria-label="' + esc(t.mail) + '">' + ICON.email + "</a>" +
           "</span>" +
