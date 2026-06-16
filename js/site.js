@@ -476,7 +476,7 @@
         "</nav>" +
       "</div></header>";
 
-    var hero =
+    var heroText =
       '<section class="ms-hero">' +
         '<span class="ms-kicker">' + esc(v.kicker) + "</span>" +
         '<h1 class="ms-hero-title">' + esc(t.heroTitle) + "</h1>" +
@@ -487,8 +487,8 @@
             '<a class="ms-cta" href="#c-items">' + esc(t.heroCta) + "</a>" +
           "</div>" +
         "</div>" +
-      "</section>" +
-      heroSlideshow(v);
+      "</section>";
+    var heroImg = heroSlideshow(v);
 
     var resultCount = v.searching
       ? '<div class="ms-result-count">' + esc(v.resultCountText) + "</div>"
@@ -524,8 +524,9 @@
     var drawer = v.listOpen ? drawerHTML(v) : "";
 
     return (
+      heroText +
       header +
-      hero +
+      heroImg +
       '<div id="c-items"></div>' +
       resultCount +
       cats +
