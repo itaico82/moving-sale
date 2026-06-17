@@ -1129,13 +1129,15 @@
       "id": "e-oven",
       "category": "electronics",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 1000,
+      "originalPrice": 4200,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-oven-1781676727210-0.jpg"
+      ],
       "title": {
-        "he": "תנור",
+        "he": "תנור Siemens אינטגרלי",
         "en": "Oven"
       },
       "desc": {
@@ -1148,13 +1150,13 @@
       "id": "e-microwave",
       "category": "electronics",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 500,
+      "originalPrice": 1400,
       "dimensions": null,
       "sold": false,
       "photos": [],
       "title": {
-        "he": "מיקרוגל",
+        "he": "מיקרוגל Siemens אינטגראלי",
         "en": "Microwave"
       },
       "desc": {
@@ -1173,7 +1175,7 @@
       "sold": false,
       "photos": [],
       "title": {
-        "he": "מנקה בלחץ מים",
+        "he": "מנקה בלחץ מים Bosch",
         "en": "Pressure Washer"
       },
       "desc": {
@@ -1227,7 +1229,7 @@
       "id": "e-air-purifier",
       "category": "electronics",
       "brand": "Xiaomi",
-      "price": null,
+      "price": 200,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
@@ -1317,7 +1319,7 @@
       "id": "k-baguette",
       "category": "kitchen",
       "brand": null,
-      "price": 150,
+      "price": 100,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
@@ -1367,7 +1369,7 @@
       "id": "k-tollmans-plate",
       "category": "kitchen",
       "brand": "Tollman's",
-      "price": 91,
+      "price": 90,
       "originalPrice": 181,
       "dimensions": "Ø30 × 6.4 ס״מ",
       "sold": false,
