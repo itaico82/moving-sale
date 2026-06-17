@@ -1077,7 +1077,11 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-dryer-1781692051207-0.jpg",
+        "images/e-dryer-1781692149844-0.jpg",
+        "images/e-dryer-1781692173004-0.jpg"
+      ],
       "title": {
         "he": "מייבש כביסה",
         "en": "Dryer"
@@ -1402,29 +1406,10 @@
       "room": "kitchen"
     },
     {
-      "id": "k-tollmans-vases-2",
-      "category": "kitchen",
-      "brand": "Tollman's",
-      "price": null,
-      "originalPrice": null,
-      "dimensions": null,
-      "sold": false,
-      "photos": [],
-      "title": {
-        "he": "זוג אגרטלים",
-        "en": "Pair of Vases"
-      },
-      "desc": {
-        "he": "סט של 2",
-        "en": "Set of 2"
-      },
-      "room": "living-room"
-    },
-    {
       "id": "k-fox-vases-3",
       "category": "kitchen",
       "brand": "Fox Home",
-      "price": null,
+      "price": 25,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
@@ -1739,7 +1724,10 @@
       "dimensions": null,
       "link": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-balcolore-tub-m-1781691846412-0.jpg",
+        "images/k-balcolore-tub-m-1781691868735-0.jpg"
+      ],
       "title": {
         "he": "סל Balcolore M",
         "en": "Balcolore Tub M"
@@ -1761,7 +1749,8 @@
       "sold": false,
       "photos": [
         "images/k-balcolore-tub-l-1781691699591-0.jpg",
-        "images/k-balcolore-tub-l-1781691719410-0.jpg"
+        "images/k-balcolore-tub-l-1781691719410-0.jpg",
+        "images/k-balcolore-tub-l-1781691889759-0.jpg"
       ],
       "title": {
         "he": "סל Balcolore L",
