@@ -1421,28 +1421,6 @@
       "room": "living-room"
     },
     {
-      "id": "k-tollmans-vases-3",
-      "category": "kitchen",
-      "brand": "Tollman's",
-      "price": null,
-      "originalPrice": null,
-      "dimensions": null,
-      "sold": false,
-      "photos": [
-        "images/k-tollmans-vases-3-1781691237513-0.jpg",
-        "images/k-tollmans-vases-3-1781691304919-0.jpg"
-      ],
-      "title": {
-        "he": "שלישיית אגרטלים שקופים",
-        "en": "Three Clear Vases"
-      },
-      "desc": {
-        "he": "סט של 3",
-        "en": "Set of 3"
-      },
-      "room": "living-room"
-    },
-    {
       "id": "k-fox-vases-3",
       "category": "kitchen",
       "brand": "Fox Home",
@@ -1715,7 +1693,10 @@
       "dimensions": null,
       "link": "https://www.tollmansdot.co.il/product/pastille-s-4/",
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-pastille-vase-15-1781691561811-0.jpg",
+        "images/k-pastille-vase-15-1781691572314-0.jpg"
+      ],
       "title": {
         "he": "אגרטל Pastille 15 ס״מ",
         "en": "Pastille Vase 15cm"
@@ -1735,7 +1716,10 @@
       "dimensions": null,
       "link": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-pastille-vase-20-1781691606643-0.jpg",
+        "images/k-pastille-vase-20-1781691616596-0.jpg"
+      ],
       "title": {
         "he": "אגרטל Pastille 20 ס״מ",
         "en": "Pastille Vase 20cm"
