@@ -1063,7 +1063,7 @@
     {
       "id": "e-washer",
       "category": "electronics",
-      "brand": null,
+      "brand": "Bosch",
       "price": 900,
       "originalPrice": null,
       "dimensions": null,
@@ -1086,7 +1086,7 @@
     {
       "id": "e-dryer",
       "category": "electronics",
-      "brand": null,
+      "brand": "AEG",
       "price": 500,
       "originalPrice": null,
       "dimensions": null,
@@ -1154,7 +1154,7 @@
     {
       "id": "e-oven",
       "category": "electronics",
-      "brand": null,
+      "brand": "Siemens",
       "price": 1000,
       "originalPrice": 4200,
       "dimensions": null,
