@@ -1890,7 +1890,11 @@
       "dimensions": null,
       "link": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-folding-exercise-bike-1781700558848-0.jpg",
+        "images/l-folding-exercise-bike-1781700558614-1.jpg",
+        "images/l-folding-exercise-bike-1781700558697-2.jpg"
+      ],
       "title": {
         "he": "אופני כושר מתקפלים",
         "en": "Folding Exercise Bike"
