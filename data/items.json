@@ -1177,11 +1177,13 @@
       "id": "e-pressure-washer",
       "category": "electronics",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 100,
+      "originalPrice": 369,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-pressure-washer-1781681432027-0.jpg"
+      ],
       "title": {
         "he": "מנקה בלחץ מים Bosch",
         "en": "Pressure Washer"
@@ -1190,13 +1192,14 @@
         "he": "",
         "en": ""
       },
-      "room": "outdoor"
+      "room": "outdoor",
+      "link": "https://ksp.co.il/web/item/241341?appkey=1006&gad_campaignid=15030324361&gbraid=0AAAAAD2DLMqutV-U1ug9p3G7Xm3kmQzKg"
     },
     {
       "id": "e-tv-living",
       "category": "electronics",
       "brand": "LG",
-      "price": 3000,
+      "price": 3500,
       "originalPrice": 8500,
       "dimensions": null,
       "sold": false,
@@ -1204,11 +1207,11 @@
         "images/e-tv-living-1781633195386-0.jpg"
       ],
       "title": {
-        "he": "טלוויזיה LG OLED 65״ C1",
+        "he": "טלוויזיה LG OLED 65״ C1 + Apple TV 4k",
         "en": "LG OLED 65\" C1 TV"
       },
       "desc": {
-        "he": "",
+        "he": "טלוויזיית OLED מעולה, 120hz - יש בעיית קישוריות אינטרנט לטלווזיה עצמה (לכן כלול גם Apple TV 4k) ",
         "en": ""
       },
       "link": "https://www.youtube.com/watch?v=JH4frUk1zzE",
