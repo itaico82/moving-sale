@@ -716,8 +716,8 @@
       "id": "f-white-wardrobe",
       "category": "furniture",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 1000,
+      "originalPrice": 1995,
       "dimensions": null,
       "sold": false,
       "photos": [
