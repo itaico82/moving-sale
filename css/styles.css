@@ -169,8 +169,8 @@ body {
 .ms-hero-cta-btn.wa { background: var(--ms-accent); color: #fff; }
 .ms-hero-cta-btn.mail { background: transparent; border: 1px solid rgba(255, 255, 255, 0.5); color: #fff; }
 @media (max-width: 560px) {
-  .ms-hero-cta { inset-inline: 12px; inset-block-end: 12px; justify-content: space-between; padding: 11px 13px; }
-  .ms-hero-cta-text { font-size: 13.5px; }
+  /* hide the "rent the apartment" overlay on mobile */
+  .ms-hero-cta { display: none; }
 }
 
 /* ---- image slots / placeholders ---- */
