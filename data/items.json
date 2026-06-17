@@ -1451,11 +1451,13 @@
       "id": "l-bike-stand",
       "category": "leisure",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 100,
+      "originalPrice": 240,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-bike-stand-1781680152291-0.jpg"
+      ],
       "title": {
         "he": "מתקן לתחזוקת אופניים",
         "en": "Bike Maintenance Stand"
@@ -1464,7 +1466,8 @@
         "he": "",
         "en": ""
       },
-      "room": "outdoor"
+      "room": "outdoor",
+      "link": "https://www.amazon.com/dp/B074PB8L1R"
     },
     {
       "id": "l-tent",
