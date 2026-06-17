@@ -323,6 +323,12 @@
             '<div class="field"><label>מחיר מקורי (אופציונלי)</label><input type="number" data-kind="item-num" data-i="' + i + '" data-field="originalPrice" value="' + (it.originalPrice == null ? "" : it.originalPrice) + '" /></div>' +
             '<div class="field" style="display:flex;align-items:flex-end;"><label class="chk"><input type="checkbox" data-kind="item-sold" data-i="' + i + '"' + (it.sold ? " checked" : "") + " /> נמכר / שמור</label></div>" +
           "</div>" +
+          (it.sold
+            ? '<div class="adm-grid">' +
+                '<div class="field"><label>נמכר ל- (שם הקונה)</label><input type="text" data-kind="item" data-i="' + i + '" data-field="soldTo" value="' + esc(it.soldTo == null ? "" : it.soldTo) + '" placeholder="שם" /></div>' +
+                '<div class="field"><label>פרטי קשר של הקונה</label><input type="text" data-kind="item" data-i="' + i + '" data-field="soldContact" value="' + esc(it.soldContact == null ? "" : it.soldContact) + '" placeholder="טלפון / אימייל" /></div>' +
+              "</div>"
+            : "") +
           '<div class="field"><label>קישור לפריט (אופציונלי — נפתח בלחיצה על התמונה)</label>' +
             '<input type="text" data-kind="item" data-i="' + i + '" data-field="link" value="' + esc(it.link == null ? "" : it.link) + '" placeholder="https://" /></div>' +
           '<div class="field"><label>תמונות</label>' +
@@ -476,7 +482,7 @@
     } else if (kind === "item") {
       var it = model.items[parseInt(t.getAttribute("data-i"), 10)];
       var val = t.value;
-      if ((field === "brand" || field === "dimensions" || field === "link") && val === "") val = null;
+      if ((field === "brand" || field === "dimensions" || field === "link" || field === "soldTo" || field === "soldContact") && val === "") val = null;
       setPath(it, field, val);
     } else if (kind === "item-num") {
       var item = model.items[parseInt(t.getAttribute("data-i"), 10)];
@@ -561,6 +567,50 @@
       .then(function () { $("save").disabled = false; });
   }
 
+  /* ---------- CSV export ---------- */
+  // Quote per RFC-4180 and neutralize spreadsheet formula injection (cells that
+  // begin with = + - @ are prefixed with a single quote so Excel/Sheets treat
+  // buyer names/contacts as text, never as live formulas).
+  function csvCell(v) {
+    var s = v == null ? "" : String(v);
+    if (/^[=+\-@]/.test(s)) s = "'" + s;
+    if (/[",\n\r]/.test(s)) s = '"' + s.replace(/"/g, '""') + '"';
+    return s;
+  }
+  function catNameById(id) {
+    var c = (model.categories || []).filter(function (x) { return x.id === id; })[0];
+    return c ? c.name.he || c.name.en || id : id;
+  }
+  function roomNameById(id) {
+    var r = (model.rooms || []).filter(function (x) { return x.id === id; })[0];
+    return r ? r.name.he || r.name.en || id : id || "";
+  }
+  function exportCsv() {
+    if (!model || !model.items) { status("אין נתונים לייצוא", "err"); return; }
+    var headers = ["שם (עברית)", "שם (אנגלית)", "קטגוריה", "חדר", "מחיר מבוקש", "מחיר מקורי", "נמכר", "נמכר ל-", "פרטי קשר"];
+    var rows = model.items.map(function (it) {
+      return [
+        it.title && it.title.he, it.title && it.title.en,
+        catNameById(it.category), roomNameById(it.room),
+        it.price == null ? "" : it.price, it.originalPrice == null ? "" : it.originalPrice,
+        it.sold ? "כן" : "לא", it.soldTo || "", it.soldContact || "",
+      ].map(csvCell).join(",");
+    });
+    var csv = "﻿" + headers.map(csvCell).join(",") + "\r\n" + rows.join("\r\n") + "\r\n";
+    var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    var d = new Date();
+    var stamp = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+    a.href = url;
+    a.download = "moving-sale-" + stamp + ".csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    status("יוצא CSV ✓ (" + model.items.length + " פריטים)", "ok");
+  }
+
   /* ---------- boot ---------- */
   function init() {
     token = localStorage.getItem("ms_gh_token") || "";
@@ -571,6 +621,7 @@
       status(token ? "הטוקן נשמר בדפדפן" : "הטוקן נמחק", "ok");
     });
     $("reload").addEventListener("click", load);
+    $("export-csv").addEventListener("click", exportCsv);
     $("save").addEventListener("click", save);
     $("add-cat").addEventListener("click", function () {
       model.categories.push({ id: "category-" + (model.categories.length + 1), name: { he: "", en: "" } });
@@ -584,7 +635,7 @@
       var firstCat = model.categories[0] ? model.categories[0].id : "";
       model.items.push({
         id: newId(), category: firstCat, room: "other", brand: null, price: null, originalPrice: null,
-        dimensions: null, link: null, sold: false, photos: [],
+        dimensions: null, link: null, sold: false, soldTo: null, soldContact: null, photos: [],
         title: { he: "", en: "" }, desc: { he: "", en: "" },
       });
       renderItems();
