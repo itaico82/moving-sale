@@ -910,8 +910,8 @@
       "id": "e-sous-vide",
       "category": "electronics",
       "brand": "Anova",
-      "price": 1200,
-      "originalPrice": 600,
+      "price": 600,
+      "originalPrice": 1200,
       "dimensions": null,
       "sold": false,
       "photos": [
