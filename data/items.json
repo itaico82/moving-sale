@@ -1092,14 +1092,15 @@
         "images/e-robot-vacuum-1781603465549-0.jpg"
       ],
       "title": {
-        "he": "רובוט שואב ושוטף",
+        "he": "רובוט שואב ושוטף EcoVacs Deebot T20 Omni",
         "en": "Robot Vacuum & Mop"
       },
       "desc": {
         "he": "",
         "en": ""
       },
-      "room": "other"
+      "room": "other",
+      "link": "https://ad.ecovacs.co.il/t20/?gad_campaignid=21391060785&gbraid=0AAAAAC-34FCpftLa4y40gZZK4QiNnzuxF"
     },
     {
       "id": "e-fridge",
