@@ -1872,6 +1872,26 @@
         "he": "סאונד בר",
         "en": "Soundbar"
       }
+    },
+    {
+      "id": "l-folding-exercise-bike",
+      "category": "leisure",
+      "brand": null,
+      "price": 400,
+      "originalPrice": 800,
+      "dimensions": null,
+      "link": null,
+      "sold": false,
+      "photos": [],
+      "title": {
+        "he": "אופני כושר מתקפלים",
+        "en": "Folding Exercise Bike"
+      },
+      "desc": {
+        "he": "",
+        "en": ""
+      },
+      "room": "outdoor"
     }
   ]
 }
