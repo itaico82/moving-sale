@@ -713,7 +713,9 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-white-wardrobe-1781680911701-0.jpg"
+      ],
       "title": {
         "he": "ארון לבן",
         "en": "White Wardrobe"
@@ -776,7 +778,9 @@
       "originalPrice": 545,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-micke-desk-1781681084812-0.jpg"
+      ],
       "title": {
         "he": "שולחן כתיבה MICKE",
         "en": "MICKE Desk"
