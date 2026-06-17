@@ -1530,7 +1530,7 @@
       "id": "l-guitar-acoustic",
       "category": "leisure",
       "brand": null,
-      "price": null,
+      "price": 1000,
       "originalPrice": null,
       "dimensions": null,
       "sold": true,
@@ -1550,7 +1550,8 @@
       },
       "room": "other",
       "soldContact": "‪+972 54‑696‑6768‬",
-      "soldTo": "אסף נאמן"
+      "soldTo": "אסף נאמן",
+      "link": "https://www.facebook.com/groups/buyandsellmusicgear/posts/3186900508136808/"
     },
     {
       "id": "l-brompton-bag",
