@@ -1917,11 +1917,14 @@
       "price": 160,
       "originalPrice": null,
       "dimensions": null,
-      "link": null,
+      "link": "https://www.decathlon.co.il/p/304565-15072-%D7%A9%D7%A2%D7%A8-%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C-%D7%90%D7%A4%D7%95%D7%A8-%D7%A9%D7%97%D7%95%D7%A8.html",
       "sold": false,
       "soldTo": null,
       "soldContact": null,
-      "photos": [],
+      "photos": [
+        "images/l-kipsta-goal-1781721669797-0.jpg",
+        "images/l-kipsta-goal-1781721669797-1.jpg"
+      ],
       "title": {
         "he": "שער כדורגל מתקפל Kipsta (דקטלון)",
         "en": "Kipsta Folding Football Goal (Decathlon)"
