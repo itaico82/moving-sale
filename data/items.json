@@ -596,9 +596,9 @@
       "id": "f-double-mattress",
       "category": "furniture",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
-      "dimensions": null,
+      "price": 3000,
+      "originalPrice": 6290,
+      "dimensions": "190/140",
       "sold": false,
       "photos": [
         "images/f-double-mattress-1781618438167-0.jpg",
@@ -606,14 +606,15 @@
         "images/f-double-mattress-1781618438285-2.jpg"
       ],
       "title": {
-        "he": "מזרון זוגי",
+        "he": "מזרון זוגי Soham",
         "en": "Double Mattress"
       },
       "desc": {
-        "he": "",
+        "he": "מזרון היברידי מעולה של סוהם. 190/140",
         "en": ""
       },
-      "room": "bedroom"
+      "room": "bedroom",
+      "link": "https://soham.co.il/products/hybrid-mattress?variant=42759658373186"
     },
     {
       "id": "f-bissa",
