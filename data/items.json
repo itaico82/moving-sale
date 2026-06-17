@@ -835,21 +835,25 @@
     {
       "id": "e-philips-mixer",
       "category": "electronics",
-      "brand": "Philips",
-      "price": null,
-      "originalPrice": null,
+      "brand": "Bosch",
+      "price": 600,
+      "originalPrice": 1250,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-philips-mixer-1781676263160-0.jpg",
+        "images/e-philips-mixer-1781676263020-1.jpg"
+      ],
       "title": {
-        "he": "מיקסר פיליפס",
+        "he": "מעבד מזון Bosch Multi-talent 8",
         "en": "Philips Mixer"
       },
       "desc": {
-        "he": "",
+        "he": "כולל המון אביזרים - שייקר, מסחטת הדרים, דיסקים לגירוד, סכין בצק, ועוד",
         "en": ""
       },
-      "room": "kitchen"
+      "room": "kitchen",
+      "link": "https://www.traklin.co.il/%D7%9E%D7%95%D7%A6%D7%A8%D7%99_%D7%97%D7%A9%D7%9E%D7%9C_%D7%9C%D7%9E%D7%98%D7%91%D7%97/%D7%9E%D7%A2%D7%91%D7%93%D7%99_%D7%9E%D7%96%D7%95%D7%9F_%D7%91%D7%9C%D7%A0%D7%93%D7%A8%D7%99%D7%9D_%D7%95%D7%A7%D7%95%D7%A6%D7%A6%D7%99_%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%9E%D7%A2%D7%91%D7%93_%D7%9E%D7%96%D7%95%D7%9F_1250_%D7%95%D7%95%D7%90%D7%98_bosch_mc812m865_%D7%91%D7%95%D7%A9?gad_campaignid=23339451288&gbraid=0AAAAAD08LmMbOGs5J0TRfEo0D66kFDjj-"
     },
     {
       "id": "e-coffee-machine",
@@ -877,21 +881,24 @@
     {
       "id": "e-frother",
       "category": "electronics",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "brand": "Nespresso",
+      "price": 400,
+      "originalPrice": 900,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-frother-1781676542296-0.jpg"
+      ],
       "title": {
-        "he": "מקציף חלב",
+        "he": "מקציף חלב Nespresso Barista",
         "en": "Milk Frother"
       },
       "desc": {
-        "he": "",
+        "he": "מקציף חלב עם תוכניות רבות, כולל משקאות מרובי שלבים והקצפה קרה. ניתן לשטיפה במדיח",
         "en": ""
       },
-      "room": "kitchen"
+      "room": "kitchen",
+      "link": "https://www.nespresso.com/il/he/orders/accessories/original/barista-milk-device"
     },
     {
       "id": "e-sous-vide",
