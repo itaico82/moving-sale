@@ -694,7 +694,7 @@
     {
       "id": "f-bathroom-shelf",
       "category": "furniture",
-      "brand": null,
+      "brand": "IKEA",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
@@ -871,7 +871,7 @@
     {
       "id": "e-coffee-machine",
       "category": "electronics",
-      "brand": null,
+      "brand": "Nespresso",
       "price": 275,
       "originalPrice": 549,
       "dimensions": null,
@@ -938,12 +938,15 @@
     {
       "id": "e-toaster",
       "category": "electronics",
-      "brand": null,
+      "brand": "Gold line",
       "price": null,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-toaster-1781693881183-0.jpg",
+        "images/e-toaster-1781693892470-0.jpg"
+      ],
       "title": {
         "he": "טוסטר מרובעים",
         "en": "Toaster"
