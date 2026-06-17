@@ -1183,7 +1183,7 @@
       "price": 100,
       "originalPrice": 369,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-pressure-washer-1781681432027-0.jpg"
       ],
