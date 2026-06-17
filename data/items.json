@@ -1258,21 +1258,25 @@
     {
       "id": "k-scale",
       "category": "kitchen",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "brand": "KitchenAid",
+      "price": 100,
+      "originalPrice": 200,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-scale-1781675472648-0.jpg",
+        "images/k-scale-1781675472805-1.jpg"
+      ],
       "title": {
-        "he": "משקל מטבח",
+        "he": "משקל מטבח KitchenAid",
         "en": "Kitchen Scale"
       },
       "desc": {
-        "he": "",
+        "he": "משקל כפול - גם לגרמים וגם למיאיות הגרם",
         "en": ""
       },
-      "room": "kitchen"
+      "room": "kitchen",
+      "link": "https://www.amazon.com/dp/B09SK6RDQZ"
     },
     {
       "id": "k-sourdough",
@@ -1813,17 +1817,18 @@
       "room": "living-room",
       "brand": "Sonos",
       "price": 1350,
-      "originalPrice": 2699,
+      "originalPrice": 2999,
       "dimensions": null,
       "link": "https://www.bug.co.il/brand/sonos/arc/color/white",
       "sold": false,
       "photos": [
         "images/e-sonos-arc-1.jpg",
         "images/e-sonos-arc-2.jpg",
-        "images/e-sonos-arc-3.webp"
+        "images/e-sonos-arc-3.webp",
+        "images/e-sonos-arc-1781675697088-0.jpg"
       ],
       "title": {
-        "he": "סאונד בר Sonos Arc (לבן)",
+        "he": "סאונד בר Sonos Arc (לבן) + מתקן תליה",
         "en": "Sonos Arc Soundbar (White)"
       },
       "desc": {
