@@ -1050,13 +1050,13 @@
       "id": "e-washer",
       "category": "electronics",
       "brand": null,
-      "price": null,
+      "price": 900,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
       "photos": [],
       "title": {
-        "he": "מכונת כביסה",
+        "he": "מכונת כביסה Constructa",
         "en": "Washing Machine"
       },
       "desc": {
@@ -1069,7 +1069,7 @@
       "id": "e-dryer",
       "category": "electronics",
       "brand": null,
-      "price": null,
+      "price": 500,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
@@ -1110,7 +1110,7 @@
       "id": "e-fridge",
       "category": "electronics",
       "brand": "LG",
-      "price": 7000,
+      "price": 6500,
       "originalPrice": 8990,
       "dimensions": null,
       "sold": false,
@@ -1241,7 +1241,7 @@
         "images/e-air-purifier-1.webp"
       ],
       "title": {
-        "he": "מטהר אוויר",
+        "he": "מטהר אוויר חכם Xiaomi",
         "en": "Air Purifier"
       },
       "desc": {
