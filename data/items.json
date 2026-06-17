@@ -1759,7 +1759,10 @@
       "dimensions": null,
       "link": "https://www.tollmansdot.co.il/product/balcolore-l-2/",
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-balcolore-tub-l-1781691699591-0.jpg",
+        "images/k-balcolore-tub-l-1781691719410-0.jpg"
+      ],
       "title": {
         "he": "סל Balcolore L",
         "en": "Balcolore Tub L"
