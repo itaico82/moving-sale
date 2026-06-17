@@ -1514,7 +1514,7 @@
       "sold": false,
       "photos": [],
       "title": {
-        "he": "תיק ברומפטון",
+        "he": "תיק לרומפטון",
         "en": "Brompton Bag"
       },
       "desc": {
@@ -1527,17 +1527,23 @@
       "id": "l-brompton-bike",
       "category": "leisure",
       "brand": "Brompton",
-      "price": null,
+      "price": 2500,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-brompton-bike-1781674995393-0.jpg",
+        "images/l-brompton-bike-1781674995580-1.jpg",
+        "images/l-brompton-bike-1781674995673-2.jpg",
+        "images/l-brompton-bike-1781674995486-3.jpg",
+        "images/l-brompton-bike-1781674995288-4.jpg"
+      ],
       "title": {
-        "he": "אופני ברומפטון מתקפלים",
+        "he": "אופני ברומפטון מתקפלים 3 הילוכים - מחושמלות",
         "en": "Brompton Folding Bike"
       },
       "desc": {
-        "he": "",
+        "he": "סוללה חלשה - דורשת החלפה",
         "en": ""
       },
       "room": "outdoor"
@@ -1711,39 +1717,21 @@
       "id": "k-coro-tumblers-berry",
       "category": "kitchen",
       "brand": null,
-      "price": 74,
-      "originalPrice": 147,
+      "price": 150,
+      "originalPrice": 300,
       "dimensions": null,
       "link": "https://www.tollmansdot.co.il/product/coro-cherry/",
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-coro-tumblers-berry-1781674796604-0.jpg"
+      ],
       "title": {
-        "he": "סט 4 כוסות Coro",
-        "en": "Coro Tumblers ×4"
+        "he": "סט 8 כוסות Coro צבעוניות",
+        "en": "Coro Tumblers ×8"
       },
       "desc": {
-        "he": "310 מ״ל · גווני דובדבן",
-        "en": "310ml · Berry assorted"
-      },
-      "room": "kitchen"
-    },
-    {
-      "id": "k-coro-tumblers-lagoon",
-      "category": "kitchen",
-      "brand": null,
-      "price": 74,
-      "originalPrice": 147,
-      "dimensions": null,
-      "link": "https://www.tollmansdot.co.il/product/coro-lagoon/",
-      "sold": false,
-      "photos": [],
-      "title": {
-        "he": "סט 4 כוסות Coro",
-        "en": "Coro Tumblers ×4"
-      },
-      "desc": {
-        "he": "310 מ״ל · גווני כחול (Lagoon)",
-        "en": "310ml · Lagoon assorted"
+        "he": "310 מ״ל · גוונים שונים",
+        "en": "310ml"
       },
       "room": "kitchen"
     },
