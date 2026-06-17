@@ -1909,6 +1909,28 @@
         "en": ""
       },
       "room": "outdoor"
+    },
+    {
+      "id": "l-kipsta-goal",
+      "category": "leisure",
+      "brand": "Kipsta",
+      "price": 160,
+      "originalPrice": null,
+      "dimensions": null,
+      "link": null,
+      "sold": false,
+      "soldTo": null,
+      "soldContact": null,
+      "photos": [],
+      "title": {
+        "he": "שער כדורגל מתקפל Kipsta (דקטלון)",
+        "en": "Kipsta Folding Football Goal (Decathlon)"
+      },
+      "desc": {
+        "he": "₪160 ליחידה · יש זוג",
+        "en": "₪160 each · pair available"
+      },
+      "room": "outdoor"
     }
   ]
 }
