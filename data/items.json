@@ -816,8 +816,8 @@
       "id": "e-speakers",
       "category": "electronics",
       "brand": "Avance",
-      "price": null,
-      "originalPrice": null,
+      "price": 2500,
+      "originalPrice": 7000,
       "dimensions": null,
       "sold": false,
       "photos": [
@@ -825,11 +825,11 @@
         "images/e-speakers-1781603171781-1.jpg"
       ],
       "title": {
-        "he": "רמקולים",
+        "he": "רמקולים רצפתיים AVANCE ",
         "en": "Speakers"
       },
       "desc": {
-        "he": "",
+        "he": "Dana 2 - יש מכה קוסמטית על אחד מהם",
         "en": ""
       },
       "room": "living-room"
