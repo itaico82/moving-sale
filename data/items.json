@@ -1470,13 +1470,15 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-tent-1781696601870-0.jpg"
+      ],
       "title": {
         "he": "אוהל",
         "en": "Tent"
       },
       "desc": {
-        "he": "",
+        "he": "אוהל של discovery adventures לארבעה אנשים, פתיחה מהירה",
         "en": ""
       },
       "room": "outdoor"
