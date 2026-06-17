@@ -323,7 +323,7 @@
         "en": "Bar Stools"
       },
       "desc": {
-        "he": "כסאות בר גבוהים, עיצוב נקי",
+        "he": "סט של 4 כסאות בר גבוהים, עיצוב נקי",
         "en": "Set of 4 · originally ₪1,150 each"
       },
       "link": "https://www.tollmansdot.co.il/product/pure-loop-white-online/",
@@ -341,7 +341,7 @@
         "images/f-nightstand-wheels-1781602683607-0.jpg"
       ],
       "title": {
-        "he": "בסטה זוגית על גלגלים, מגירה אחת",
+        "he": "כוננית בסטה זוגית על גלגלים, מגירה אחת",
         "en": "Wide Nightstand on Wheels, One Drawer"
       },
       "desc": {
@@ -361,7 +361,7 @@
       "sold": false,
       "photos": [],
       "title": {
-        "he": "בסטה זוגית, דלתות לבנות",
+        "he": "כוננית בסטה זוגית, דלתות לבנות",
         "en": "Wide Nightstand, White Doors"
       },
       "desc": {
@@ -384,7 +384,7 @@
         "images/f-nightstand-single-1781602822806-0.jpg"
       ],
       "title": {
-        "he": "בסטה בודדת, דלת לבנה וגלגלים",
+        "he": "כוננית בסטה בודדת, דלת לבנה וגלגלים",
         "en": "Single Nightstand, White Door & Wheels"
       },
       "desc": {
@@ -427,7 +427,7 @@
       "sold": false,
       "photos": [],
       "title": {
-        "he": "ריבוע EKET כחול",
+        "he": "כוננית ריבוע EKET כחול",
         "en": "EKET Blue Cube"
       },
       "desc": {
@@ -449,7 +449,7 @@
         "images/f-kallax-8-vertical-1781606197418-0.jpg"
       ],
       "title": {
-        "he": "KALLAX 8 תאים, עומדת",
+        "he": "כוננית KALLAX 8 תאים, עומדת",
         "en": "KALLAX 8-Cube, Vertical"
       },
       "desc": {
@@ -471,7 +471,7 @@
         "images/f-kallax-8-horizontal-1781604367509-0.jpg"
       ],
       "title": {
-        "he": "KALLAX 8 תאים, לרוחב",
+        "he": "כוננית KALLAX 8 תאים, לרוחב",
         "en": "KALLAX 8-Cube, Horizontal"
       },
       "desc": {
@@ -493,7 +493,7 @@
         "images/f-kallax-4-vertical-1781604633378-0.jpg"
       ],
       "title": {
-        "he": "KALLAX 4 תאים, לגובה",
+        "he": "כוננית KALLAX 4 תאים, לגובה",
         "en": "KALLAX 4-Cube, Vertical"
       },
       "desc": {
@@ -755,7 +755,9 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-bedside-table-1781679574786-0.jpg"
+      ],
       "title": {
         "he": "שולחן צד מיטה",
         "en": "Bedside Table"
@@ -800,11 +802,11 @@
         "images/e-tube-amp-1781603039571-2.jpg"
       ],
       "title": {
-        "he": "מגבר מנורות",
+        "he": "מגבר מנורות 202 Jolida",
         "en": "Tube Amplifier"
       },
       "desc": {
-        "he": "",
+        "he": "40w - מגבר מנורות מלא\nיצירת מופת - דורש מעט תחזוקה (ניקוי מגעים)",
         "en": ""
       },
       "link": "https://www.ebay.com/itm/188500391146",
