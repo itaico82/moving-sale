@@ -1946,7 +1946,11 @@
       "sold": false,
       "soldTo": null,
       "soldContact": null,
-      "photos": [],
+      "photos": [
+        "images/f-mosslanda-ledge-1781721889955-0.jpg",
+        "images/f-mosslanda-ledge-1781721889955-1.jpg",
+        "images/f-mosslanda-ledge-1781721889955-2.jpg"
+      ],
       "title": {
         "he": "מדף תמונות MOSSLANDA לבן 115 ס״מ",
         "en": "MOSSLANDA Picture Ledge, White, 115cm"
