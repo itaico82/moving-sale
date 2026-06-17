@@ -425,7 +425,10 @@
       "originalPrice": 120,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-eket-blue-1781692857379-0.jpg",
+        "images/f-eket-blue-1781692882322-0.jpg"
+      ],
       "title": {
         "he": "כוננית ריבוע EKET כחול",
         "en": "EKET Blue Cube"
