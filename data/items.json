@@ -1306,7 +1306,7 @@
       "price": 100,
       "originalPrice": 200,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-scale-1781675472648-0.jpg",
         "images/k-scale-1781675472805-1.jpg"
@@ -1320,7 +1320,8 @@
         "en": "Dual scale — weighs in both grams and hundredths of a gram"
       },
       "room": "kitchen",
-      "link": "https://www.amazon.com/dp/B09SK6RDQZ"
+      "link": "https://www.amazon.com/dp/B09SK6RDQZ",
+      "soldTo": "תומר גלאון"
     },
     {
       "id": "k-sourdough",
