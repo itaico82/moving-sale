@@ -1934,6 +1934,28 @@
         "en": "₪160 each · pair available"
       },
       "room": "outdoor"
+    },
+    {
+      "id": "f-mosslanda-ledge",
+      "category": "furniture",
+      "brand": "IKEA",
+      "price": 40,
+      "originalPrice": 59,
+      "dimensions": "115 ס״מ",
+      "link": "https://www.ikea.com/il/he/p/mosslanda-picture-ledge-white-90292103/",
+      "sold": false,
+      "soldTo": null,
+      "soldContact": null,
+      "photos": [],
+      "title": {
+        "he": "מדף תמונות MOSSLANDA לבן 115 ס״מ",
+        "en": "MOSSLANDA Picture Ledge, White, 115cm"
+      },
+      "desc": {
+        "he": "סגור באריזה המקורית · יש שניים",
+        "en": "Sealed in original packaging · two available"
+      },
+      "room": "living-room"
     }
   ]
 }
