@@ -1494,11 +1494,15 @@
       "id": "l-guitar-classical",
       "category": "leisure",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 400,
+      "originalPrice": 1200,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-guitar-classical-1781676006570-0.jpg",
+        "images/l-guitar-classical-1781676006308-1.jpg",
+        "images/l-guitar-classical-1781676006387-2.jpg"
+      ],
       "title": {
         "he": "גיטרה קלאסית",
         "en": "Classical Guitar"
@@ -1517,9 +1521,14 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-guitar-acoustic-1781676037195-0.jpg",
+        "images/l-guitar-acoustic-1781676036879-1.jpg",
+        "images/l-guitar-acoustic-1781676036969-2.jpg",
+        "images/l-guitar-acoustic-1781676037054-3.jpg"
+      ],
       "title": {
-        "he": "גיטרה אקוסטית מוגברת",
+        "he": "גיטרה אקוסטית מוגברת Fender",
         "en": "Acoustic-Electric Guitar"
       },
       "desc": {
@@ -1631,7 +1640,7 @@
         "images/l-bike-amit-1781631413901-0.jpg"
       ],
       "title": {
-        "he": "אופני ילדים מקצועיות - 24\" Polygon Relic",
+        "he": "אופני שטח מקצועיות לילדים - 24\" Polygon Relic",
         "en": "24״ mountain bike"
       },
       "desc": {
