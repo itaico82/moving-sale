@@ -1428,7 +1428,10 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-tollmans-vases-3-1781691237513-0.jpg",
+        "images/k-tollmans-vases-3-1781691304919-0.jpg"
+      ],
       "title": {
         "he": "שלישיית אגרטלים שקופים",
         "en": "Three Clear Vases"
@@ -1447,7 +1450,9 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-fox-vases-3-1781691197978-0.jpg"
+      ],
       "title": {
         "he": "שלישיית אגרטלים כחולים",
         "en": "Three Blue Vases"
@@ -1687,7 +1692,10 @@
       "dimensions": null,
       "link": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-margot-vase-trio-1781691388725-0.jpg",
+        "images/k-margot-vase-trio-1781691437128-0.jpg"
+      ],
       "title": {
         "he": "שלישיית אגרטלים Margot",
         "en": "Margot Vase Trio"
