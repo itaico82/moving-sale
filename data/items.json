@@ -1508,11 +1508,15 @@
       "id": "l-brompton-bag",
       "category": "leisure",
       "brand": "Brompton",
-      "price": null,
-      "originalPrice": null,
+      "price": 850,
+      "originalPrice": 2500,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-brompton-bag-1781675108720-0.jpg",
+        "images/l-brompton-bag-1781675108635-1.jpg",
+        "images/l-brompton-bag-1781675108810-2.jpg"
+      ],
       "title": {
         "he": "תיק לרומפטון",
         "en": "Brompton Bag"
