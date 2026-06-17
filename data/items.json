@@ -1162,7 +1162,10 @@
       "originalPrice": 1400,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-microwave-1781691062044-0.jpg",
+        "images/e-microwave-1781691081422-0.jpg"
+      ],
       "title": {
         "he": "מיקרוגל Siemens אינטגראלי",
         "en": "Microwave"
