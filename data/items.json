@@ -1006,13 +1006,15 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/e-dvd-1781677435325-0.jpg"
+      ],
       "title": {
-        "he": "נגן DVD",
+        "he": "נגן DVD79 Cambridge Audio",
         "en": "DVD Player"
       },
       "desc": {
-        "he": "",
+        "he": "נגן CD ו DVD מוזיקלי ועשיר.",
         "en": ""
       },
       "room": "living-room"
