@@ -1175,7 +1175,7 @@
     {
       "id": "e-microwave",
       "category": "electronics",
-      "brand": null,
+      "brand": "Siemens",
       "price": 500,
       "originalPrice": 1400,
       "dimensions": null,
