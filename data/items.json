@@ -1869,7 +1869,7 @@
       "originalPrice": 2999,
       "dimensions": null,
       "link": "https://www.bug.co.il/brand/sonos/arc/color/white",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-sonos-arc-1.jpg",
         "images/e-sonos-arc-2.jpg",
@@ -1883,7 +1883,8 @@
       "desc": {
         "he": "סאונד בר",
         "en": "Soundbar"
-      }
+      },
+      "soldTo": "שגיא"
     },
     {
       "id": "l-folding-exercise-bike",
