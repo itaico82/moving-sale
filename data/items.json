@@ -359,7 +359,11 @@
       "originalPrice": 525,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/f-nightstand-doors-1781693383866-0.jpg",
+        "images/f-nightstand-doors-1781693422946-0.jpg",
+        "images/f-nightstand-doors-1781693447248-0.jpg"
+      ],
       "title": {
         "he": "כוננית בסטה זוגית, דלתות לבנות",
         "en": "Wide Nightstand, White Doors"
