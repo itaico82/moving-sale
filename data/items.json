@@ -383,7 +383,7 @@
       "price": 160,
       "originalPrice": 320,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-nightstand-single-1781602800020-0.jpg",
         "images/f-nightstand-single-1781602822806-0.jpg"
@@ -397,7 +397,9 @@
         "en": "Optional glass shelf inside, included"
       },
       "room": "bedroom",
-      "link": "https://www.ikea.com/il/he/p/besta-frame-white-stained-oak-effect-50247377/#content"
+      "link": "https://www.ikea.com/il/he/p/besta-frame-white-stained-oak-effect-50247377/#content",
+      "soldContact": "‪+972 54‑229‑7001‬",
+      "soldTo": "~Avish"
     },
     {
       "id": "f-lack-shelves",
