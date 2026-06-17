@@ -1278,17 +1278,24 @@
       "id": "k-sourdough",
       "category": "kitchen",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 150,
+      "originalPrice": 500,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-sourdough-1781675312005-0.jpg",
+        "images/k-sourdough-1781675278853-0.jpg",
+        "images/k-sourdough-1781675311788-1.jpg",
+        "images/k-sourdough-1781675311651-2.jpg",
+        "images/k-sourdough-1781675311687-3.jpg",
+        "images/k-sourdough-1781675311859-4.jpg"
+      ],
       "title": {
         "he": "ציוד מחמצת",
         "en": "Sourdough Kit"
       },
       "desc": {
-        "he": "",
+        "he": "כל מה שצריך בשביל הכנת לחמי מחמצת - סלסילות תפיחה, קלפים, כלי למחמצת, סכין לחם",
         "en": ""
       },
       "room": "kitchen"
@@ -1297,17 +1304,22 @@
       "id": "k-baguette",
       "category": "kitchen",
       "brand": null,
-      "price": null,
+      "price": 150,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-baguette-1781675145221-0.jpg",
+        "images/k-baguette-1781675402761-0.jpg",
+        "images/k-baguette-1781675402805-1.jpg",
+        "images/k-baguette-1781675402950-2.jpg"
+      ],
       "title": {
         "he": "ציוד באגטים",
         "en": "Baguette Baking Kit"
       },
       "desc": {
-        "he": "",
+        "he": "תבניות באגטים, סרגל הפיכה, בדי פשתן, מברשת ניקוי",
         "en": ""
       },
       "room": "kitchen"
@@ -1316,17 +1328,24 @@
       "id": "k-flours",
       "category": "kitchen",
       "brand": null,
-      "price": null,
-      "originalPrice": null,
+      "price": 8,
+      "originalPrice": 15,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/k-flours-1781675196470-0.jpg",
+        "images/k-flours-1781675196674-1.jpg",
+        "images/k-flours-1781675196544-2.jpg",
+        "images/k-flours-1781675196756-3.jpg",
+        "images/k-flours-1781675196891-4.jpg",
+        "images/k-flours-1781675197029-5.jpg"
+      ],
       "title": {
-        "he": "קמחים",
+        "he": "קמח הארץ - קמחים איכותיים",
         "en": "Flours"
       },
       "desc": {
-        "he": "",
+        "he": "הקמחים הנפלאים של קמח הארץ - קמחי לחם, כפריים, מלאים, לבאגטים ובריוש. 8 ש״ח לקילו",
         "en": ""
       },
       "room": "kitchen"
