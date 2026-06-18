@@ -1960,6 +1960,28 @@
         "en": "Sealed in original packaging · two available"
       },
       "room": "living-room"
+    },
+    {
+      "id": "cloth-diapers",
+      "category": "other",
+      "brand": null,
+      "price": null,
+      "originalPrice": null,
+      "dimensions": null,
+      "link": null,
+      "sold": false,
+      "soldTo": null,
+      "soldContact": null,
+      "photos": [],
+      "title": {
+        "he": "חיתולים רב פעמיים",
+        "en": "Reusable Cloth Diapers"
+      },
+      "desc": {
+        "he": "",
+        "en": ""
+      },
+      "room": "kids"
     }
   ]
 }
