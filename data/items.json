@@ -1914,8 +1914,8 @@
       "id": "l-kipsta-goal",
       "category": "leisure",
       "brand": "Kipsta",
-      "price": 160,
-      "originalPrice": null,
+      "price": 80,
+      "originalPrice": 160,
       "dimensions": null,
       "link": "https://www.decathlon.co.il/p/304565-15072-%D7%A9%D7%A2%D7%A8-%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C-%D7%90%D7%A4%D7%95%D7%A8-%D7%A9%D7%97%D7%95%D7%A8.html",
       "sold": false,
@@ -1930,7 +1930,7 @@
         "en": "Kipsta Folding Football Goal (Decathlon)"
       },
       "desc": {
-        "he": "₪160 ליחידה · יש זוג",
+        "he": "₪80 ליחידה · יש זוג",
         "en": "₪160 each · pair available"
       },
       "room": "outdoor"
