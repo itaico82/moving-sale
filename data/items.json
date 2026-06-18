@@ -284,7 +284,7 @@
       "price": 1460,
       "originalPrice": 2920,
       "dimensions": null,
-      "sold": true,
+      "sold": false,
       "photos": [
         "images/f-yellow-chairs-1781556729374-0.jpg",
         "images/f-yellow-chairs-1781587541453-0.jpg",
