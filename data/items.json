@@ -1965,20 +1965,26 @@
       "id": "cloth-diapers",
       "category": "other",
       "brand": null,
-      "price": null,
+      "price": 250,
       "originalPrice": null,
       "dimensions": null,
       "link": null,
       "sold": false,
       "soldTo": null,
       "soldContact": null,
-      "photos": [],
+      "photos": [
+        "images/cloth-diapers-1781866835013-0.jpg",
+        "images/cloth-diapers-1781866835178-1.jpg",
+        "images/cloth-diapers-1781866834857-2.jpg",
+        "images/cloth-diapers-1781866835116-3.jpg",
+        "images/cloth-diapers-1781866834915-4.jpg"
+      ],
       "title": {
         "he": "חיתולים רב פעמיים",
         "en": "Reusable Cloth Diapers"
       },
       "desc": {
-        "he": "",
+        "he": "חיתולי בד רב פעמיים, רובם כיסים. של צ׳רלי בננה עם רפידותיהם, בלוברי, גרוביה וואן. יש גם הרבה רפידות שונות, פלאטים ופריפולדים. הכל נקי ועם גומיות תקינות. ",
         "en": ""
       },
       "room": "kids"
