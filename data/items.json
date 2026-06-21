@@ -1476,7 +1476,7 @@
       "id": "l-tent",
       "category": "leisure",
       "brand": null,
-      "price": null,
+      "price": 200,
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
@@ -1658,7 +1658,7 @@
       "price": 800,
       "originalPrice": 1639,
       "dimensions": "24\"",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/l-bike-amit-1781631386813-1.jpg",
         "images/l-bike-amit-1781631386577-0.jpg",
@@ -1673,7 +1673,8 @@
         "en": "-"
       },
       "link": "https://www.selabike.co.il/p/%D7%90%D7%95%D7%A4%D7%A0%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%90%D7%93%D7%95%D7%9D-polygon-relic-24/?attribute_pa_color=%25d7%25a7%25d7%25a8%25d7%259d&cmc_adid=ga__22822423647&creativeId=&adgroupid=&targetid=&gad_campaignid=22822456752&gbraid=0AAAAACoLA6ougPeWI_OeHRf49qUdDoJvj",
-      "room": "outdoor"
+      "room": "outdoor",
+      "soldContact": "0545662277"
     },
     {
       "id": "k-margot-vase-trio",
