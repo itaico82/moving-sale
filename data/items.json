@@ -435,7 +435,7 @@
       "price": 60,
       "originalPrice": 120,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-eket-blue-1781692857379-0.jpg",
         "images/f-eket-blue-1781692882322-0.jpg"
@@ -449,7 +449,8 @@
         "en": ""
       },
       "link": "https://www.ikea.com/il/he/p/eket-wall-mounted-shelving-unit-dark-grey-blue-s49602033/#content",
-      "room": "living-room"
+      "room": "living-room",
+      "soldTo": "נטע"
     },
     {
       "id": "f-kallax-8-vertical",
@@ -1952,8 +1953,8 @@
       "originalPrice": 59,
       "dimensions": "115 ס״מ",
       "link": "https://www.ikea.com/il/he/p/mosslanda-picture-ledge-white-90292103/",
-      "sold": false,
-      "soldTo": null,
+      "sold": true,
+      "soldTo": "נטע",
       "soldContact": null,
       "photos": [
         "images/f-mosslanda-ledge-1781721889955-0.jpg",
