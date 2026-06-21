@@ -1460,7 +1460,7 @@
       "price": 100,
       "originalPrice": 240,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/l-bike-stand-1781680152291-0.jpg"
       ],
@@ -1473,7 +1473,9 @@
         "en": ""
       },
       "room": "outdoor",
-      "link": "https://www.amazon.com/dp/B074PB8L1R"
+      "link": "https://www.amazon.com/dp/B074PB8L1R",
+      "soldTo": "דוד פבלובסקי",
+      "soldContact": "0549998700"
     },
     {
       "id": "l-tent",
