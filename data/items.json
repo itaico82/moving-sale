@@ -1045,7 +1045,7 @@
       "price": 1500,
       "originalPrice": 6290,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-grill-1.webp",
         "images/e-grill-1781639922712-0.jpg",
@@ -1061,7 +1061,9 @@
         "en": "4-burner · black"
       },
       "link": "https://www.argaman4u.co.il/product/5109/",
-      "room": "outdoor"
+      "room": "outdoor",
+      "soldTo": "אדם פז ",
+      "soldContact": "0528135006"
     },
     {
       "id": "e-washer",
