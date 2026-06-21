@@ -1520,7 +1520,7 @@
       "price": 400,
       "originalPrice": 1200,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/l-guitar-classical-1781676006570-0.jpg",
         "images/l-guitar-classical-1781676006308-1.jpg",
