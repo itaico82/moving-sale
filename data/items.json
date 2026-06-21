@@ -726,20 +726,21 @@
       "brand": null,
       "price": 1000,
       "originalPrice": 1995,
-      "dimensions": null,
+      "dimensions": " ‎122x59x216 ס\"מ‏",
       "sold": false,
       "photos": [
         "images/f-white-wardrobe-1781680911701-0.jpg"
       ],
       "title": {
-        "he": "ארון לבן",
+        "he": "ארון לבן VISTHUS",
         "en": "White Wardrobe"
       },
       "desc": {
         "he": "",
         "en": ""
       },
-      "room": "bedroom"
+      "room": "bedroom",
+      "link": "https://www.ikea.com/il/he/p/visthus-wardrobe-grey-white-90493446/"
     },
     {
       "id": "f-stockholm-mirror",
