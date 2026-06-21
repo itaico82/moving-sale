@@ -275,7 +275,8 @@
         "en": "BE-Easy · Fenix London Grey"
       },
       "link": "https://www.tollmansdot.co.il/product/be-easy-london-grey-170/",
-      "room": "dining"
+      "room": "dining",
+      "soldTo": "שלזים"
     },
     {
       "id": "f-yellow-chairs",
@@ -302,7 +303,7 @@
       },
       "link": "https://www.tollmansdot.co.il/product/slik-blue/",
       "room": "dining",
-      "soldTo": null,
+      "soldTo": "שיר סטיבה",
       "soldContact": "0545662277"
     },
     {
@@ -331,7 +332,7 @@
       "link": "https://www.tollmansdot.co.il/product/pure-loop-white-online/",
       "room": "kitchen",
       "soldContact": "0545662277",
-      "soldTo": null
+      "soldTo": "שיר סטיבה"
     },
     {
       "id": "f-nightstand-wheels",
@@ -1674,7 +1675,8 @@
       },
       "link": "https://www.selabike.co.il/p/%D7%90%D7%95%D7%A4%D7%A0%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D-%D7%90%D7%93%D7%95%D7%9D-polygon-relic-24/?attribute_pa_color=%25d7%25a7%25d7%25a8%25d7%259d&cmc_adid=ga__22822423647&creativeId=&adgroupid=&targetid=&gad_campaignid=22822456752&gbraid=0AAAAACoLA6ougPeWI_OeHRf49qUdDoJvj",
       "room": "outdoor",
-      "soldContact": "0545662277"
+      "soldContact": "0545662277",
+      "soldTo": "שיר סטיבה"
     },
     {
       "id": "k-margot-vase-trio",
