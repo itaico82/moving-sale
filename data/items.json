@@ -311,7 +311,7 @@
       "price": 2300,
       "originalPrice": 4600,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-bar-stools-1781556739857-0.jpg",
         "images/f-bar-stools-pureloop-1.jpg",
@@ -328,7 +328,9 @@
         "en": "Set of 4 · originally ₪1,150 each"
       },
       "link": "https://www.tollmansdot.co.il/product/pure-loop-white-online/",
-      "room": "kitchen"
+      "room": "kitchen",
+      "soldContact": "0545662277",
+      "soldTo": null
     },
     {
       "id": "f-nightstand-wheels",
