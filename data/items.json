@@ -1641,7 +1641,7 @@
       "price": 150,
       "originalPrice": 800,
       "dimensions": "20״",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/l-bike-noga-1781631744593-0.jpg",
         "images/l-bike-noga-1781631744392-1.jpg"
@@ -1654,7 +1654,9 @@
         "he": "אופני שטח 20״ מדקטלון. תוספת רגלית ומתקן לבקבוק",
         "en": "Noga's size"
       },
-      "room": "outdoor"
+      "room": "outdoor",
+      "soldContact": "0527907824",
+      "soldTo": "תומר הייליג"
     },
     {
       "id": "l-bike-amit",
