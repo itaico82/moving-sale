@@ -791,7 +791,7 @@
       "price": 275,
       "originalPrice": 545,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-micke-desk-1781681084812-0.jpg"
       ],
@@ -804,7 +804,8 @@
         "en": ""
       },
       "link": "https://www.ikea.com/il/he/p/micke-desk-white-90214308/",
-      "room": "office"
+      "room": "office",
+      "soldTo": "עידו"
     },
     {
       "id": "e-tube-amp",
