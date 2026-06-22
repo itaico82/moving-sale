@@ -1605,7 +1605,9 @@
       "originalPrice": null,
       "dimensions": null,
       "sold": false,
-      "photos": [],
+      "photos": [
+        "images/l-bike-valerie-1782149469723-0.jpg"
+      ],
       "title": {
         "he": "אופניי עיר - Decathlon",
         "en": "Bicycle"
@@ -1890,7 +1892,7 @@
       "originalPrice": 800,
       "dimensions": null,
       "link": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/l-folding-exercise-bike-1781700558848-0.jpg",
         "images/l-folding-exercise-bike-1781700558614-1.jpg",
