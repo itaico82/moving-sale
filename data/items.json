@@ -987,25 +987,6 @@
       "room": "office"
     },
     {
-      "id": "e-monitor-2",
-      "category": "electronics",
-      "brand": null,
-      "price": null,
-      "originalPrice": null,
-      "dimensions": null,
-      "sold": false,
-      "photos": [],
-      "title": {
-        "he": "מסך מחשב",
-        "en": "Computer Monitor"
-      },
-      "desc": {
-        "he": "מסך 2",
-        "en": "Monitor 2"
-      },
-      "room": "office"
-    },
-    {
       "id": "e-gaming-pc",
       "category": "electronics",
       "brand": null,
@@ -1440,7 +1421,7 @@
       "price": 25,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-fox-vases-3-1781691197978-0.jpg"
       ],
