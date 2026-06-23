@@ -1676,7 +1676,7 @@
       "originalPrice": 214,
       "dimensions": null,
       "link": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-margot-vase-trio-1781691388725-0.jpg",
         "images/k-margot-vase-trio-1781691437128-0.jpg"
@@ -1689,7 +1689,8 @@
         "he": "מעושן / טורקיז / שקוף",
         "en": "Smoke / Teal / Clear"
       },
-      "room": "living-room"
+      "room": "living-room",
+      "soldTo": "קלי"
     },
     {
       "id": "k-pastille-vase-15",
@@ -1699,7 +1700,7 @@
       "originalPrice": 102,
       "dimensions": null,
       "link": "https://www.tollmansdot.co.il/product/pastille-s-4/",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-pastille-vase-15-1781691561811-0.jpg",
         "images/k-pastille-vase-15-1781691572314-0.jpg"
@@ -1712,7 +1713,8 @@
         "he": "גוון Berry",
         "en": "Berry"
       },
-      "room": "living-room"
+      "room": "living-room",
+      "soldTo": "קלי"
     },
     {
       "id": "k-pastille-vase-20",
