@@ -503,7 +503,7 @@
       "price": 173,
       "originalPrice": 345,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-kallax-4-vertical-1781604633378-0.jpg"
       ],
@@ -516,7 +516,8 @@
         "en": ""
       },
       "link": null,
-      "room": "living-room"
+      "room": "living-room",
+      "soldTo": "באליק"
     },
     {
       "id": "f-eket-unit-8",
