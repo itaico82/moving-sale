@@ -1596,7 +1596,8 @@
         "he": "סוללה חלשה - דורשת החלפה",
         "en": "Weak battery — needs replacement"
       },
-      "room": "outdoor"
+      "room": "outdoor",
+      "soldTo": "עידו"
     },
     {
       "id": "l-bike-valerie",
@@ -1605,7 +1606,7 @@
       "price": null,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/l-bike-valerie-1782149469723-0.jpg"
       ],
