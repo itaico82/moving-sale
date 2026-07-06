@@ -591,7 +591,7 @@
       "price": 1098,
       "originalPrice": 2195,
       "dimensions": "140x200",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-double-bed-1781617371091-0.jpg",
         "images/f-double-bed-1781632817288-0.jpg",
@@ -1152,7 +1152,7 @@
       "price": 1000,
       "originalPrice": 4200,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-oven-1781676727210-0.jpg"
       ],
@@ -1173,7 +1173,7 @@
       "price": 500,
       "originalPrice": 1400,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-microwave-1781691062044-0.jpg",
         "images/e-microwave-1781691081422-0.jpg"
@@ -1259,7 +1259,7 @@
       "price": 200,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-air-purifier-1.webp"
       ],
@@ -1400,7 +1400,7 @@
       "price": 90,
       "originalPrice": 181,
       "dimensions": "Ø30 × 6.4 ס״מ",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-tollmans-plate-1.jpg",
         "images/k-tollmans-plate-1781691163916-0.jpg"
@@ -1413,7 +1413,8 @@
         "he": "אפור כהה",
         "en": "Dark grey"
       },
-      "room": "kitchen"
+      "room": "kitchen",
+      "soldTo": "שלזים"
     },
     {
       "id": "k-fox-vases-3",
