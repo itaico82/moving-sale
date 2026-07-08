@@ -750,7 +750,7 @@
       "price": 198,
       "originalPrice": 395,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-stockholm-mirror-1781638506485-1.jpg",
         "images/f-stockholm-mirror-1781638506635-0.jpg"
@@ -773,7 +773,7 @@
       "price": null,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-bedside-table-1781679574786-0.jpg"
       ],
@@ -953,7 +953,7 @@
       "price": null,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-toaster-1781693881183-0.jpg",
         "images/e-toaster-1781693892470-0.jpg"
@@ -1581,7 +1581,7 @@
       "price": 2500,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/l-brompton-bike-1781674995393-0.jpg",
         "images/l-brompton-bike-1781674995580-1.jpg",
@@ -1822,7 +1822,7 @@
       "originalPrice": 199,
       "dimensions": null,
       "link": "https://www.mi-il.co.il/product/mi-led-desk-lamp-1s",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-mi-desk-lamp-1.jpg",
         "images/e-mi-desk-lamp-3.jpg",
@@ -1921,7 +1921,7 @@
       "originalPrice": 160,
       "dimensions": null,
       "link": "https://www.decathlon.co.il/p/304565-15072-%D7%A9%D7%A2%D7%A8-%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C-%D7%90%D7%A4%D7%95%D7%A8-%D7%A9%D7%97%D7%95%D7%A8.html",
-      "sold": false,
+      "sold": true,
       "soldTo": null,
       "soldContact": null,
       "photos": [
