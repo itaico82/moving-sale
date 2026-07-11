@@ -548,7 +548,7 @@
       "price": 1248,
       "originalPrice": 2495,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-luli-bed-1781603437745-0.jpg",
         "images/f-luli-bed-1781603479615-0.jpg",
@@ -572,7 +572,7 @@
       "price": 188,
       "originalPrice": 375,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [],
       "title": {
         "he": "מיטת מעבר + מזרון",
@@ -662,7 +662,7 @@
       "price": 88,
       "originalPrice": 175,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-trones-1781618252525-0.jpg"
       ],
@@ -1061,7 +1061,7 @@
       "price": 900,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-washer-1781692236713-0.jpg",
         "images/e-washer-1781692284192-0.jpg",
@@ -1084,7 +1084,7 @@
       "price": 500,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-dryer-1781692051207-0.jpg",
         "images/e-dryer-1781692149844-0.jpg",
