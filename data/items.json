@@ -1,3 +1,4 @@
+
 {
   "config": {
     "whatsapp": "972544911686",
@@ -341,7 +342,7 @@
       "price": 220,
       "originalPrice": 550,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-nightstand-wheels-1781602683607-0.jpg"
       ],
@@ -363,7 +364,7 @@
       "price": 263,
       "originalPrice": 525,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-nightstand-doors-1781693383866-0.jpg",
         "images/f-nightstand-doors-1781693422946-0.jpg",
@@ -402,7 +403,7 @@
       },
       "room": "bedroom",
       "link": "https://www.ikea.com/il/he/p/besta-frame-white-stained-oak-effect-50247377/#content",
-      "soldContact": "‪+972 54‑229‑7001‬",
+      "soldContact": "‪+972 54‑229‑7001‬",
       "soldTo": "~Avish"
     },
     {
@@ -412,7 +413,7 @@
       "price": 20,
       "originalPrice": 39,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-lack-shelves-1781602950160-0.jpg",
         "images/f-lack-shelves-1781602972002-0.jpg"
@@ -459,7 +460,7 @@
       "price": 238,
       "originalPrice": 475,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-kallax-8-vertical-1781606197418-0.jpg"
       ],
@@ -481,7 +482,7 @@
       "price": 238,
       "originalPrice": 475,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-kallax-8-horizontal-1781604367509-0.jpg"
       ],
@@ -526,7 +527,7 @@
       "price": 410,
       "originalPrice": 820,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-eket-unit-8-1781603063983-0.jpg"
       ],
@@ -615,7 +616,7 @@
       "price": 3000,
       "originalPrice": 6290,
       "dimensions": "190/140",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-double-mattress-1781618438167-0.jpg",
         "images/f-double-mattress-1781618438223-1.jpg",
@@ -639,7 +640,7 @@
       "price": 113,
       "originalPrice": 225,
       "dimensions": "49x28x93",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-bissa-1781603171461-0.jpg",
         "images/f-bissa-1781632987162-0.jpg"
@@ -707,7 +708,7 @@
       "price": 175,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/f-bathroom-shelf-1781603990403-0.jpg"
       ],
@@ -863,7 +864,7 @@
       "price": 600,
       "originalPrice": 1250,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-philips-mixer-1781676263160-0.jpg",
         "images/e-philips-mixer-1781676263020-1.jpg"
@@ -886,7 +887,7 @@
       "price": 275,
       "originalPrice": 549,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-coffee-machine-1781603191552-0.jpg",
         "images/e-coffee-machine-1781603191413-1.jpg"
@@ -909,7 +910,7 @@
       "price": 400,
       "originalPrice": 900,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-frother-1781676542296-0.jpg"
       ],
@@ -931,7 +932,7 @@
       "price": 600,
       "originalPrice": 1200,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-sous-vide-1781633394202-0.jpg"
       ],
@@ -1107,7 +1108,7 @@
       "price": 1800,
       "originalPrice": 4435,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-robot-vacuum-1781603465549-0.jpg"
       ],
@@ -1129,7 +1130,7 @@
       "price": 6000,
       "originalPrice": 8990,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/e-fridge-1781633031497-0.jpg",
         "images/e-fridge-1781633031415-1.jpg"
@@ -1324,7 +1325,7 @@
       "price": 150,
       "originalPrice": 500,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-sourdough-1781675312005-0.jpg",
         "images/k-sourdough-1781675278853-0.jpg",
@@ -1350,7 +1351,7 @@
       "price": 100,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-baguette-1781675145221-0.jpg",
         "images/k-baguette-1781675402761-0.jpg",
@@ -1374,7 +1375,7 @@
       "price": 8,
       "originalPrice": 15,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-flours-1781675196470-0.jpg",
         "images/k-flours-1781675196674-1.jpg",
@@ -1468,7 +1469,7 @@
       "price": 200,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/l-tent-1781696601870-0.jpg"
       ],
@@ -1489,7 +1490,7 @@
       "price": null,
       "originalPrice": null,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [],
       "title": {
         "he": "שקי שינה",
@@ -1547,7 +1548,7 @@
         "en": ""
       },
       "room": "other",
-      "soldContact": "‪+972 54‑696‑6768‬",
+      "soldContact": "‪+972 54‑696‑6768‬",
       "soldTo": "אסף נאמן",
       "link": "https://www.facebook.com/groups/buyandsellmusicgear/posts/3186900508136808/"
     },
@@ -1558,7 +1559,7 @@
       "price": 850,
       "originalPrice": 2500,
       "dimensions": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/l-brompton-bag-1781675108720-0.jpg",
         "images/l-brompton-bag-1781675108635-1.jpg",
@@ -1727,7 +1728,7 @@
       "originalPrice": 201,
       "dimensions": null,
       "link": null,
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-pastille-vase-20-1781691606643-0.jpg",
         "images/k-pastille-vase-20-1781691616596-0.jpg"
@@ -1773,7 +1774,7 @@
       "originalPrice": 158,
       "dimensions": null,
       "link": "https://www.tollmansdot.co.il/product/balcolore-l-2/",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-balcolore-tub-l-1781691699591-0.jpg",
         "images/k-balcolore-tub-l-1781691719410-0.jpg",
@@ -1797,7 +1798,7 @@
       "originalPrice": 300,
       "dimensions": null,
       "link": "https://www.tollmansdot.co.il/product/coro-cherry/",
-      "sold": false,
+      "sold": true,
       "photos": [
         "images/k-coro-tumblers-berry-1781674796604-0.jpg",
         "images/k-coro-tumblers-berry-1781680221359-0.jpg",
@@ -1972,7 +1973,7 @@
       "originalPrice": null,
       "dimensions": null,
       "link": null,
-      "sold": false,
+      "sold": true,
       "soldTo": null,
       "soldContact": null,
       "photos": [
